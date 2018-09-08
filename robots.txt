@@ -1,0 +1,19 @@
+User-agent:*
+Disallow: /images/
+Disallow: /js/
+Disallow: /css/
+Disallow: /blog/git/
+Disallow: /blog/imgs/
+Disallow: /blog/js/
+Disallow: /blog/css/
+Disallow: /blog/fonts/
+Allow: /
+Allow: /blog/posts/
+Allow: /blog/archives/
+Allow: /blog/categories/
+Allow: /blog/links/
+Allow: /blog/tags/
+Allow: /blog/works/
+Allow: /blog/aboutme/
+Sitemap: https://sarakale.github.io/blog/sitemap.xml
+Sitemap: https://sarakale.github.io/blog/baidusitemap.xml
