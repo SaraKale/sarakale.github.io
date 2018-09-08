@@ -24,6 +24,7 @@
     <script src="/blog/js/aos.js"></script>
     <script src="/blog/js/highslide/highslide-full.min.js"></script>
     <script src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="/blog/js/fold.js"></script>
     <link rel="stylesheet" href="/blog/js/highslide/highslide.css">
     <style type="text/css">
         @media (max-width: 768px) {
@@ -39,7 +40,7 @@
       if (document.images) {
         var avatar = new Image();
         avatar.src = '/blog/imgs/https:/i.loli.net/2017/11/24/5a18011d1b535.jpg'
-        var previews = 'http://wx2.sinaimg.cn/large/5e9bd619ly1fuudym2r2sj20jg0aeq44.jpg,http://wx2.sinaimg.cn/mw690/5e9bd619ly1fuudyoqt5oj20jg0aeq3s.jpg,http://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudyrgvh5j20jg0aemxh.jpg,http://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudytvct3j20jg0aeabs.jpg,http://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudz812ivj20jg0aejsm.jpg,http://wx4.sinaimg.cn/mw690/5e9bd619ly1fuudzambuwj20jg0aemz5.jpg,http://wx2.sinaimg.cn/mw690/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg,http://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudzg51x5j20jg0aegng.jpg'.split(',')
+        var previews = 'https://wx2.sinaimg.cn/large/5e9bd619ly1fuudym2r2sj20jg0aeq44.jpg,https://wx2.sinaimg.cn/mw690/5e9bd619ly1fuudyoqt5oj20jg0aeq3s.jpg,https://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudyrgvh5j20jg0aemxh.jpg,https://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudytvct3j20jg0aeabs.jpg,https://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudz812ivj20jg0aejsm.jpg,https://wx4.sinaimg.cn/mw690/5e9bd619ly1fuudzambuwj20jg0aemz5.jpg,https://wx2.sinaimg.cn/mw690/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg,https://wx3.sinaimg.cn/mw690/5e9bd619ly1fuudzg51x5j20jg0aegng.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
@@ -193,9 +194,9 @@
                     
                     <a href="/blog/tags/仙剑六/">仙剑六</a>, 
                     
-                    <a href="/blog/tags/感想/">感想</a>, 
+                    <a href="/blog/tags/当时明月/">当时明月</a>, 
                     
-                    <a href="/blog/tags/当时明月/">当时明月</a>
+                    <a href="/blog/tags/感想/">感想</a>
                     
                 </span>
                 
@@ -226,9 +227,9 @@
                     
                     <a href="/blog/tags/仙剑六/">仙剑六</a>, 
                     
-                    <a href="/blog/tags/感想/">感想</a>, 
+                    <a href="/blog/tags/当时明月/">当时明月</a>, 
                     
-                    <a href="/blog/tags/当时明月/">当时明月</a>
+                    <a href="/blog/tags/感想/">感想</a>
                     
                     
                     
@@ -296,12 +297,33 @@
         </div>
     </article>
     
- 
+<!-- valine 评论系统 --> 
+
+    <div id="vcomment" class="comment" style="margin:auto;padding:10px;background:rgba(255, 255, 255, 0.774);border: 1px #000;margin-bottom: 30px;"></div> 
+    <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/valine@1.3.1/dist/Valine.min.js"></script>
+    <script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+        new Valine({
+                av: AV,
+                el: '#vcomment',
+                notify: notify,
+                verify: verify,
+                app_id: "xDeYcKI4KteMnLmXylrSPJ7l-gzGzoHsz",
+                app_key: "LnIFK9kr6eH2Umk0fBop5Ckj",
+                placeholder: "欢迎留下您宝贵的留言~",
+                avatar:"mm",
+                pageSize: "10"
+            });
+    </script>
+  
     <!--
     
 -->
-<!-- valine 评论系统 -->
- 
+
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -326,14 +348,16 @@
         <div class="author-panel text-center">
             <img src="https://i.loli.net/2017/11/24/5a18011d1b535.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
+                 <br />
            <p style="font-size: 16px;">滚来滚去～我哒～我哒哒哒～</p>
            <!-- <p class="author-description"><p>SaraKale’s blog是个人博客，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。</p>
 </p>-->
             <div class="project-pages">
                 <ul class="nav nav-pills">
                     <li><a href="https://weibo.com/1587271193/profile?topnav=1&wvr=6" class="fa fa-weibo" target="_blank"></a></li>
-                    <li><a href="https://space.bilibili.com/4197121/#/"target="_blank" style=" width: 70px;">B站</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" class="fa fa-youtube-play" target="_blank"></a></li>
+                   <!-- <li><a href="https://space.bilibili.com/4197121/#/"target="_blank" style=" width: 70px;">B站</a></li> -->
+                    <li><a href="https://space.bilibili.com/4197121/#/" class="fa fa-youtube-play" target="_blank"></a></li>
+                    <li><a href="https://steamcommunity.com/id/sarakale/" class="fa fa-steam" target="_blank"></a></li>
                     <li><a href="https://github.com/SaraKale" class="fa fa-github" target="_blank"></a></li>
                 </ul>
             </div>
@@ -365,6 +389,12 @@
             <i class="fa fa-chevron-circle-up panel-toggle"></i>
         </div>
         <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/535faed9.html">新博客迁移到Hexo，又重新安家了</a>
+                </span>
+            </li>
             
             <li class="list-group-item">
                 <span class="post-title">
@@ -420,12 +450,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/173.html">最近观看的几个剧场版影评</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -444,49 +468,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/blog/posts/50615.html">仙剑各大授权手游语音资源整理下载</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/55741.html">《仙剑奇侠传五》配音对白文本编号对照整理【更新12-13】</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/15959.html">仙剑奇侠传六2D组内对话头像抠图素材下载</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/51888.html">《战斗吧！球球》 - 月玲珑小剧场游戏</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/blog/posts/64850.html">《涯羽霓裳》祝有涯x羽裳真人剪辑视频欣赏</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/173.html">最近观看的几个剧场版影评</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/18647.html">家族之爱，奇迹的尽头——《CLANNAD》感想</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/blog/posts/12770.html">关于制作CLANNAD视频的点滴</a>
                 </span>
             </li>
             
@@ -498,7 +480,49 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/blog/posts/62550.html">仙剑奇侠传系列剧情对话资料测试版发布</a>
+                    <a href="/blog/posts/28180.html">【仙剑】伪-仙剑春晚（练习作品）</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/15959.html">仙剑奇侠传六2D组内对话头像抠图素材下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/1270.html">仙剑相关资源工具推荐</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/2137.html">仙剑系列相关资源个人整理</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/18647.html">家族之爱，奇迹的尽头——《CLANNAD》感想</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/35192.html">新仙剑OL相关资源整合（剧情回放、素材资源等）[2018-03-15更新]</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/535faed9.html">新博客迁移到Hexo，又重新安家了</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/blog/posts/19549.html">记录体验steam的感受</a>
                 </span>
             </li>
             
@@ -523,107 +547,107 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/blog/tags/新仙剑OL/" style="font-size: 12.784256296849591px;" class="tag-cloud-link">新仙剑OL</a>
+    <a href="/blog/tags/年终总结/" style="font-size: 13.95598550526072px;" class="tag-cloud-link">年终总结</a>
     
-    <a href="/blog/tags/新仙剑奇侠传online/" style="font-size: 10.607123351440688px;" class="tag-cloud-link">新仙剑奇侠传online</a>
+    <a href="/blog/tags/Markdown/" style="font-size: 19.2242389234001px;" class="tag-cloud-link">Markdown</a>
     
-    <a href="/blog/tags/资源提取/" style="font-size: 9.133816662236097px;" class="tag-cloud-link">资源提取</a>
+    <a href="/blog/tags/MD/" style="font-size: 15.285162208530135px;" class="tag-cloud-link">MD</a>
     
-    <a href="/blog/tags/仙剑六/" style="font-size: 13.369618757015008px;" class="tag-cloud-link">仙剑六</a>
+    <a href="/blog/tags/仙剑五/" style="font-size: 17.66310566087776px;" class="tag-cloud-link">仙剑五</a>
     
-    <a href="/blog/tags/仙剑奇侠传六/" style="font-size: 13.7164728188903px;" class="tag-cloud-link">仙剑奇侠传六</a>
+    <a href="/blog/tags/仙剑奇侠传五/" style="font-size: 14.617919831147477px;" class="tag-cloud-link">仙剑奇侠传五</a>
     
-    <a href="/blog/tags/感想/" style="font-size: 15.742340773727229px;" class="tag-cloud-link">感想</a>
+    <a href="/blog/tags/语音整理/" style="font-size: 18.79609560528052px;" class="tag-cloud-link">语音整理</a>
     
-    <a href="/blog/tags/仙剑/" style="font-size: 10.470240084560047px;" class="tag-cloud-link">仙剑</a>
+    <a href="/blog/tags/叶青/" style="font-size: 12.272382621185123px;" class="tag-cloud-link">叶青</a>
     
-    <a href="/blog/tags/素材整理/" style="font-size: 8.643610719055948px;" class="tag-cloud-link">素材整理</a>
+    <a href="/blog/tags/张睿/" style="font-size: 18.605782509561077px;" class="tag-cloud-link">张睿</a>
     
-    <a href="/blog/tags/仙剑手游/" style="font-size: 11.749308621291071px;" class="tag-cloud-link">仙剑手游</a>
+    <a href="/blog/tags/祝有涯/" style="font-size: 17.97724292707155px;" class="tag-cloud-link">祝有涯</a>
     
-    <a href="/blog/tags/仙剑五/" style="font-size: 15.303032385337952px;" class="tag-cloud-link">仙剑五</a>
+    <a href="/blog/tags/羽裳/" style="font-size: 10.56078670475753px;" class="tag-cloud-link">羽裳</a>
     
-    <a href="/blog/tags/仙剑奇侠传五/" style="font-size: 17.595777323173042px;" class="tag-cloud-link">仙剑奇侠传五</a>
+    <a href="/blog/tags/RPG-maker-MV/" style="font-size: 9.614283183033018px;" class="tag-cloud-link">RPG maker MV</a>
     
-    <a href="/blog/tags/语音整理/" style="font-size: 13.694794460325635px;" class="tag-cloud-link">语音整理</a>
+    <a href="/blog/tags/战斗吧！球球/" style="font-size: 11.362708117394305px;" class="tag-cloud-link">战斗吧！球球</a>
     
-    <a href="/blog/tags/2D表情/" style="font-size: 10.437972745750027px;" class="tag-cloud-link">2D表情</a>
+    <a href="/blog/tags/月玲珑/" style="font-size: 13.555766365695593px;" class="tag-cloud-link">月玲珑</a>
     
-    <a href="/blog/tags/抠图素材/" style="font-size: 12.319735407162646px;" class="tag-cloud-link">抠图素材</a>
+    <a href="/blog/tags/月玲珑小剧场游戏/" style="font-size: 18.353911380563627px;" class="tag-cloud-link">月玲珑小剧场游戏</a>
     
-    <a href="/blog/tags/RPG-maker-MV/" style="font-size: 19.908812657480276px;" class="tag-cloud-link">RPG maker MV</a>
+    <a href="/blog/tags/神舞幻想/" style="font-size: 10.080991891758522px;" class="tag-cloud-link">神舞幻想</a>
     
-    <a href="/blog/tags/战斗吧！球球/" style="font-size: 17.96485968491431px;" class="tag-cloud-link">战斗吧！球球</a>
+    <a href="/blog/tags/Let-s-encrypt/" style="font-size: 19.015504062644457px;" class="tag-cloud-link">Let&#39;s encrypt</a>
     
-    <a href="/blog/tags/月玲珑/" style="font-size: 14.572696176963717px;" class="tag-cloud-link">月玲珑</a>
+    <a href="/blog/tags/SSL/" style="font-size: 18.177635614583103px;" class="tag-cloud-link">SSL</a>
     
-    <a href="/blog/tags/月玲珑小剧场游戏/" style="font-size: 13.35712272617612px;" class="tag-cloud-link">月玲珑小剧场游戏</a>
+    <a href="/blog/tags/CLANNAD/" style="font-size: 9.093052256343938px;" class="tag-cloud-link">CLANNAD</a>
     
-    <a href="/blog/tags/月玲珑十周年/" style="font-size: 14.778885738000437px;" class="tag-cloud-link">月玲珑十周年</a>
+    <a href="/blog/tags/Key/" style="font-size: 13.307786837024388px;" class="tag-cloud-link">Key</a>
     
-    <a href="/blog/tags/月玲珑配音社/" style="font-size: 18.579240713771153px;" class="tag-cloud-link">月玲珑配音社</a>
+    <a href="/blog/tags/MAD/" style="font-size: 19.133505621400015px;" class="tag-cloud-link">MAD</a>
     
-    <a href="/blog/tags/祝有涯/" style="font-size: 16.11106073644255px;" class="tag-cloud-link">祝有涯</a>
+    <a href="/blog/tags/仙剑奇侠传/" style="font-size: 9.686064631788016px;" class="tag-cloud-link">仙剑奇侠传</a>
     
-    <a href="/blog/tags/羽裳/" style="font-size: 8.085996555506167px;" class="tag-cloud-link">羽裳</a>
+    <a href="/blog/tags/仙剑/" style="font-size: 17.534906064682158px;" class="tag-cloud-link">仙剑</a>
     
-    <a href="/blog/tags/叶青/" style="font-size: 13.857782611971828px;" class="tag-cloud-link">叶青</a>
+    <a href="/blog/tags/仙剑春晚/" style="font-size: 17.545295111277397px;" class="tag-cloud-link">仙剑春晚</a>
     
-    <a href="/blog/tags/张睿/" style="font-size: 14.610281854371575px;" class="tag-cloud-link">张睿</a>
+    <a href="/blog/tags/仙剑六/" style="font-size: 8.415466359031154px;" class="tag-cloud-link">仙剑六</a>
     
-    <a href="/blog/tags/个人作品/" style="font-size: 11.189110977914556px;" class="tag-cloud-link">个人作品</a>
+    <a href="/blog/tags/仙剑奇侠传六/" style="font-size: 16.35281308990428px;" class="tag-cloud-link">仙剑奇侠传六</a>
     
-    <a href="/blog/tags/广播剧/" style="font-size: 11.21349659670626px;" class="tag-cloud-link">广播剧</a>
+    <a href="/blog/tags/当时明月/" style="font-size: 13.859184454678118px;" class="tag-cloud-link">当时明月</a>
     
-    <a href="/blog/tags/视频剪辑/" style="font-size: 16.310926626410918px;" class="tag-cloud-link">视频剪辑</a>
+    <a href="/blog/tags/个人作品/" style="font-size: 11.336977830253414px;" class="tag-cloud-link">个人作品</a>
     
-    <a href="/blog/tags/博客/" style="font-size: 16.80243821870199px;" class="tag-cloud-link">博客</a>
+    <a href="/blog/tags/广播剧/" style="font-size: 15.11580993133974px;" class="tag-cloud-link">广播剧</a>
     
-    <a href="/blog/tags/Markdown/" style="font-size: 8.291299467880773px;" class="tag-cloud-link">Markdown</a>
+    <a href="/blog/tags/视频剪辑/" style="font-size: 11.212837122170608px;" class="tag-cloud-link">视频剪辑</a>
     
-    <a href="/blog/tags/MD/" style="font-size: 15.631253211833405px;" class="tag-cloud-link">MD</a>
+    <a href="/blog/tags/博客/" style="font-size: 9.358361565356418px;" class="tag-cloud-link">博客</a>
     
-    <a href="/blog/tags/Let-s-encrypt/" style="font-size: 17.101529989534647px;" class="tag-cloud-link">Let&#39;s encrypt</a>
+    <a href="/blog/tags/仙剑奇侠传七/" style="font-size: 8.090057937718981px;" class="tag-cloud-link">仙剑奇侠传七</a>
     
-    <a href="/blog/tags/SSL/" style="font-size: 19.25708485226965px;" class="tag-cloud-link">SSL</a>
+    <a href="/blog/tags/仙剑七/" style="font-size: 10.961999319309415px;" class="tag-cloud-link">仙剑七</a>
     
-    <a href="/blog/tags/声之形/" style="font-size: 14.661899969639647px;" class="tag-cloud-link">声之形</a>
+    <a href="/blog/tags/扣图素材/" style="font-size: 17.090234474952826px;" class="tag-cloud-link">扣图素材</a>
     
-    <a href="/blog/tags/心が叫びたがってるんだ。/" style="font-size: 13.291129804279029px;" class="tag-cloud-link">心が叫びたがってるんだ。</a>
+    <a href="/blog/tags/仙剑手游/" style="font-size: 18.94708505581979px;" class="tag-cloud-link">仙剑手游</a>
     
-    <a href="/blog/tags/心灵想要大声呼喊/" style="font-size: 19.906285596902393px;" class="tag-cloud-link">心灵想要大声呼喊</a>
+    <a href="/blog/tags/2D表情/" style="font-size: 14.043725506452173px;" class="tag-cloud-link">2D表情</a>
     
-    <a href="/blog/tags/聲の形/" style="font-size: 17.572641957489438px;" class="tag-cloud-link">聲の形</a>
+    <a href="/blog/tags/抠图素材/" style="font-size: 18.315635247209194px;" class="tag-cloud-link">抠图素材</a>
     
-    <a href="/blog/tags/steam/" style="font-size: 10.224057148174921px;" class="tag-cloud-link">steam</a>
+    <a href="/blog/tags/仙剑剧情对话/" style="font-size: 17.93158270689103px;" class="tag-cloud-link">仙剑剧情对话</a>
     
-    <a href="/blog/tags/CLANNAD/" style="font-size: 19.522259998258804px;" class="tag-cloud-link">CLANNAD</a>
+    <a href="/blog/tags/素材整理/" style="font-size: 8.863998473142399px;" class="tag-cloud-link">素材整理</a>
     
-    <a href="/blog/tags/Key/" style="font-size: 8.877409636847027px;" class="tag-cloud-link">Key</a>
+    <a href="/blog/tags/资源提取/" style="font-size: 10.97819326705189px;" class="tag-cloud-link">资源提取</a>
     
-    <a href="/blog/tags/MAD/" style="font-size: 16.52193103794945px;" class="tag-cloud-link">MAD</a>
+    <a href="/blog/tags/新仙剑OL/" style="font-size: 11.20048666846004px;" class="tag-cloud-link">新仙剑OL</a>
     
-    <a href="/blog/tags/年终总结/" style="font-size: 10.319629487248955px;" class="tag-cloud-link">年终总结</a>
+    <a href="/blog/tags/新仙剑奇侠传online/" style="font-size: 10.496470435582058px;" class="tag-cloud-link">新仙剑奇侠传online</a>
     
-    <a href="/blog/tags/仙剑奇侠传/" style="font-size: 17.56525344319449px;" class="tag-cloud-link">仙剑奇侠传</a>
+    <a href="/blog/tags/感想/" style="font-size: 15.507729631527262px;" class="tag-cloud-link">感想</a>
     
-    <a href="/blog/tags/仙剑春晚/" style="font-size: 18.209532135615625px;" class="tag-cloud-link">仙剑春晚</a>
+    <a href="/blog/tags/声之形/" style="font-size: 15.106129468978603px;" class="tag-cloud-link">声之形</a>
     
-    <a href="/blog/tags/单机/" style="font-size: 9.027702182387907px;" class="tag-cloud-link">单机</a>
+    <a href="/blog/tags/心が叫びたがってるんだ。/" style="font-size: 14.029830886999171px;" class="tag-cloud-link">心が叫びたがってるんだ。</a>
     
-    <a href="/blog/tags/游戏整理/" style="font-size: 18.461143913710533px;" class="tag-cloud-link">游戏整理</a>
+    <a href="/blog/tags/心灵想要大声呼喊/" style="font-size: 14.431375569293355px;" class="tag-cloud-link">心灵想要大声呼喊</a>
     
-    <a href="/blog/tags/神舞幻想/" style="font-size: 18.612969898683165px;" class="tag-cloud-link">神舞幻想</a>
+    <a href="/blog/tags/聲の形/" style="font-size: 9.525395918986304px;" class="tag-cloud-link">聲の形</a>
     
-    <a href="/blog/tags/仙剑奇侠传七/" style="font-size: 18.525211181922025px;" class="tag-cloud-link">仙剑奇侠传七</a>
+    <a href="/blog/tags/月玲珑十周年/" style="font-size: 15.780881218887117px;" class="tag-cloud-link">月玲珑十周年</a>
     
-    <a href="/blog/tags/仙剑七/" style="font-size: 13.339354843632245px;" class="tag-cloud-link">仙剑七</a>
+    <a href="/blog/tags/月玲珑配音社/" style="font-size: 16.057889267924246px;" class="tag-cloud-link">月玲珑配音社</a>
     
-    <a href="/blog/tags/扣图素材/" style="font-size: 13.504124832838835px;" class="tag-cloud-link">扣图素材</a>
+    <a href="/blog/tags/单机/" style="font-size: 19.36385394246708px;" class="tag-cloud-link">单机</a>
     
-    <a href="/blog/tags/仙剑剧情对话/" style="font-size: 15.560087062524524px;" class="tag-cloud-link">仙剑剧情对话</a>
+    <a href="/blog/tags/游戏整理/" style="font-size: 17.677240404375464px;" class="tag-cloud-link">游戏整理</a>
     
-    <a href="/blog/tags/当时明月/" style="font-size: 16.700669345343147px;" class="tag-cloud-link">当时明月</a>
+    <a href="/blog/tags/steam/" style="font-size: 8.814095778013945px;" class="tag-cloud-link">steam</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
@@ -741,6 +765,7 @@
 <script src="/blog/js/blog.js"></script>
 
 <script src="/blog/js/oni.js"></script>
+
 
 
 
