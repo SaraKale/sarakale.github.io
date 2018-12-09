@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","width":240,"display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownBigIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="AVS,Aviutl,透明台标,去水印">
+<meta property="og:type" content="article">
+<meta property="og:title" content="去除视频水印测试（AVS+Aviutl）">
+<meta property="og:url" content="https://sarakale.github.io/blog/posts/7e3d2d4.html">
+<meta property="og:site_name" content="SaraKale&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwn0221jj209w0abjrs.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwksu9ljj20ay04ugss.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwkw3rd6j20uq0lejtm.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwkz1otzj20uq0lejth.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwm1vsqbj20860injsi.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwm5624wj20zm0jowj1.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/large/5e9bd619ly1fxwwm8564rj207r05y74l.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwmf4arqj20zm0jogr7.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwid31qzj20zk0fk7dy.jpg">
+<meta property="og:updated_time" content="2018-12-09T08:56:02.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="去除视频水印测试（AVS+Aviutl）">
+<meta name="twitter:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://sarakale.github.io/blog/posts/7e3d2d4.html">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>去除视频水印测试（AVS+Aviutl） | SaraKale's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+       <!-- <span class="site-title">SaraKale's blog</span> -->
+        <span class="site-title"><img src="https://sarakale.github.io/images/LOGO2.png"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-works">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/works/" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>作品</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">68</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">6</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">36</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-message">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/message/" rel="section"><i class="menu-item-icon fa fa-fw fa-comment"></i> <br>留言板</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-heart"></i> <br>友链</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-aboutme">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/aboutme/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sarakale.github.io/blog/posts/7e3d2d4.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SaraKale">
+      <meta itemprop="description" content="SaraKale's blog是个人博客，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。">
+      <meta itemprop="image" content="https://i.loli.net/2017/11/24/5a18011d1b535.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SaraKale's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">去除视频水印测试（AVS+Aviutl）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-11 22:04:20" itemprop="dateCreated datePublished" datetime="2018-09-11T22:04:20+08:00">2018-09-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/工具资源/" itemprop="url" rel="index"><span itemprop="name">工具资源</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/7e3d2d4.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/posts/7e3d2d4.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg" alt=""><br><a id="more"></a></p>
+<p>这段时间准备开始做视频了，心里有个大坑想要去做，一直老拖着不好，还是早点做完早点解脱吧……首先要解决的是“视频水印/台标”问题，要是官方放出无水印那就更好了，但如果官方加上了LOGO那是所有剪刀手最烦恼的一大问题了……<br>其实去除的方法和技术是有，但很难做到完美，最多只能做到“障眼法”让人不会太在意LOGO，如果是强迫症除非去逐帧处理，但这样效率太低了，太耗时……<br>目前普遍方式是：<br>1、AE动态追踪技术+画笔去除，但如果时长太长处理也需要更高的配置。<br>2、ffmpeg逐帧导出用PS内容识别再导回去合成视频，缺点效率太低流程繁琐。<br>3、AVS+Aviutl用台标识别插件调整参数，再通过x264二压。这是目前比较快捷的方法。</p>
+<p>我就优先用AVS+Aviutl这种方法了，以前老早听说很久了，但一直没有尝试，如今终于才想起来……</p>
+<h2 id="需要的软件"><a href="#需要的软件" class="headerlink" title="需要的软件"></a>需要的软件</h2><p>Aviutl<br>Avisynth<br>logoscan_007<br>delogo_avisynth_005a<br>x264<br>……等</p>
+<p>Aviutl可以去<a href="http://spring-fragrance.mints.ne.jp/aviutl/" target="_blank" rel="noopener">官网</a>下，它是日区的视频编辑软件，也可以下载贴吧的汉化包，但最好是用英文语言，否则会出现不明BUG……日文报错我也看不懂啊x<br>logoscan_007、delogo_avisynth_005a这两个插件要去<a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=7&amp;t=42" target="_blank" rel="noopener">使用EraseLOGO 分析+去台标</a>这帖子下，顺便也可以看流程，他们写的也很详细，其他软件直接搜索官网就能找到了。<br>可以提前了解别人是怎么做的，再自己进行摸索。推荐：<a href="https://www.cnbeining.com/2013/08/memo-how-transparency/" target="_blank" rel="noopener">如何去透明台标</a>、<a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=7&amp;t=42" target="_blank" rel="noopener">使用EraseLOGO 分析+去台标</a></p>
+<p>把插件放好后，打开aviutl去开启插件，菜单栏Filter点击有一个乱码的名称，这个不用在意，开启就好了，照样能用。<br><img src="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwn0221jj209w0abjrs.jpg" alt=""><br>然后直接把视频拖入软件就好了，接下来……<br><img src="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwksu9ljj20ay04ugss.jpg" alt=""><br>诶？？？不能加载超过1280x720分辨率的视频？！<br>What！你在逗我！不可能啊！以前都能拖入的！怎么只能支持这么点儿分辨率……</p>
+<p>哦我大概想起来了，以前测试用社里的老资源还能拖入，可能是运气……</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwkw3rd6j20uq0lejtm.jpg" alt=""></th>
+<th><img src="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwkz1otzj20uq0lejth.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><center>原视频</center></td>
+<td><center>处理后</center></td>
+</tr>
+</tbody>
+</table>
+<p>因为以前社里资源有一半找不回来了，我就去挖了在线平台的视频做备份，但优酷这LOGO有两个，去除有点麻烦，一个去掉还行，两个同时出现就更烦躁了。只存了原分析文件就搁置了。</p>
+<p>好吧，那我去贴吧找找有没有支持高分辨率的导入插件，说不定能找到呢~逛了一圈果然有人做了完美汉化版，真是雪中送炭！<br>如果遇到不能载入报错就去下这个<a href="https://tieba.baidu.com/p/5541881662" target="_blank" rel="noopener">完全汉化版 AviUtl_CN(Mod 1.00)</a></p>
+<p>好了，这回应该可以用了，还是像刚才一样要先开启台标分析插件，菜单栏<code>滤镜</code>——<code>台标分析</code>开启<br>如图：<br><img src="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwm1vsqbj20860injsi.jpg" alt=""><br>然后可以载入视频进行分析了，如果没有显示台标分析小窗口，就去点击<code>设置</code>——<code>台标分析设置</code>就能看到了。</p>
+<p>以“《仙剑奇侠传3D回合》手游CG”为例，主要处理那特别大的“仙剑奇侠传3D回合”水印。<br><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwm5624wj20zm0jowj1.jpg" alt=""><br>鼠标框选LOGO位置，然后可以调整阈值，按<code>[ ]</code>键选起止点，起止点要看情况，如果LOGO很短就去找准时间点，太长也容易耗时。最后可以点击台标分析了，等待它的扫描结果。</p>
+<p><img src="https://wx4.sinaimg.cn/large/5e9bd619ly1fxwwm8564rj207r05y74l.jpg" alt=""><br>分析结果出来了，可以保存了，它的后缀名是lgd2。<br>可以放到Avisynth里写脚本了，其实Aviutl也可以直接看效果，点菜单<code>滤镜</code>——<code>透明台标分析</code>加载刚才导出的文件就可以了。<br><img src="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwmf4arqj20zm0jogr7.jpg" alt=""><br>仔细调整Y、Cb、Cr的值，达到“透明”的效果就好，<br>但这个视频LOGO后面颜色太复杂，做不到统一处理，只能写个AVS脚本试试了。</p>
+<p>打开avisynth，加载必备插件，写参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#delogo 插件</span><br><span class="line">DirectShowSource(&quot;D:\仙剑奇侠传\授权手游\[2016-05-11]《仙剑奇侠传3D回合》手游 - 盖娅互娱\《仙剑奇侠传3D回合》官网CG完整版.mp4&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\delogo.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\fft3dGPU.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\FFT3DFilter.dll&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\logoscan.auf&quot;)</span><br><span class="line">EraseLOGO(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\pal3d 1280x560.lgd2&quot;)</span><br><span class="line">EPSlice(l=1270, t=70, r=100, b=80, sp1=”fft3dgpu(sigma=2, plane=4)”, spmode=1)</span><br></pre></td></tr></table></figure>
+<p>基本上效果也不甚满意，换个插件写……</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># logoNE插件</span><br><span class="line">src = DirectShowSource(&quot;D:\仙剑奇侠传\授权手游\[2016-05-11]《仙剑奇侠传3D回合》手游 - 盖娅互娱\《仙剑奇侠传3D回合》官网CG完整版.mp4&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\delogo.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\fft3dGPU.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\FFT3DFilter.dll&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviSynth+\plugins\nnedi3_resize16_v3.3.avsi&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviSynth+\plugins\logoNR_v0.1.avsi&quot;)</span><br><span class="line">dlg = src.EraseLOGO(&quot;I:\字幕与压制\LOGO台标\pal3dgame 1280x560.lgd&quot;)</span><br><span class="line">logoNR(dlg, src)</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwid31qzj20zk0fk7dy.jpg" alt=""></p>
+<p>不管怎么搞，都觉得水印好明显……算了我直接放弃了……</p>
+<p>最后去官网逛的时候，才发现他们发了无水印版本的，妈的我到底是为了什么？不过这码率给压得好低…算了，总比没有的强……<br>┑(￣Д ￣)┍</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a href="https://www.cnbeining.com/2013/08/memo-how-transparency" target="_blank" rel="noopener">如何去透明台标</a><br>[2] <a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=7&amp;t=42" target="_blank" rel="noopener">使用EraseLOGO 分析+去台标</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>SaraKale</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://sarakale.github.io/blog/posts/7e3d2d4.html" title="去除视频水印测试（AVS+Aviutl）">https://sarakale.github.io/blog/posts/7e3d2d4.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AVS/" rel="tag"># AVS</a>
+          
+            <a href="/tags/Aviutl/" rel="tag"># Aviutl</a>
+          
+            <a href="/tags/透明台标/" rel="tag"># 透明台标</a>
+          
+            <a href="/tags/去水印/" rel="tag"># 去水印</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/535faed9.html" rel="next" title="新博客迁移到Hexo，又重新安家了">
+                <i class="fa fa-chevron-left"></i> 新博客迁移到Hexo，又重新安家了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/14580416.html" rel="prev" title="整理计划最久的项目，制作文档的那些坑">
+                整理计划最久的项目，制作文档的那些坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2017/11/24/5a18011d1b535.jpg" alt="SaraKale">
+            
+              <p class="site-author-name" itemprop="name">SaraKale</p>
+              <p class="site-description motion-element" itemprop="description">SaraKale's blog是个人博客，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/1587271193/profile?topnav=1&wvr=6" title="Weibo &rarr; https://weibo.com/1587271193/profile?topnav=1&wvr=6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://space.bilibili.com/4197121/#/" title="bilibili &rarr; https://space.bilibili.com/4197121/#/" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube-play"></i>bilibili</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" title="YouTube &rarr; https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://steamcommunity.com/id/sarakale/" title="steam &rarr; https://steamcommunity.com/id/sarakale/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sjxyy.net/" title="http://sjxyy.net/" rel="noopener" target="_blank">水晶心月影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ls.ganquancun.com/" title="http://ls.ganquancun.com/" rel="noopener" target="_blank">如影随行</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要的软件"><span class="nav-number">1.</span> <span class="nav-text">需要的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SaraKale</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.3.3/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'xDeYcKI4KteMnLmXylrSPJ7l-gzGzoHsz',
+        appKey: 'LnIFK9kr6eH2Umk0fBop5Ckj',
+        placeholder: '欢迎留下您宝贵的留言~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="/js/src/instantclick.min.js" data-no-instant=""></script>
+<script data-no-instant="">InstantClick.init();</script>
+  <!-- 背景图片轮播 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<!--<script type="text/javascript" src="/js/src/custom.js"></script>-->
+ <script>
+     $("body").backstretch([
+          "https://wx1.sinaimg.cn/large/5e9bd619ly1fxsmggtvrvj21hc0u0100.jpg",
+          "https://wx3.sinaimg.cn/large/5e9bd619ly1fxsmgjkf31j21hc0u0aja.jpg",
+          "https://wx4.sinaimg.cn/large/5e9bd619ly1fxsmgbub5uj21hc0u01kx.jpg",
+          "https://wx4.sinaimg.cn/large/5e9bd619ly1fxsrn8qcwej21ax0u0keo.jpg",
+          "https://wx2.sinaimg.cn/large/5e9bd619ly1fxsro9syabj21av0u0h8x.jpg",
+          "https://wx1.sinaimg.cn/large/5e9bd619ly1fxssb81rvqj21hc0u07sn.jpg",
+  ], { duration: 4000, fade: 2000, scale:"fit"});
+ </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":false},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
