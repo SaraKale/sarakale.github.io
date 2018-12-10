@@ -23,10 +23,6 @@
 
 
 
-  
-  
-  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
-
 
 
 
@@ -150,11 +146,13 @@
 
 
 
-  <meta name="keywords" content="AVS,Aviutl,透明台标,去水印">
+  <meta name="description" content="水印就在那里，雷打不动。">
+<meta name="keywords" content="AVS,Aviutl,透明台标,去水印">
 <meta property="og:type" content="article">
 <meta property="og:title" content="去除视频水印测试（AVS+Aviutl）">
 <meta property="og:url" content="https://sarakale.github.io/blog/posts/7e3d2d4.html">
 <meta property="og:site_name" content="SaraKale&#39;s blog">
+<meta property="og:description" content="水印就在那里，雷打不动。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwn0221jj209w0abjrs.jpg">
@@ -166,9 +164,10 @@
 <meta property="og:image" content="https://wx4.sinaimg.cn/large/5e9bd619ly1fxwwm8564rj207r05y74l.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwmf4arqj20zm0jogr7.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwid31qzj20zk0fk7dy.jpg">
-<meta property="og:updated_time" content="2018-12-09T08:56:02.748Z">
+<meta property="og:updated_time" content="2018-12-10T10:21:16.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="去除视频水印测试（AVS+Aviutl）">
+<meta name="twitter:description" content="水印就在那里，雷打不动。">
 <meta name="twitter:image" content="https://wx2.sinaimg.cn/large/5e9bd619ly1fuudzdf20cj20jg0ae75n.jpg">
 
 
@@ -595,6 +594,8 @@
           
 
           
+              <div class="post-description">水印就在那里，雷打不动。</div>
+          
 
         </div>
       </header>
@@ -635,8 +636,8 @@
 <p>好了，这回应该可以用了，还是像刚才一样要先开启台标分析插件，菜单栏<code>滤镜</code>——<code>台标分析</code>开启<br>如图：<br><img src="https://wx2.sinaimg.cn/mw690/5e9bd619ly1fxwwm1vsqbj20860injsi.jpg" alt=""><br>然后可以载入视频进行分析了，如果没有显示台标分析小窗口，就去点击<code>设置</code>——<code>台标分析设置</code>就能看到了。</p>
 <p>以“《仙剑奇侠传3D回合》手游CG”为例，主要处理那特别大的“仙剑奇侠传3D回合”水印。<br><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwm5624wj20zm0jowj1.jpg" alt=""><br>鼠标框选LOGO位置，然后可以调整阈值，按<code>[ ]</code>键选起止点，起止点要看情况，如果LOGO很短就去找准时间点，太长也容易耗时。最后可以点击台标分析了，等待它的扫描结果。</p>
 <p><img src="https://wx4.sinaimg.cn/large/5e9bd619ly1fxwwm8564rj207r05y74l.jpg" alt=""><br>分析结果出来了，可以保存了，它的后缀名是lgd2。<br>可以放到Avisynth里写脚本了，其实Aviutl也可以直接看效果，点菜单<code>滤镜</code>——<code>透明台标分析</code>加载刚才导出的文件就可以了。<br><img src="https://wx3.sinaimg.cn/large/5e9bd619ly1fxwwmf4arqj20zm0jogr7.jpg" alt=""><br>仔细调整Y、Cb、Cr的值，达到“透明”的效果就好，<br>但这个视频LOGO后面颜色太复杂，做不到统一处理，只能写个AVS脚本试试了。</p>
-<p>打开avisynth，加载必备插件，写参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#delogo 插件</span><br><span class="line">DirectShowSource(&quot;D:\仙剑奇侠传\授权手游\[2016-05-11]《仙剑奇侠传3D回合》手游 - 盖娅互娱\《仙剑奇侠传3D回合》官网CG完整版.mp4&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\delogo.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\fft3dGPU.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\FFT3DFilter.dll&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\logoscan.auf&quot;)</span><br><span class="line">EraseLOGO(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\pal3d 1280x560.lgd2&quot;)</span><br><span class="line">EPSlice(l=1270, t=70, r=100, b=80, sp1=”fft3dgpu(sigma=2, plane=4)”, spmode=1)</span><br></pre></td></tr></table></figure>
+<p>打开Avisynth，加载必备插件，写参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># delogo插件</span><br><span class="line">DirectShowSource(&quot;D:\仙剑奇侠传\授权手游\[2016-05-11]《仙剑奇侠传3D回合》手游 - 盖娅互娱\《仙剑奇侠传3D回合》官网CG完整版.mp4&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\delogo.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\fft3dGPU.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\FFT3DFilter.dll&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\logoscan.auf&quot;)</span><br><span class="line">EraseLOGO(&quot;I:\字幕与压制\AviUtl_CN(Mod 1.00)\plugins\pal3d 1280x560.lgd2&quot;)</span><br><span class="line">EPSlice(l=1270, t=70, r=100, b=80, sp1=”fft3dgpu(sigma=2, plane=4)”, spmode=1)</span><br></pre></td></tr></table></figure>
 <p>基本上效果也不甚满意，换个插件写……</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># logoNE插件</span><br><span class="line">src = DirectShowSource(&quot;D:\仙剑奇侠传\授权手游\[2016-05-11]《仙剑奇侠传3D回合》手游 - 盖娅互娱\《仙剑奇侠传3D回合》官网CG完整版.mp4&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\delogo.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\fft3dGPU.dll&quot;)</span><br><span class="line">LoadPlugin(&quot;I:\字幕与压制\AviSynth+\plugins\FFT3DFilter.dll&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviSynth+\plugins\nnedi3_resize16_v3.3.avsi&quot;)</span><br><span class="line">Import(&quot;I:\字幕与压制\AviSynth+\plugins\logoNR_v0.1.avsi&quot;)</span><br><span class="line">dlg = src.EraseLOGO(&quot;I:\字幕与压制\LOGO台标\pal3dgame 1280x560.lgd&quot;)</span><br><span class="line">logoNR(dlg, src)</span><br></pre></td></tr></table></figure>
 <p><img src="https://wx2.sinaimg.cn/large/5e9bd619ly1fxwwid31qzj20zk0fk7dy.jpg" alt=""></p>
@@ -701,26 +702,6 @@
       
 
       
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-            
-               <div id="needsharebutton-postbottom">
-                 <span class="btn">
-                    <i class="fa fa-share-alt" aria-hidden="true"></i>
-                 </span>
-               </div>
-            
-          </div>
-        
-        </div>
       
       
 
@@ -1177,15 +1158,17 @@
     
 
     
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
 	
     
 
+    
+      <div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0e4c691822a1fb" async="async"></script>
+</div>
+
+      </div>
     
   </div>
 
@@ -1671,39 +1654,6 @@
   
 
   
-  
-  
-  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
-
-  <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-      flOptions = {};
-      
-          flOptions.iconStyle = "box";
-      
-          flOptions.boxForm = "horizontal";
-      
-          flOptions.position = "middleRight";
-      
-          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
-  </script>
-
   
 
   

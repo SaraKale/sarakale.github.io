@@ -1713,53 +1713,6 @@ pre .javascript .function {
 .post-copyright i.fa {
   font-size: 15px;
 }
-.post-widgets {
-  border-top: 1px solid #eee;
-  padding-top: 9px;
-  margin-top: 45px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.post-widgets .post-meta-divider {
-  height: 25px;
-  color: #999;
-}
-.wp_rating {
-  height: 20px;
-  margin-right: 10px;
-  text-align: center;
-  line-height: 20px;
-  padding-top: 6px;
-}
-.social-like {
-  font-size: 14px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.vk_like {
-  width: 85px;
-  height: 21px;
-  padding-top: 7px;
-  align-self: center;
-}
-.fb_like {
-  height: 30px;
-  align-self: center;
-}
-.bdsharebuttonbox {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-.bdsharebuttonbox a {
-  border: none;
-}
-.bdshare-slide-button-box a {
-  border: none;
-}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1957,7 +1910,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #876645;
+  background: #fff4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2382,29 +2335,6 @@ pre .javascript .function {
 .site-pv .busuanzi-value,
 .page-pv .busuanzi-value {
   margin: 0 5px;
-}
-#needsharebutton-postbottom {
-  position: relative;
-  cursor: pointer;
-  height: 26px;
-}
-#needsharebutton-postbottom .btn {
-  display: initial;
-  padding: 1px 4px;
-  border: 1px solid #555;
-  border-radius: 3px;
-}
-#needsharebutton-float {
-  position: fixed;
-  bottom: 38px;
-  left: -8px;
-  z-index: 9999;
-  cursor: pointer;
-}
-#needsharebutton-float .btn {
-  padding: 0 10px 0 14px;
-  border: 1px solid #555;
-  border-radius: 4px;
 }
 .page-archive .archive-page-counter {
   position: relative;
@@ -3293,6 +3223,21 @@ ul.breadcrumb li+li:last-child {
 .menu .menu-item a:hover {
   background: rgba(101,182,253,0.604);
 }
+img.img-topic {
+  width: 100%;
+}
+code {
+  overflow-wrap: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 2px 4px;
+  color: #d9534f;
+  background: #fbf7f8;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0px 4px;
+  border: 1px dotted #cda7b7;
+}
 @media (min-width: 360px) {
   .site-title img {
     max-width: 200px;
@@ -3406,6 +3351,14 @@ ul.breadcrumb li+li:last-child {
   color: #f0f0f0;
   background-color: rgba(0,0,0,0.308);
 }
+.posts-expand .post-meta {
+  margin: 3px 0 20px 0;
+}
+.posts-expand .post-meta .post-description {
+  font-size: 17px;
+  margin-top: 2px;
+  color: #888;
+}
 .comments {
   background-color: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
@@ -3480,4 +3433,13 @@ ul#download-btn-freebie > li:last-child {
 }
 ul#download-btn-freebie > li > span {
   margin-bottom: 10px;
+}
+span#inline-toc {
+  display: inline-block;
+  border-radius: 80% 100% 90% 20%;
+  background-color: #e3f2fd;
+  color: #555;
+  padding: 0.05em 0.4em;
+  margin: 2px 5px 2px 0px;
+  line-height: 1.5;
 }
