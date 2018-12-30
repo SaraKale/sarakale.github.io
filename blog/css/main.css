@@ -1,3 +1,9 @@
+/*
+$font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
+$font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step
+$font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
+$font-size-headings-larger  = $font-size-headings-large + $font-size-headings-step
+*/
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -186,8 +192,8 @@ th {
 body {
   position: relative;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Heiti SC", "STHeiti", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
-  font-size: 16px;
-  line-height: 2;
+  font-size: 14px;
+  line-height: 1.7;
   color: #555;
   background: #eee;
 }
@@ -203,7 +209,7 @@ body {
 }
 @media (min-width: 1200px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 h1,
@@ -227,51 +233,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
-}
-@media (max-width: 767px) {
-  h1 {
-    font-size: 18px;
-  }
-}
-h2 {
-  font-size: 20px;
-}
-@media (max-width: 767px) {
-  h2 {
-    font-size: 16px;
-  }
-}
-h3 {
   font-size: 18px;
 }
 @media (max-width: 767px) {
-  h3 {
+  h1 {
     font-size: 14px;
   }
 }
-h4 {
+h2 {
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  h4 {
+  h2 {
     font-size: 12px;
   }
 }
-h5 {
+h3 {
   font-size: 14px;
 }
 @media (max-width: 767px) {
-  h5 {
+  h3 {
     font-size: 10px;
   }
 }
-h6 {
+h4 {
   font-size: 12px;
 }
 @media (max-width: 767px) {
-  h6 {
+  h4 {
     font-size: 8px;
+  }
+}
+h5 {
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  h5 {
+    font-size: 6px;
+  }
+}
+h6 {
+  font-size: 8px;
+}
+@media (max-width: 767px) {
+  h6 {
+    font-size: 4px;
   }
 }
 p {
@@ -1294,7 +1300,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1910,7 +1916,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #99c9ff;
+  background: #326aa8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2586,7 +2592,7 @@ ul.breadcrumb {
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 ul.breadcrumb li {
   display: inline;
@@ -3207,14 +3213,74 @@ ul.breadcrumb li+li:last-child {
     margin: 8px 0 0;
   }
 }
+@media (min-width: 360px) {
+  .container .main-inner {
+    width: 350px;
+  }
+}
+@media (min-width: 411px) {
+  .container .main-inner {
+    width: 385px;
+  }
+}
+@media (min-width: 576px) {
+  .container .main-inner {
+    width: 570px;
+  }
+}
+@media (min-width: 768px) {
+  .container .main-inner {
+    width: 760px;
+  }
+}
+@media (min-width: 992px) {
+  .container .main-inner {
+    width: 951px;
+  }
+}
+@media (min-width: 1200px) {
+  .container .main-inner {
+    width: 1100px;
+  }
+}
 @media (min-width: 1600px) {
   .container .main-inner {
-    width: 58%;
+    width: 1100px;
+  }
+}
+@media (min-width: 360px) {
+  .header {
+    width: 360px;
+  }
+}
+@media (min-width: 411px) {
+  .header {
+    width: 411px;
+  }
+}
+@media (min-width: 576px) {
+  .header {
+    width: 551px;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    width: 740px;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    width: 951px;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    width: 1100px;
   }
 }
 @media (min-width: 1600px) {
   .header {
-    width: 58%;
+    width: 1100px;
   }
 }
 #instantclick {
