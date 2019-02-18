@@ -192,7 +192,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Heiti SC", "STHeiti", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   color: #555;
   background: #eee;
@@ -1300,7 +1300,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1911,7 +1911,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #016afa;
+  background: #ec65ab;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2587,7 +2587,7 @@ ul.breadcrumb {
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 ul.breadcrumb li {
   display: inline;
