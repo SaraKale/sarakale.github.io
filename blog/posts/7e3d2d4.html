@@ -164,7 +164,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/SaraKale/blogimg/master/logoavs08.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/SaraKale/blogimg/master/logoavs09.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/SaraKale/blogimg/master/logoavs02_1.jpg">
-<meta property="og:updated_time" content="2019-08-21T11:00:54.470Z">
+<meta property="og:updated_time" content="2019-09-02T12:28:37.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="去除视频水印测试（AVS+Aviutl）">
 <meta name="twitter:description" content="水印就在那里，雷打不动。">
@@ -611,7 +611,7 @@
 
       
         <p><img src="https://raw.githubusercontent.com/SaraKale/blogimg/master/logoavs01_1.jpg" alt=""><br><a id="more"></a></p>
-<p>这段时间准备开始做视频了，心里有个大坑想要去做，一直老拖着不好，还是早点做完早点解脱吧……首先要解决的是“视频水印/台标”问题，要是官方放出无水印那就更好了，但如果官方加上了LOGO那是所有剪刀手最烦恼的一大问题了……<br>其实去除的方法和技术是有，但很难做到完美，最多只能做到“障眼法”让人不会太在意LOGO，如果是强迫症除非去逐帧处理，但这样效率太低了，太耗时……<br>目前普遍方式是：<br>1、AE动态追踪技术+画笔去除，但如果时长太长处理也需要更高的配置。<br>2、ffmpeg逐帧导出用PS内容识别再导回去合成视频，缺点效率太低流程繁琐。<br>3、AVS+Aviutl用台标识别插件调整参数，再通过x264二压。这是目前比较快捷的方法。</p>
+<p>这段时间准备开始做视频了，心里有个大坑想要去做，一直老拖着不好，还是早点做完早点解脱吧……首先要解决的是“视频水印/台标”问题，要是官方放出无水印那就更好了，但如果官方加上了LOGO那是所有剪刀手最烦恼的一大问题了……<br>其实去除的方法和技术是有，但很难做到完美，最多只能做到“障眼法”让人不会太在意LOGO，如果是强迫症除非去逐帧处理，但这样效率太低了，太耗时……<br>目前普遍方式是：<br>1、AE动态追踪技术+ROTO画笔去除，但如果时长太长处理也需要更高的配置。<br>2、ffmpeg逐帧导出用PS内容识别再导回去合成视频，缺点效率太低流程繁琐。<br>3、AVS+Aviutl用台标识别插件调整参数，再通过x264二压。这是目前比较快捷的方法。</p>
 <p>我就优先用AVS+Aviutl这种方法了，以前老早听说很久了，但一直没有尝试，如今终于才想起来……</p>
 <h2 id="需要的软件"><a href="#需要的软件" class="headerlink" title="需要的软件"></a>需要的软件</h2><p>Aviutl<br>Avisynth<br>logoscan_007<br>delogo_avisynth_005a<br>x264<br>……等</p>
 <p>Aviutl可以去<a href="http://spring-fragrance.mints.ne.jp/aviutl/" target="_blank" rel="noopener">官网</a>下，它是日区的视频编辑软件，也可以下载贴吧的汉化包，但最好是用英文语言，否则会出现不明BUG……日文报错我也看不懂啊x<br>logoscan_007、delogo_avisynth_005a这两个插件要去<a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=7&amp;t=42" target="_blank" rel="noopener">使用EraseLOGO 分析+去台标</a>这帖子下，顺便也可以看流程，他们写的也很详细，其他软件直接搜索官网就能找到了。<br>可以提前了解别人是怎么做的，再自己进行摸索。推荐：<a href="https://www.cnbeining.com/2013/08/memo-how-transparency/" target="_blank" rel="noopener">如何去透明台标</a>、<a href="https://www.nmm-hd.org/newbbs/viewtopic.php?f=7&amp;t=42" target="_blank" rel="noopener">使用EraseLOGO 分析+去台标</a></p>
@@ -1322,7 +1322,7 @@
   
     
   
-  <script src="https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
@@ -1333,11 +1333,11 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: false,
-        appId: 'xDeYcKI4KteMnLmXylrSPJ7l-gzGzoHsz',
-        appKey: 'LnIFK9kr6eH2Umk0fBop5Ckj',
+        notify: true,
+        appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
+        appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
-        avatar:'mm',
+        avatar:'mp',
         meta:guest,
         pageSize:'10' || 10,
         visitor: false
