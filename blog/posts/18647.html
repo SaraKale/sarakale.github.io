@@ -605,12 +605,12 @@
       
         <p><img src="https://img.moegirl.org/common/1/1e/CLANNAD1.jpg" style="width:70%"><br><a id="more"></a></p>
 
-        <div id="aplayer-uZvogiqX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-dfeIYcLP" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-uZvogiqX"),
+            element: document.getElementById("aplayer-dfeIYcLP"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -1284,7 +1284,7 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
         appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
@@ -1294,6 +1294,16 @@
         visitor: false
     });
   </script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
 
 
 

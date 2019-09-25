@@ -2005,7 +2005,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/SaraKale/blogimg/master/8.jpg" rel="gallery_ck0y2ktwm008w2ws33le9t3td" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/SaraKale/blogimg/master/8.jpg" rel="gallery_ck0ynx8vf008lzcs30czgjdgc" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/SaraKale/blogimg/master/8.jpg" itemprop="contentUrl">
               </a>
             
@@ -2810,7 +2810,7 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
         appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
@@ -2820,6 +2820,16 @@
         visitor: false
     });
   </script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
 
 
 

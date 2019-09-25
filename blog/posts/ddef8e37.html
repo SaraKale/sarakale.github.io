@@ -603,7 +603,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/blog/" rel="gallery_ck0y2ktpw00212ws3ixmfvy6e" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/blog/" rel="gallery_ck0ynx8s80020zcs3ho8fif6a" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/blog/" itemprop="contentUrl">
               </a>
             
@@ -1277,7 +1277,7 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
         appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
@@ -1287,6 +1287,16 @@
         visitor: false
     });
   </script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
 
 
 

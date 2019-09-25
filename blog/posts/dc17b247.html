@@ -628,12 +628,12 @@
 <p>视频已发布，可以点下面看：<br>B站：<a href="https://www.bilibili.com/video/av36765208/" target="_blank" rel="noopener">https://www.bilibili.com/video/av36765208/</a><br>A站：<a href="http://www.acfun.cn/v/ac4741370" target="_blank" rel="noopener">http://www.acfun.cn/v/ac4741370</a><br>youtube：<a href="https://youtu.be/t6vkOsLiMaY" target="_blank" rel="noopener">https://youtu.be/t6vkOsLiMaY</a></p>
 <hr>
 
-        <div id="aplayer-tQYHtXlZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-YIyQiatA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-tQYHtXlZ"),
+            element: document.getElementById("aplayer-YIyQiatA"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -1423,7 +1423,7 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
         appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
@@ -1433,6 +1433,16 @@
         visitor: false
     });
   </script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
 
 
 

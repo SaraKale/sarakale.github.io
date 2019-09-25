@@ -614,12 +614,12 @@
       
         <p><img src="https://i.loli.net/2019/07/13/5d29ffe75ed3268710.jpg" style="width:80%"><br><a id="more"></a></p>
 
-        <div id="aplayer-RezULaup" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-iLXVCyZj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-RezULaup"),
+            element: document.getElementById("aplayer-iLXVCyZj"),
             narrow: false,
             autoplay: false,
             showlrc: 3,
@@ -1343,7 +1343,7 @@
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
         appKey: 'wacxEHPUedaFn5GuedHdJWO8',
         placeholder: '欢迎留下您宝贵的留言~',
@@ -1353,6 +1353,16 @@
         visitor: false
     });
   </script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
 
 
 
