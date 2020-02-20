@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <link rel="manifest" href="/blog/images/manifest.json">
+  <meta name="msapplication-config" content="/blog/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=-apple-system, BlinkMacSystemFont, "PingFang SC","Microsoft YaHei","Hiragino Sans GB", "Heiti SC", "STHeiti", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback":300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sarakale.github.io","root":"/blog/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownBigIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="为什么我要一直琢磨呢？为什么呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新博客迁移到Hexo，又重新安家了">
+<meta property="og:url" content="https://sarakale.github.io/blog/posts/535faed9/index.html">
+<meta property="og:site_name" content="SaraKale&#39;s blog">
+<meta property="og:description" content="为什么我要一直琢磨呢？为什么呢？">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-09-06T13:09:12.000Z">
+<meta property="article:modified_time" content="2019-09-24T15:41:28.182Z">
+<meta property="article:author" content="SaraKale">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://sarakale.github.io/blog/posts/535faed9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>新博客迁移到Hexo，又重新安家了 | SaraKale's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+       <!--LOGO图片修改 <span class="site-title">SaraKale's blog</span> -->
+         <span class="site-title"><img src="https://sarakale.github.io/images/LOGO2.png"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-works">
+
+    <a href="/blog/works/" rel="section"><i class="fa fa-fw fa-list"></i>作品</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">51</span></a>
+
+  </li>
+        <li class="menu-item menu-item-favoritelist">
+
+    <a href="/blog/favoritelist/" rel="section"><i class="fa fa-fw fa-heart"></i>歌单 | 追番 | 游戏</a>
+
+  </li>
+        <li class="menu-item menu-item-message">
+
+    <a href="/blog/message/" rel="section"><i class="fa fa-fw fa-comment"></i>留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-magic"></i>友链</a>
+
+  </li>
+        <li class="menu-item menu-item-aboutme">
+
+    <a href="/blog/aboutme/" rel="section"><i class="fa fa-fw fa-user"></i>关于我</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sarakale.github.io/blog/posts/535faed9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2017/11/24/5a18011d1b535.jpg">
+      <meta itemprop="name" content="SaraKale">
+      <meta itemprop="description" content="SaraKale's blog是个人博客，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SaraKale's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          新博客迁移到Hexo，又重新安家了
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-09-06 21:09:12" itemprop="dateCreated datePublished" datetime="2018-09-06T21:09:12+08:00">2018-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">生活随记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/posts/535faed9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/posts/535faed9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">为什么我要一直琢磨呢？为什么呢？</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="note default no-icon">
+            <p>每个博主都有折磨的命……</p>
+          </div>
+<a id="more"></a>
+
+<p>如题所示，是的，我又换地儿安家了…这次除了主站之外，转移子目录blog下的数据相当的麻烦……因为原博客于7月份已到期，本来我是不打算续期了，反正数据库也导出备份了，我就一直不担心。然而我后来万万没想到本地模拟调试的时候竟然不能预览了，我也忘记怎么搞数据库了……时间一长都忘光了……没办法，那就重新复制粘贴呗！反正文章也不多，顺便也熟悉下新博客系统。<br>当初就说过以后可能在github建立静态博客，这次又折磨了一下，花了一周多时间才搞完……真是漫长的过程……<br>原来博客系统是Typecho，当初也是因为看上轻量级特点就安装了，因为买了主机支持动态博客，就不能浪费体验的好机会233后来时间长了也很少打开后台去输入文章，博客系统总体也有点不满意，主要是没二级导航定制，或者自己对PHP也不懂老是瞎搞就容易报错……一般还是不要自己乱改的好……<br>现在换成github+hexo的方法写博客了，也搜了一圈还有什么静态博客系统，有hugo、jekyll、hexo等，蛮多的，jekyll需要ruby环境，有点麻烦，我还是换Hexo了，因为它正好是只需要Node.js，就选定它了！</p>
+<p>选好一个博客框架后，前期构建很顺利，官方<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>也有迁移的方法，这真是太方便不过了。<br>但因为我原来是typecho系统，不是wordpress，于是本地创建安装一个wordpress，导入从typecho转换WP的文件，再重新导出……于是就迁移好了。<br>但转移还需要人工校对，有的图片外链也需要重新改，把以前的地址重新改成现在的地址，这也是费心费力的事了。<br>然后去挑选喜欢的主题，默认的主题肯定是不满足自己的，去官方主题列表看中好多不错的，目前就先敲定了这个主题<a href="https://github.com/ZEROKISEKI/hexo-theme-gal" target="_blank" rel="noopener">hexo-theme-gal</a>，非常炫酷！二次元主题正好是我喜欢的！～然后之后是改自己喜欢的样式了，过程当中有不少BUG，还自己琢磨修复了主题BUG……目前修改差不多了，看起来不错，可能你们看起来有点费眼，若是觉得透明度太低可以告诉我，我可以调回来。<br>目前好像搜索功能搜不出来，不过也无大碍，要去找我文章的话可以去点击“分类”就行，文章也不多。<br>然后是添加自己需要的插件，修改以前文章死链和错别字了，写作的时候只需要在本地新建文件了，也支持Markdown语法，然后就可以随意部署发布了，非常简单～就不用去操心数据库乱七八糟的功能了……</p>
+<p>然后好像还得有个评论系统嘛？因为静态博客本身就没有评论功能，要弄评论系统有点麻烦，大多数博主都没有这需求的，不过办法总会有的，通过各种奇怪的方案总会有人搞出来的2333<br>国内之前多说、网易云跟帖什么的都已经挂了，不能指望有长期的稳定性，只能寄望国外的评论系统了。国外有Disqus，Hypercomments、LiveRe等，但需要挂梯子，也是更麻烦，有的还需要注册账号，github也有gitment的例子，就是把项目仓库的lssues当作是评论功能，也是个有效方法，我目前用的主题也支持gitment，但这个也还是需要注册登录的，我需求是可以匿名回复，给个无门槛方便大家交流就好，后来在我不懈搜索下，找到了可靠的方案，就是<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a>！看官网介绍的时候感觉很厉害的样子，基于Leancloud，然后通过一轮配置可以做评论系统了！真是太棒了！</p>
+<p>最后差不多了之后，就要发布到线上了，我是这么打算的，反正原来域名已经不打算续期了，当然现在只是为了放仙剑对话资料库续期了…只续期到明年……域名现在也没什么要求了，反正github.io这样域名也不错的，还能给SSL证书233不过第一次用git也是焦头烂额，它这有时候要先提交再推送才能算成功发布……不过git有时候真挺方便的，毕竟是如雷贯耳的版本控制系统，先熟悉下是怎么个过程。</p>
+<p>大概就这些了，博客算是全新转移了，以后就长期在这写写日常了，啊对了也要更换图库服务商了，之前是偶然看到的<a href="https://sm.ms/" target="_blank" rel="noopener">SM.MS</a>，但是没有后台查看过往传过的图片……我也找不到以前传过啥了……就考虑换国外图库吧。顺便自己爬虫了自己的网站，以防万一做个备份，将来再有变故时也刚好应急用233我真是被自己的坚持不懈精神感动了……</p>
+<p>做个记录备份：</p>
+<p><strong>博客系统对比</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">博客框架</th>
+<th align="left">需要环境</th>
+<th align="left">测试说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Wordpress</td>
+<td align="left">PHP</td>
+<td align="left">全球使用量最多的系统，主题插件丰富，但是很臃肿，只在本地环境模拟玩过一次……</td>
+</tr>
+<tr>
+<td align="left">Typecho</td>
+<td align="left">PHP</td>
+<td align="left">2017年使用的轻量博客，虽然不错，但是底层无法自定义定制。</td>
+</tr>
+<tr>
+<td align="left">Jekyll</td>
+<td align="left">Ruby</td>
+<td align="left">静态博客系统之一，需要安装ruby，这个也不错，就是自己不想再多装一个语言了……</td>
+</tr>
+<tr>
+<td align="left">Hexo</td>
+<td align="left">Node.js</td>
+<td align="left">静态博客系统，node.js环境，目前在用的框架。</td>
+</tr>
+</tbody></table>
+<p><strong>Hexo命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init 我的博客 &#x2F;&#x2F;创建新网站</span><br><span class="line">hexo new &quot;标题&quot; &#x2F;&#x2F;新建文章</span><br><span class="line">hexo generate 或缩写 hexo g &#x2F;&#x2F;生成静态文件</span><br><span class="line">hexo server 或 hexo s &#x2F;&#x2F;启动服务器预览</span><br><span class="line">hexo deploy 或 hexo d &#x2F;&#x2F;部署网站，直接发布到git或其他站点</span><br><span class="line">hexo clean &#x2F;&#x2F;清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br></pre></td></tr></table></figure>
+
+<p><strong>git命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git init &#x2F;&#x2F;把这个目录变成Git可以管理的仓库</span><br><span class="line">git clone url &#x2F;&#x2F;克隆仓库到本地</span><br><span class="line">git add test.html &#x2F;&#x2F;文件添加到仓库</span><br><span class="line">git add . &#x2F;&#x2F;将当前目录所有文件添加到仓库</span><br><span class="line">git commit -m &quot;说明&quot; &#x2F;&#x2F;把文件提交到仓库</span><br><span class="line">git remote add origin git@自己的仓库地址 &#x2F;&#x2F;关联远程仓库</span><br><span class="line">git push -u origin master &#x2F;&#x2F;推送到远程仓库</span><br><span class="line">git reset --hard 版本ID &#x2F;&#x2F;回退历史版本</span><br><span class="line">rm file &#x2F;&#x2F;本地删除文件</span><br><span class="line">git rm file &#x2F;&#x2F;从版本库中删除</span><br></pre></td></tr></table></figure>
+
+<p>博客系统：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo</a><br>博客主题：<a href="https://github.com/ZEROKISEKI/hexo-theme-gal" target="_blank" rel="noopener">hexo-theme-gal</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1]: <a href="https://blog.csdn.net/blue_zy/article/details/79071414" target="_blank" rel="noopener"> 为你的Hexo加上评论系统-Valine </a><br>[2]: <a href="https://www.jianshu.com/p/9cc4cc8628c9" target="_blank" rel="noopener">解决Hexo博客中 Disqus 在国内不能访问的方案</a><br>[3]: <a href="http://www.zhyong.cn/posts/95cb/" target="_blank" rel="noopener">hexo 博客添加 Valine 评论系统</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>SaraKale
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://sarakale.github.io/blog/posts/535faed9/" title="新博客迁移到Hexo，又重新安家了">https://sarakale.github.io/blog/posts/535faed9/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/posts/62550/" rel="prev" title="仙剑奇侠传系列剧情对话资料测试版发布">
+      <i class="fa fa-chevron-left"></i> 仙剑奇侠传系列剧情对话资料测试版发布
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/posts/7e3d2d4/" rel="next" title="去除视频水印测试（AVS+Aviutl）">
+      去除视频水印测试（AVS+Aviutl） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SaraKale"
+      src="https://i.loli.net/2017/11/24/5a18011d1b535.jpg">
+  <p class="site-author-name" itemprop="name">SaraKale</p>
+  <div class="site-description" itemprop="description">SaraKale's blog是个人博客，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/3312158754/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;3312158754&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/4197121/#/" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;4197121&#x2F;#&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube-play"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCw_cN6ERwP7KjjXYlkMVjvQ" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://sarakale.lofter.com/" title="LOFTER → http:&#x2F;&#x2F;sarakale.lofter.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-gbp"></i>LOFTER</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/sarakale/" title="steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;sarakale&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://sjxyy.net/" title="http:&#x2F;&#x2F;sjxyy.net&#x2F;" rel="noopener" target="_blank">水晶心月影</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SaraKale</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      script.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'bOhwVhlUhhSqhKYdVtuuaJFJ-MdYXbMMI',
+      appKey     : 'wacxEHPUedaFn5GuedHdJWO8',
+      placeholder: "欢迎留下您宝贵的留言~",
+      avatar     : 'mp',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+<!-- 背景图片轮播 backstretch 
+https://github.com/jquery-backstretch/jquery-backstretch
+-->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
+<!--<script type="text/javascript" src="/js/src/custom.js"></script>-->
+ <script>
+     $("body").backstretch([
+        "https://i.loli.net/2019/07/13/5d29bc010b29f17376.jpg",
+        "https://i.loli.net/2019/07/13/5d29bc010e1b357090.jpg",
+        "https://i.loli.net/2019/07/13/5d29bc011036670769.jpg",
+        "https://i.loli.net/2019/07/13/5d29bc01110f442795.jpg",
+        "https://i.loli.net/2019/07/13/5d29bc012833613479.jpg",
+  ], { duration: 4000, fade: 2000, scale:"cover"});
+</script>
+
+</body>
+</html>
