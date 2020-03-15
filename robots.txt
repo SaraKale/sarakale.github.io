@@ -7,6 +7,8 @@ Disallow: /blog/imgs/
 Disallow: /blog/js/
 Disallow: /blog/css/
 Disallow: /blog/fonts/
+Disallow: /blog/assets/
+Disallow: /blog/lib/
 Allow: /
 Allow: /blog/posts/
 Allow: /blog/archives/
@@ -15,5 +17,10 @@ Allow: /blog/links/
 Allow: /blog/tags/
 Allow: /blog/works/
 Allow: /blog/aboutme/
+Allow: /blog/message/
+Allow: /blog/music/
+Allow: /blog/page/
+Allow: /blog/bangumis/
+Allow: /blog/steamgames/
 Sitemap: https://sarakale.github.io/blog/sitemap.xml
 Sitemap: https://sarakale.github.io/blog/baidusitemap.xml
