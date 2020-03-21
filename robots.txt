@@ -3,7 +3,7 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /css/
 Disallow: /blog/git/
-Disallow: /blog/imgs/
+Disallow: /blog/img/
 Disallow: /blog/js/
 Disallow: /blog/css/
 Disallow: /blog/fonts/
