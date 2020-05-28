@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sarakale.github.io/blog/aboutme/index.html</loc>
+    
+    <lastmod>2020-05-28T08:42:41.531Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sarakale.github.io/blog/posts/15663.html</loc>
     
-    <lastmod>2020-04-11T13:35:29.692Z</lastmod>
+    <lastmod>2020-05-28T03:18:51.835Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sarakale.github.io/blog/links/index.html</loc>
     
-    <lastmod>2020-04-10T13:36:19.324Z</lastmod>
+    <lastmod>2020-04-11T13:50:15.689Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://sarakale.github.io/blog/posts/14580416.html</loc>
     
     <lastmod>2020-03-20T17:37:59.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sarakale.github.io/blog/aboutme/index.html</loc>
-    
-    <lastmod>2020-03-20T17:01:46.613Z</lastmod>
     
   </url>
   
