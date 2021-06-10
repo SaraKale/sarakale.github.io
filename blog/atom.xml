@@ -6,7 +6,7 @@
   <link href="https://sarakale.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://sarakale.github.io/blog/"/>
-  <updated>2021-05-29T13:15:25.000Z</updated>
+  <updated>2021-06-10T11:39:58.000Z</updated>
   <id>https://sarakale.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PR导入OGG/FLAG音频方法</title>
+    <link href="https://sarakale.github.io/blog/posts/42198.html"/>
+    <id>https://sarakale.github.io/blog/posts/42198.html</id>
+    <published>2021-06-10T11:19:58.000Z</published>
+    <updated>2021-06-10T11:39:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>做过剪辑的剪刀手们应该都碰过很头疼的问题，就是PR竟然还不支持导入<strong>OGG</strong>、<strong>FLAG</strong>这几个格式！<br>当你想导入文件时，会出现如下警告：<br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/ArticleOGG+FLAC.jpg"></p><p>是不是特别心塞？<br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/05.gif"><br>自家对面的Audition都支持了啊为什么你还不支持！这不科学！<br>过去我也没仔细查过，以前不知道怎么解决嘛，只能默默手动去转换成mp3再做视频……</p><p>然后有一天我还是要查查有没有解决方案，果然一查就查到了！才发现早已有大神做了插件，我竟然才发现……<br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/31.gif"></p><h1 id="插件官网"><a href="#插件官网" class="headerlink" title="插件官网"></a>插件官网</h1><p><a href="https://github.com/fnordware/AdobeOgg">https://github.com/fnordware/AdobeOgg</a></p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>要是在github下载比较慢，可以下载我这边的分流点</p><a class="btn-beautify button--animated blue larger" href="https://wwe.lanzoui.com/izXz7q05xva"   title="下载"><i class="fas fa-arrow-circle-down"></i><span>下载</span></a><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>插件安装很简单，只要将文件复制到MediaCore目录即可。</p><p>Win系统:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Adobe\Common\Plug-ins\CSX\MediaCore</span><br></pre></td></tr></table></figure><p>Mac系统:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Application Support/Adobe/Common/Plug-ins/CSX/MediaCore</span><br></pre></td></tr></table></figure><p>“<font color="red">CSX</font>”是你当前PR的版本。最新的Premiere Pro CC版本是“<strong>7.0</strong>”。</p><p><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/ArticleOGG+FLAC-2.jpg"></p><p>然后就可以导入OGG、FLAG、opus文件了！当然同样也可以导出OGG/FLAG/opus格式文件，可以愉快做视频啦！！！<br>不过这插件很少有人知道，一般大家都是手动转换别的格式，比较繁琐，如果大家用上了这插件的话，就不用很麻烦转换了。<br>不过还是要打死PR，早点开放格式吧！！你看别人家软件都支持了你可赶紧地……</p>]]></content>
+    
+    
+    <summary type="html">万年谜题PR竟然不能导入OGG！</summary>
+    
+    
+    
+    <category term="工具资源" scheme="https://sarakale.github.io/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    
+    
+    <category term="PR" scheme="https://sarakale.github.io/blog/tags/PR/"/>
+    
+    <category term="premiere" scheme="https://sarakale.github.io/blog/tags/premiere/"/>
+    
+    <category term="OGG" scheme="https://sarakale.github.io/blog/tags/OGG/"/>
+    
+    <category term="FLAC" scheme="https://sarakale.github.io/blog/tags/FLAC/"/>
+    
+  </entry>
   
   <entry>
     <title>时隔半年，我又回来了</title>
@@ -444,15 +471,15 @@
     
     <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
+    <category term="陈楚河" scheme="https://sarakale.github.io/blog/tags/%E9%99%88%E6%A5%9A%E6%B2%B3/"/>
+    
     <category term="陈意涵" scheme="https://sarakale.github.io/blog/tags/%E9%99%88%E6%84%8F%E6%B6%B5/"/>
     
     <category term="流星蝴蝶剑" scheme="https://sarakale.github.io/blog/tags/%E6%B5%81%E6%98%9F%E8%9D%B4%E8%9D%B6%E5%89%91/"/>
     
-    <category term="孙蝶" scheme="https://sarakale.github.io/blog/tags/%E5%AD%99%E8%9D%B6/"/>
-    
-    <category term="陈楚河" scheme="https://sarakale.github.io/blog/tags/%E9%99%88%E6%A5%9A%E6%B2%B3/"/>
-    
     <category term="孟星魂" scheme="https://sarakale.github.io/blog/tags/%E5%AD%9F%E6%98%9F%E9%AD%82/"/>
+    
+    <category term="孙蝶" scheme="https://sarakale.github.io/blog/tags/%E5%AD%99%E8%9D%B6/"/>
     
   </entry>
   
@@ -504,17 +531,17 @@
     
     <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="朱一龙" scheme="https://sarakale.github.io/blog/tags/%E6%9C%B1%E4%B8%80%E9%BE%99/"/>
-    
     <category term="陈意涵" scheme="https://sarakale.github.io/blog/tags/%E9%99%88%E6%84%8F%E6%B6%B5/"/>
     
     <category term="流星蝴蝶剑" scheme="https://sarakale.github.io/blog/tags/%E6%B5%81%E6%98%9F%E8%9D%B4%E8%9D%B6%E5%89%91/"/>
     
+    <category term="孙蝶" scheme="https://sarakale.github.io/blog/tags/%E5%AD%99%E8%9D%B6/"/>
+    
+    <category term="朱一龙" scheme="https://sarakale.github.io/blog/tags/%E6%9C%B1%E4%B8%80%E9%BE%99/"/>
+    
     <category term="新边城浪子" scheme="https://sarakale.github.io/blog/tags/%E6%96%B0%E8%BE%B9%E5%9F%8E%E6%B5%AA%E5%AD%90/"/>
     
     <category term="傅红雪" scheme="https://sarakale.github.io/blog/tags/%E5%82%85%E7%BA%A2%E9%9B%AA/"/>
-    
-    <category term="孙蝶" scheme="https://sarakale.github.io/blog/tags/%E5%AD%99%E8%9D%B6/"/>
     
   </entry>
   
@@ -544,29 +571,6 @@
     <category term="刘亦菲" scheme="https://sarakale.github.io/blog/tags/%E5%88%98%E4%BA%A6%E8%8F%B2/"/>
     
     <category term="赵灵儿" scheme="https://sarakale.github.io/blog/tags/%E8%B5%B5%E7%81%B5%E5%84%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>十年朝夕 人去无踪</title>
-    <link href="https://sarakale.github.io/blog/posts/ddef8e37.html"/>
-    <id>https://sarakale.github.io/blog/posts/ddef8e37.html</id>
-    <published>2019-04-17T13:08:53.000Z</published>
-    <updated>2019-04-17T13:08:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/cover/8.jpg" style="width:80%" /><span id="more"></span><p>发生了许许多多的事，现在又写个日记来感慨了……<br>不知不觉已经十年了啊……这十年间经历了太多，见证了很多发生的事，无论在哪里都不会留下任何依恋，人来人往的街道上，每个人都只是过客而已……<br>也不知道自己究竟为了什么而坚持，已经受伤了一次还要再被伤一次吗？付出了太多自己得不到回报，到头来都是一场空。<br>不可否认的是，曾经所在的圈子里，是有快乐难忘的时光，那些都将成为过去，只剩下回忆了。只能说遇人不淑，能了解自己的只有自己。天下没有不散的筵席，最后都会各奔东西，道不同不相为谋，不如好聚好散。<br>知道越多，看淡了许多，慢慢地不会再为那些人和事触动了，只有自己活着开心最重要。<br>其实也没什么好说的，言语已化为烟云消散了，说再多也毫无意义，不如活在当下。<br>当然仍然会有懂自己的人，知音难觅，我会好好珍惜一直陪伴我的人。<br>今后，为了自己而活。<br>去看看另一个精彩的世界。</p>]]></content>
-    
-    
-    <summary type="html">经历人世沧桑，也慢慢淡忘。</summary>
-    
-    
-    
-    <category term="生活随记" scheme="https://sarakale.github.io/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"/>
-    
-    
-    <category term="网络" scheme="https://sarakale.github.io/blog/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="十年" scheme="https://sarakale.github.io/blog/tags/%E5%8D%81%E5%B9%B4/"/>
     
   </entry>
   

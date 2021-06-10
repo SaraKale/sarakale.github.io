@@ -6,7 +6,6 @@ Disallow: /blog/git/
 Disallow: /blog/img/
 Disallow: /blog/js/
 Disallow: /blog/css/
-Disallow: /blog/fonts/
 Disallow: /blog/assets/
 Disallow: /blog/lib/
 Allow: /
