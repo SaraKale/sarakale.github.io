@@ -6,7 +6,7 @@
   <link href="https://sarakale.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://sarakale.github.io/blog/"/>
-  <updated>2021-06-19T10:00:00.000Z</updated>
+  <updated>2021-06-24T11:40:33.000Z</updated>
   <id>https://sarakale.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【仙五/凡柔】云柔心乡丨你是我心里的暖阳丨 赠：绣雨烟萝 越今朝的橙子</title>
+    <link href="https://sarakale.github.io/blog/posts/15904.html"/>
+    <id>https://sarakale.github.io/blog/posts/15904.html</id>
+    <published>2021-06-24T11:35:33.000Z</published>
+    <updated>2021-06-24T11:40:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/work/23.jpg" style="width:70%" /><div class="video-container"><iframe src="//player.bilibili.com/player.html?aid=758832819&bvid=BV1864y197Jp&cid=358626022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><p><span style="font-size:20px">在线观看：</span><br><a href="https://www.bilibili.com/video/BV1864y197Jp">BiliBili</a><br><a href="https://www.acfun.cn/v/ac29984470">ACfun</a><br><a href="https://youtu.be/-V8mMADmSWY">youtube</a></p><p>赠：绣雨烟萝 越今朝的橙子<br>同时也送给喜欢凡柔的伙伴们！希望你们会喜欢~</p><p>BGM：《心乡》<br>曲：张信哲《白月光》<br>策：白杳杳【月玲珑】<br>词：梓瑜【月玲珑】<br>唱：呆瓜小贼【月玲珑】<br>混：陌冰【月玲珑】</p><p>姜云凡 饰 郑业成<br>唐雨柔 饰 王楚然</p><p>海报/歌词手写/剪辑：雪团<br>感谢：越今朝的橙子</p><p>拖了这么久的坑终于填完了！！泪目！！本来应该去年做完的，结果拖到现在才做完……捂脸，人类的本质就是鸽子哈哈哈！<br>还好现在填完了，心里也放心了，不知道大家会不会喜欢呢？希望看客们会喜欢唷！<br>凡柔这一对是我很喜欢的CP，他们之间实在是很坎坷，为他们感到心酸，他们彼此之间都是心里的暖阳，也是我的暖阳呀～互相救赎，两个人的爱情真的很美好……就犹如歌词里写的那样，回忆就留在我们心中流淌，静静回想……</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\blog\assets\js\APlayer.m</summary>
+      
+    
+    
+    
+    <category term="个人作品" scheme="https://sarakale.github.io/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    
+    
+    <category term="仙剑五" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94/"/>
+    
+    <category term="仙剑奇侠传五" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%94/"/>
+    
+    <category term="视频剪辑" scheme="https://sarakale.github.io/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    
+    <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    
+    <category term="真人" scheme="https://sarakale.github.io/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    
+    <category term="姜云凡" scheme="https://sarakale.github.io/blog/tags/%E5%A7%9C%E4%BA%91%E5%87%A1/"/>
+    
+    <category term="唐雨柔" scheme="https://sarakale.github.io/blog/tags/%E5%94%90%E9%9B%A8%E6%9F%94/"/>
+    
+    <category term="郑业成" scheme="https://sarakale.github.io/blog/tags/%E9%83%91%E4%B8%9A%E6%88%90/"/>
+    
+    <category term="王楚然" scheme="https://sarakale.github.io/blog/tags/%E7%8E%8B%E6%A5%9A%E7%84%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>评论系统更换为Waline</title>
@@ -110,9 +150,9 @@
     
     <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
-    
     <category term="真人" scheme="https://sarakale.github.io/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    
+    <category term="仙剑奇侠传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
   </entry>
   
@@ -218,9 +258,9 @@
     
     <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
-    
     <category term="真人" scheme="https://sarakale.github.io/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    
+    <category term="仙剑奇侠传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
   </entry>
   
@@ -532,41 +572,6 @@
     <category term="仙剑奇侠传三" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89/"/>
     
     <category term="龙葵" scheme="https://sarakale.github.io/blog/tags/%E9%BE%99%E8%91%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【朱一龙x陈意涵】飞蝶 | 赠·玲珑小醋</title>
-    <link href="https://sarakale.github.io/blog/posts/31d725ea.html"/>
-    <id>https://sarakale.github.io/blog/posts/31d725ea.html</id>
-    <published>2019-07-11T13:37:57.000Z</published>
-    <updated>2019-07-11T13:37:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/work/13.jpg" style="width:70%" /><span id="more"></span><div class="video-container"><iframe src="//player.bilibili.com/player.html?aid=58757790&cid=102451336&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="note info no-icon flat"><p>愿世间 春秋与天地<br>眼中唯有一个你<br>苦乐悲喜 得失中尽致淋漓</p></div><p>终于填完坑了！一直很想做流星蝴蝶剑的剪辑，终于完成了～～<br>赠送给小醋的友情礼物，也感谢小伊提供BGM～<br>第一次做真人剪辑做得还不好，请多多海涵～</p><p>BGM：《山有木兮》伦桑<br>素材：流星蝴蝶剑 新边城浪子<br>感谢：玲珑小醋 尘水伊阁<br>制作：雪团/SaraKale</p><p>在线观看：<br>B站：<a href="https://www.bilibili.com/video/av58757790">https://www.bilibili.com/video/av58757790</a><br>A站：<a href="https://www.acfun.cn/v/ac10415645">https://www.acfun.cn/v/ac10415645</a><br>youtube：<a href="https://youtu.be/7NXOSH3MwLE">https://youtu.be/7NXOSH3MwLE</a></p>]]></content>
-    
-    
-    <summary type="html">容我图一次CP粮</summary>
-    
-    
-    
-    <category term="个人作品" scheme="https://sarakale.github.io/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-    <category term="视频剪辑" scheme="https://sarakale.github.io/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
-    
-    <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    <category term="朱一龙" scheme="https://sarakale.github.io/blog/tags/%E6%9C%B1%E4%B8%80%E9%BE%99/"/>
-    
-    <category term="陈意涵" scheme="https://sarakale.github.io/blog/tags/%E9%99%88%E6%84%8F%E6%B6%B5/"/>
-    
-    <category term="流星蝴蝶剑" scheme="https://sarakale.github.io/blog/tags/%E6%B5%81%E6%98%9F%E8%9D%B4%E8%9D%B6%E5%89%91/"/>
-    
-    <category term="新边城浪子" scheme="https://sarakale.github.io/blog/tags/%E6%96%B0%E8%BE%B9%E5%9F%8E%E6%B5%AA%E5%AD%90/"/>
-    
-    <category term="傅红雪" scheme="https://sarakale.github.io/blog/tags/%E5%82%85%E7%BA%A2%E9%9B%AA/"/>
-    
-    <category term="孙蝶" scheme="https://sarakale.github.io/blog/tags/%E5%AD%99%E8%9D%B6/"/>
     
   </entry>
   
