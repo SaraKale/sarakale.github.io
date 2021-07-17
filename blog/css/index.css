@@ -5840,11 +5840,11 @@ a.steamItem div.steamiText {
 .fa-line-chart:before {
   color: #5e8196;
 }
-[data-theme='dark'] .icon-github:before {
-  color: rgba(131,143,156,.549);
-}
 #waifu-tool .icon-bilibili:before {
   color: #1f2938;
+}
+[data-theme='dark'] .icon-github:before {
+  color: rgba(131,143,156,.549);
 }
 [data-theme='dark'] #waifu-tool .icon-bilibili:before {
   color: #5b6c7d;
