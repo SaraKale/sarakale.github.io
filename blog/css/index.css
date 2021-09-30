@@ -5228,6 +5228,9 @@ hr:before {
   padding: 0 .5rem 2rem;
   line-height: 30px;
 }
+#sidebar #sidebar-menus .menus_items .site-page:hover {
+  background: #f5bdbb;
+}
 [data-theme='dark'] #sidebar #sidebar-menus .menus_items {
   padding: 0 .5rem 2rem;
   line-height: 30px;
