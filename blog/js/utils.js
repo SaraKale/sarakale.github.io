@@ -1,1 +1,251 @@
-"use strict";function _slicedToArray(e,t){return _arrayWithHoles(e)||_iterableToArrayLimit(e,t)||_unsupportedIterableToArray(e,t)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _iterableToArrayLimit(e,t){var r=e&&("undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"]);if(null!=r){var n,o,i=[],a=!0,u=!1;try{for(r=r.call(e);!(a=(n=r.next()).done)&&(i.push(n.value),!t||i.length!==t);a=!0);}catch(e){u=!0,o=e}finally{try{a||null==r.return||r.return()}finally{if(u)throw o}}return i}}function _arrayWithHoles(e){if(Array.isArray(e))return e}function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,t){if(e){if("string"==typeof e)return _arrayLikeToArray(e,t);var r=Object.prototype.toString.call(e).slice(8,-1);return"Map"===(r="Object"===r&&e.constructor?e.constructor.name:r)||"Set"===r?Array.from(e):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?_arrayLikeToArray(e,t):void 0}}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,n=new Array(t);r<t;r++)n[r]=e[r];return n}var btf={debounce:function(n,o,i){var a;return function(){var e=this,t=arguments,r=i&&!a;clearTimeout(a),a=setTimeout(function(){a=null,i||n.apply(e,t)},o),r&&n.apply(e,t)}},throttle:function(r,n,o){var i,a,u,l=0;o=o||{};function s(){l=!1===o.leading?0:(new Date).getTime(),i=null,r.apply(a,u),i||(a=u=null)}return function(){var e=(new Date).getTime();l||!1!==o.leading||(l=e);var t=n-(e-l);a=this,u=arguments,t<=0||n<t?(i&&(clearTimeout(i),i=null),l=e,r.apply(a,u),i||(a=u=null)):i||!1===o.trailing||(i=setTimeout(s,t))}},sidebarPaddingR:function(){var e=window.innerWidth,t=document.body.clientWidth;e!==t&&(document.body.style.paddingRight=e-t+"px")},snackbarShow:function(e,t,r){var n=void 0!==t&&t,o=void 0!==r?r:2e3,t=GLOBAL_CONFIG.Snackbar.position,r="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark;Snackbar.show({text:e,backgroundColor:r,showAction:n,duration:o,pos:t})},initJustifiedGallery:function(e){(e=!(e instanceof jQuery)?$(e):e).each(function(e,t){$(this).is(":visible")&&$(this).justifiedGallery({rowHeight:220,margins:4})})},diffDate:function(e){var t,r=1<arguments.length&&void 0!==arguments[1]&&arguments[1],n=new Date,o=new Date(e),i=n.getTime()-o.getTime();return r?(t=i/864e5,e=i/36e5,n=i/6e4,12<(r=i/2592e6)?o.toLocaleDateString().replace(/\//g,"-"):1<=r?parseInt(r)+" "+GLOBAL_CONFIG.date_suffix.month:1<=t?parseInt(t)+" "+GLOBAL_CONFIG.date_suffix.day:1<=e?parseInt(e)+" "+GLOBAL_CONFIG.date_suffix.hour:1<=n?parseInt(n)+" "+GLOBAL_CONFIG.date_suffix.min:GLOBAL_CONFIG.date_suffix.just):parseInt(i/864e5)},loadComment:function(e,t){var r;"IntersectionObserver"in window?(r=new IntersectionObserver(function(e){e[0].isIntersecting&&(t(),r.disconnect())},{threshold:[0]})).observe(e):t()},scrollToDest:function(n,o){var i,a;n<0||o<0||(i=window.scrollY||window.screenTop,n<i&&(n-=70),"CSS"in window&&CSS.supports("scroll-behavior","smooth")?window.scrollTo({top:n,behavior:"smooth"}):(a=null,o=o||500,window.requestAnimationFrame(function e(t){var r;a=a||t,i<n?(r=t-a,window.scrollTo(0,(n-i)*r/o+i),r<o?window.requestAnimationFrame(e):window.scrollTo(0,n)):(t=t-a,window.scrollTo(0,i-(i-n)*t/o),t<o?window.requestAnimationFrame(e):window.scrollTo(0,n))})))},fadeIn:function(e,t){e.style.cssText="display:block;animation: to_show ".concat(t,"s")},fadeOut:function(t,e){t.addEventListener("animationend",function e(){t.style.cssText="display: none; animation: '' ",t.removeEventListener("animationend",e)}),t.style.animation="to_hide ".concat(e,"s")},getParents:function(e,t){for(;e&&e!==document;e=e.parentNode)if(e.matches(t))return e;return null},siblings:function(t,r){return _toConsumableArray(t.parentNode.children).filter(function(e){return r?e!==t&&e.matches(r):e!==t})},wrap:function(e,t,r){for(var n=document.createElement(t),o=0,i=Object.entries(r);o<i.length;o++){var a=_slicedToArray(i[o],2),u=a[0],a=a[1];n.setAttribute(u,a)}e.parentNode.insertBefore(n,e),n.appendChild(e)},unwrap:function(e){var t=e.parentNode;t!==document.body&&(t.parentNode.insertBefore(e,t),t.parentNode.removeChild(t))},isJqueryLoad:function(e){"undefined"==typeof jQuery?getScript(GLOBAL_CONFIG.source.jQuery).then(e):e()},isHidden:function(e){return 0===e.offsetHeight&&0===e.offsetWidth},getEleTop:function(e){for(var t=e.offsetTop,r=e.offsetParent;null!==r;)t+=r.offsetTop,r=r.offsetParent;return t}};
+const btf = {
+  debounce: function (func, wait, immediate) {
+    let timeout
+    return function () {
+      const context = this
+      const args = arguments
+      const later = function () {
+        timeout = null
+        if (!immediate) func.apply(context, args)
+      }
+      const callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(context, args)
+    }
+  },
+
+  throttle: function (func, wait, options) {
+    let timeout, context, args
+    let previous = 0
+    if (!options) options = {}
+
+    const later = function () {
+      previous = options.leading === false ? 0 : new Date().getTime()
+      timeout = null
+      func.apply(context, args)
+      if (!timeout) context = args = null
+    }
+
+    const throttled = function () {
+      const now = new Date().getTime()
+      if (!previous && options.leading === false) previous = now
+      const remaining = wait - (now - previous)
+      context = this
+      args = arguments
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout)
+          timeout = null
+        }
+        previous = now
+        func.apply(context, args)
+        if (!timeout) context = args = null
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining)
+      }
+    }
+
+    return throttled
+  },
+
+  sidebarPaddingR: () => {
+    const innerWidth = window.innerWidth
+    const clientWidth = document.body.clientWidth
+    const paddingRight = innerWidth - clientWidth
+    if (innerWidth !== clientWidth) {
+      document.body.style.paddingRight = paddingRight + 'px'
+    }
+  },
+
+  snackbarShow: (text, showAction, duration) => {
+    const sa = (typeof showAction !== 'undefined') ? showAction : false
+    const dur = (typeof duration !== 'undefined') ? duration : 2000
+    const position = GLOBAL_CONFIG.Snackbar.position
+    const bg = document.documentElement.getAttribute('data-theme') === 'light' ? GLOBAL_CONFIG.Snackbar.bgLight : GLOBAL_CONFIG.Snackbar.bgDark
+    Snackbar.show({
+      text: text,
+      backgroundColor: bg,
+      showAction: sa,
+      duration: dur,
+      pos: position
+    })
+  },
+
+  initJustifiedGallery: function (selector) {
+    if (!(selector instanceof jQuery)) {
+      selector = $(selector)
+    }
+    selector.each(function (i, o) {
+      if ($(this).is(':visible')) {
+        $(this).justifiedGallery({
+          rowHeight: 220,
+          margins: 4
+        })
+      }
+    })
+  },
+
+  diffDate: (d, more = false) => {
+    const dateNow = new Date()
+    const datePost = new Date(d)
+    const dateDiff = dateNow.getTime() - datePost.getTime()
+    const minute = 1000 * 60
+    const hour = minute * 60
+    const day = hour * 24
+    const month = day * 30
+
+    let result
+    if (more) {
+      const monthCount = dateDiff / month
+      const dayCount = dateDiff / day
+      const hourCount = dateDiff / hour
+      const minuteCount = dateDiff / minute
+
+      if (monthCount > 12) {
+        result = datePost.toLocaleDateString().replace(/\//g, '-')
+      } else if (monthCount >= 1) {
+        result = parseInt(monthCount) + ' ' + GLOBAL_CONFIG.date_suffix.month
+      } else if (dayCount >= 1) {
+        result = parseInt(dayCount) + ' ' + GLOBAL_CONFIG.date_suffix.day
+      } else if (hourCount >= 1) {
+        result = parseInt(hourCount) + ' ' + GLOBAL_CONFIG.date_suffix.hour
+      } else if (minuteCount >= 1) {
+        result = parseInt(minuteCount) + ' ' + GLOBAL_CONFIG.date_suffix.min
+      } else {
+        result = GLOBAL_CONFIG.date_suffix.just
+      }
+    } else {
+      result = parseInt(dateDiff / day)
+    }
+    return result
+  },
+
+  loadComment: (dom, callback) => {
+    if ('IntersectionObserver' in window) {
+      const observerItem = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          callback()
+          observerItem.disconnect()
+        }
+      }, { threshold: [0] })
+      observerItem.observe(dom)
+    } else {
+      callback()
+    }
+  },
+
+  scrollToDest: (pos, time) => {
+    if (pos < 0 || time < 0) {
+      return
+    }
+
+    const currentPos = window.scrollY || window.screenTop
+    if (currentPos > pos) pos = pos - 70
+
+    if ('CSS' in window && CSS.supports('scroll-behavior', 'smooth')) {
+      window.scrollTo({
+        top: pos,
+        behavior: 'smooth'
+      })
+      return
+    }
+
+    let start = null
+    time = time || 500
+    window.requestAnimationFrame(function step (currentTime) {
+      start = !start ? currentTime : start
+      if (currentPos < pos) {
+        const progress = currentTime - start
+        window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos)
+        if (progress < time) {
+          window.requestAnimationFrame(step)
+        } else {
+          window.scrollTo(0, pos)
+        }
+      } else {
+        const progress = currentTime - start
+        window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time))
+        if (progress < time) {
+          window.requestAnimationFrame(step)
+        } else {
+          window.scrollTo(0, pos)
+        }
+      }
+    })
+  },
+
+  fadeIn: (ele, time) => {
+    ele.style.cssText = `display:block;animation: to_show ${time}s`
+  },
+
+  fadeOut: (ele, time) => {
+    ele.addEventListener('animationend', function f () {
+      ele.style.cssText = "display: none; animation: '' "
+      ele.removeEventListener('animationend', f)
+    })
+    ele.style.animation = `to_hide ${time}s`
+  },
+
+  getParents: (elem, selector) => {
+    for (; elem && elem !== document; elem = elem.parentNode) {
+      if (elem.matches(selector)) return elem
+    }
+    return null
+  },
+
+  siblings: (ele, selector) => {
+    return [...ele.parentNode.children].filter((child) => {
+      if (selector) {
+        return child !== ele && child.matches(selector)
+      }
+      return child !== ele
+    })
+  },
+
+  /**
+   *
+   * @param {*} selector
+   * @param {*} eleType the type of create element
+   * @param {*} options object key: value
+   */
+  wrap: (selector, eleType, options) => {
+    const creatEle = document.createElement(eleType)
+    for (const [key, value] of Object.entries(options)) {
+      creatEle.setAttribute(key, value)
+    }
+    selector.parentNode.insertBefore(creatEle, selector)
+    creatEle.appendChild(selector)
+  },
+
+  unwrap: el => {
+    const elParentNode = el.parentNode
+    if (elParentNode !== document.body) {
+      elParentNode.parentNode.insertBefore(el, elParentNode)
+      elParentNode.parentNode.removeChild(elParentNode)
+    }
+  },
+
+  isJqueryLoad: fn => {
+    if (typeof jQuery === 'undefined') {
+      getScript(GLOBAL_CONFIG.source.jQuery).then(fn)
+    } else {
+      fn()
+    }
+  },
+
+  isHidden: ele => ele.offsetHeight === 0 && ele.offsetWidth === 0,
+
+  getEleTop: ele => {
+    let actualTop = ele.offsetTop
+    let current = ele.offsetParent
+
+    while (current !== null) {
+      actualTop += current.offsetTop
+      current = current.offsetParent
+    }
+
+    return actualTop
+  }
+
+}

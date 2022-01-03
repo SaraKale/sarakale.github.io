@@ -6,7 +6,7 @@
   <link href="https://sarakale.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://sarakale.github.io/blog/"/>
-  <updated>2021-12-25T13:25:05.000Z</updated>
+  <updated>2022-01-03T09:58:33.961Z</updated>
   <id>https://sarakale.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo 6.0.0发布，支持Node.js 12+</title>
+    <link href="https://sarakale.github.io/blog/posts/34806.html"/>
+    <id>https://sarakale.github.io/blog/posts/34806.html</id>
+    <published>2022-01-03T10:03:09.000Z</published>
+    <updated>2022-01-03T09:58:33.961Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>前几天逛Hexo官网的时候，突然发现它居然发布6.0了！天呐！它终于更新了！！而且还支持Node.js 12以上版本了，泪流满面，有时候想用Node高版本却发现Hexo还没有兼容高版本，真是忧伤，这下子终于熬到它发布6.0了！<br>Hexo 6.0.0发布新闻：<a href="https://hexo.io/news/2021/12/26/hexo-6-0-0-released/">Hexo 6.0.0 Released</a></p><p>老样子，升级前需要提前备份！以免造成错误哦～<br>设置好Node环境变量后，在博客package.json文件修改对应版本号。</p><figure class="highlight json"><figcaption><span>~blog\package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^6.0.0&quot;</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>然后输入npm update更新<br>再全局输入npm i hexo -g更新到6.0.0</p><p>检查依赖库更新：npm-check<br>更新全局包：npm update <name> -g<br>更新生产环境依赖包：npm update <name> –save<br>更新全部库：npm-check -u</p><p>经测试我安装的Node.js最新版16.13.1可以使用，没有出现问题，终于更新完毕啦！撒花<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em><br>主题也没啥变化，依然可用，主题butterfly目前最新版本是3.8.4<br>大概就这些了～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\blog\assets\js\APlayer.m</summary>
+      
+    
+    
+    
+    <category term="其他" scheme="https://sarakale.github.io/blog/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="Hexo" scheme="https://sarakale.github.io/blog/tags/Hexo/"/>
+    
+    <category term="Node.js" scheme="https://sarakale.github.io/blog/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021年终总结</title>
+    <link href="https://sarakale.github.io/blog/posts/8569.html"/>
+    <id>https://sarakale.github.io/blog/posts/8569.html</id>
+    <published>2022-01-03T09:38:04.000Z</published>
+    <updated>2022-01-03T07:40:48.991Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>今年的年终总结不咕啦～可算提前做完了！今年产量还可以，依然还是和小伙伴合剪较多，希望2022年也保持一样的产量～！<br>大家也要加油啊！！早日填坑！！</p><p><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2021/2021-P1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2021/2021-P2.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2021/2021-P3.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2021/2021-P4.jpg"></p><p><strong>视频作品：</strong><br>[2021-05-09] 【仙剑真人群像合剪】孟婆八泪丨是念念不忘的岁月<br>[2021-06-23] 【仙五/凡柔】云柔心乡丨你是我心里的暖阳<br>[2021-07-17] 【古剑/恭芳】芳华如梦丨千载弦歌 芳华如梦<br>[2021-09-14] 【仙五前传】盗将行·记姜承/姜世离<br>[2021-09-30] 【沈晓海古装群像】还君旧山河<br>[2021-11-12] 舒远婚礼联动剧场<br>[2021-12-25] 【仙剑三外传/燎日X蕙卿】刻舟求爱丨赠·烟寒水月斜</p><p><strong>海报类：</strong><br>依旧是时间轴错乱，如有缺漏欢迎告知～<br>[2021-01-15]【仙剑前传/主90后真人合剪】谁年轻时还不是个小鲜肉<br>[2021-02-05] 现代言情广播剧《不二之臣》第四期<br>[2021-02-11] 现代言情广播剧《第二十八年春》第三期<br>[2021-02-14] 现代都市言情广播剧《唐家小猫》第一期<br>[2021-03-20] 现代都市言情广播剧《唐家小猫》第二期<br>[2021-03-25] 现代言情广播剧《不二之臣》第五期<br>[2021-03-30] 现代言情广播剧《我等你，很久了》大结局<br>[2021-04-01] 第二十八年春特别番外《一抔尘土几许情》<br>[2021-05-01] 现代都市言情广播剧《唐家小猫》——小剧场2《唐先生的醋王路》<br>[2021-05-04] 《狼与兔》——皓嫣同人曲<br>[2021-06-01] 现代言情广播剧《林深有天亮，念念不敢忘》第三期<br>[2021-06-13] 全一期古风耽美广播剧《大手》<br>[2021-06-24] 仙剑五前传真人预告长离未离‖皇甫卓x夏初临‖‖天将明<br>[2021-06-28] 天作之合·第一期<br>[2021-09-09] 现代耽美甜萌《线上有狼，请小心》第二期<br>[2021-09-20] 现代言情广播剧《不二之臣》第六期<br>[2021-10-01] 原创现代BG广播剧《不就弃了个坑吗？这是什么神展开！》第二期<br>[2021-10-06] 现代言情广播剧《第二十八年春》第四期<br>[2021-10-26]【仙剑奇侠传七丨月清疏x修吾】九千错<br>[2021-10-29]【仙剑奇侠传七‖修吾&amp;月清疏】青衣谣<br>[2021-11-23]【仙剑】×【七仙女】人生恍如梦<br>[2021-12-26] 现代言情广播剧《咬丝绒》第一期</p><p><strong>其他类：</strong><br>[2021-07-06]仙剑奇侠传五10周年庆祝活动<br>[2021-10-28]三外17周年生贺祝福-温慧、王蓬絮</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\blog\assets\js\APlayer.m</summary>
+      
+    
+    
+    
+    <category term="个人作品" scheme="https://sarakale.github.io/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    
+    
+    <category term="年终总结" scheme="https://sarakale.github.io/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>【仙剑三外传/燎日X蕙卿】刻舟求爱丨赠·烟寒水月斜</title>
@@ -491,9 +541,9 @@
     <category term="其他" scheme="https://sarakale.github.io/blog/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="博客" scheme="https://sarakale.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
     <category term="Hexo" scheme="https://sarakale.github.io/blog/tags/Hexo/"/>
+    
+    <category term="博客" scheme="https://sarakale.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="npm" scheme="https://sarakale.github.io/blog/tags/npm/"/>
     
@@ -521,70 +571,6 @@
     <category term="Spleeter" scheme="https://sarakale.github.io/blog/tags/Spleeter/"/>
     
     <category term="音轨分离" scheme="https://sarakale.github.io/blog/tags/%E9%9F%B3%E8%BD%A8%E5%88%86%E7%A6%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title> 【仙剑混剪】缘尽世间丨友情篇丨此生有幸与你结为挚友 [2019籼米影业第三届大赛]</title>
-    <link href="https://sarakale.github.io/blog/posts/491b225d.html"/>
-    <id>https://sarakale.github.io/blog/posts/491b225d.html</id>
-    <published>2020-01-22T12:50:06.000Z</published>
-    <updated>2020-01-22T12:50:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/work/18.jpg" style="width:70%" /><span id="more"></span><div class="video-container"><iframe src="//player.bilibili.com/player.html?aid=84567000&cid=144633276&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><div class="note danger no-icon flat"><p>烟灯良景，把酒言欢，旅途路上与你初见，<br>我们曾患难与共、笑看风云，在生死同归战火下盟海誓，<br>知我者良友也，此生有幸与你结为挚友，<br>兄弟、姐妹，多谢了。<br>人生有一知音朋友，难能可贵，感恩一路上有你。</p></div><h2 id="在线观看"><a href="#在线观看" class="headerlink" title="在线观看"></a>在线观看</h2><p>B站：<a href="https://www.bilibili.com/video/av84567000">https://www.bilibili.com/video/av84567000</a><br>A站：<a href="https://www.acfun.cn/v/ac12574397">https://www.acfun.cn/v/ac12574397</a><br>youtube：<a href="https://youtu.be/__0qtVuajRA">https://youtu.be/__0qtVuajRA</a></p><p>这次视频是参加<a href="https://www.bilibili.com/read/cv3746682">2019籼米影业第三届大赛</a>的参赛作品，原地址在这里<a href="https://www.bilibili.com/video/av70564906">参赛链接</a>，很荣幸能与最优秀的两位队友合作，过程十分愉快！也提高了自己的水平，真的是太感谢了！而且也获得了第一名，实在是太高兴了！！非常非常感谢！！<br>也推荐给大家看我们<strong>洛天依小组</strong>其他两位队友的作品，他们也做得很棒！欢迎去观看呀～！点击名称就可以跳转了～<br>【强烈推荐缘尽世间系列姊妹篇！】<br><a href="https://www.bilibili.com/video/av84574756">亲情篇丨离聚无悔尽是缘</a> UP主：尘水伊阁<br><a href="https://www.bilibili.com/video/av84571260">爱情篇丨爱叹云兮终无悔</a> UP主：天赋哓哓</p><p>在我个人空间单独投稿的是重新制作的版本，对友情篇有了更深入的理解，欢迎大家讨论～！P1是重制版本，P2是参赛版本。<br>也感谢授权配音的制作组给予最大的帮助，还有喻南松CV柳川鱼也衷心感谢～<br>缘分真的很奇妙～！谢谢大家的支持！</p><p>素材：历代游戏录制 新仙剑OL及各手游素材<br>授权配音：仙剑三/仙三外传制作组 CFC工作室<br>部分CV配音：喻南松——柳川鱼【星之声中文配音组】<br>录制/题字/制作：雪团SaraKale<br>感谢：天赋哓哓 尘水伊阁 籼米影业 魔月 月冷川寒 CFC工作室 以及众多支持的观众们</p><p>祝籼米们新春快乐！</p>]]></content>
-    
-    
-    <summary type="html">难得有机会尝试混剪了，欢迎观看～</summary>
-    
-    
-    
-    <category term="个人作品" scheme="https://sarakale.github.io/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-    <category term="个人作品" scheme="https://sarakale.github.io/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    <category term="仙剑奇侠传五" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%94/"/>
-    
-    <category term="视频剪辑" scheme="https://sarakale.github.io/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
-    
-    <category term="仙剑奇侠传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
-    
-    <category term="仙剑" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91/"/>
-    
-    <category term="仙剑奇侠传三" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89/"/>
-    
-    <category term="仙剑奇侠传六" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E5%85%AD/"/>
-    
-    <category term="仙剑奇侠传二" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%8C/"/>
-    
-    <category term="仙剑奇侠传三外传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%B8%89%E5%A4%96%E4%BC%A0/"/>
-    
-    <category term="仙剑奇侠传四" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E5%9B%9B/"/>
-    
-    <category term="仙剑奇侠传五前传" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%94%E5%89%8D%E4%BC%A0/"/>
-    
-    <category term="仙剑混剪" scheme="https://sarakale.github.io/blog/tags/%E4%BB%99%E5%89%91%E6%B7%B7%E5%89%AA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019年终总结</title>
-    <link href="https://sarakale.github.io/blog/posts/845ca7c4.html"/>
-    <id>https://sarakale.github.io/blog/posts/845ca7c4.html</id>
-    <published>2020-01-20T12:22:40.000Z</published>
-    <updated>2020-01-20T12:22:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.jpg" style="width:70%" /><span id="more"></span><p>依旧是迟到的年终总结……图很大请在wifi下打开。</p><p><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-01.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-02.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-03.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-04.jpg"></p><p><strong>视频作品：</strong><br>[2019-01-24]【仙剑】2019年1月无月历动态壁纸（伪）<br>[2019-06-20]【刘亦菲x赵灵儿】甜蜜蜜 | 赠·天赋晓晓·生贺<br>[2019-07-11]【朱一龙x陈意涵】飞蝶 | 赠·玲珑小醋<br>[2019-07-28]【仙剑三x双葵】双葵的百合之旅 | 赠·瓶子 [沙雕GMV]<br>[2019-08-18]【流星蝴蝶剑 | 陈楚河x陈意涵】星蝶 | 与你一马一剑驰骋川谷<br>[2019-10-10] 仙剑混剪《缘尽世间》友情篇 | 此生有幸与你结为挚友【2019籼米影业第三届大赛】<br>[2019-10-13]【AMV/幻璃镜】浩气参天 | 青槐个人向<br>[2019-11-02]【AMV】奔跑的梦想【2019随意链接MAD大赛/未入围】</p><p>纯凑数的视频（往年作品上传）<br>【古剑奇谭二】夏夷则x阿阮同人视频《在水一方》<br>【月玲珑出品】古风怪异志谈系列广播剧《诡事书》第五折《壁上花》预告《萤诺》<br>【月玲珑出品】2018年月玲珑贺岁歌曲《玲珑月光2018》<br>【月玲珑出品】2019年贺岁剧仙剑女配剧场《最惨女配是衬托》</p><p><strong>海报类：</strong><br>依旧是时间轴错乱，如有缺漏欢迎告知～<br>[2019-04-30] 有声漫画《全世界都在谈恋爱》第七期<br>[2019-06-16] 【忆语】现代灵异广播剧《无明夜》第四期<br>[2019-07-02] 现代言情广播剧《我等你，很久了》第一期<br>[2019-07-29] 个人bl条漫《大冒险不能随便玩》<br>[2019-09-10] 个人全一期·原创短篇师生广播剧《老师，我喜欢你》<br>[2019-09-12] 长篇古风清宫广播剧《烟娇百媚》第一期<br>[2019-10-01] 长篇BG声漫《姑娘不可以》第一集<br>[2019-10-10] 仙剑混剪《缘尽世间》系列封面<br>[2019-10-22] 个人bl条漫《醋翻了》<br>[2019-11-13] 【填翻】《你是不是喜欢我》<br>[2019-11-16] 长篇BG声漫《姑娘不可以》第二集<br>[2019-11-18] 现代全一期深夜放毒广播剧《抹茶蜜桃冰》<br>[2019-11-24] 现代言情广播剧《西城往事》第一期<br>[2019-11-29] 现代BG广播剧《藏在回忆里的风景》第三期（大结局）<br>[2019-11-30] 现代言情广播剧《我等你，很久了》第二期<br>[2019-12-22] 有声漫《曲折少年》第四话<br>[2019-12-31] 长篇BG声漫《姑娘不可以》第三集</p><p><strong>其他类：</strong><br>[2019-01-25] 玲珑娘定制手机壳/明信片<br>[2019-10-30] 仙五超话封面/背景<br>[2019-11-28] 仙五steam封面/背景</p>]]></content>
-    
-    
-    <summary type="html">&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2019/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.jpg&quot; style=&quot;width:70%&quot; /&gt;</summary>
-    
-    
-    
-    <category term="个人作品" scheme="https://sarakale.github.io/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-    <category term="年终总结" scheme="https://sarakale.github.io/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
