@@ -604,6 +604,13 @@ hr:before {
 #sidebar #sidebar-menus .menus_items .site-page:hover {
   background: #f5bdbb;
 }
+[data-theme='dark'] #sidebar #sidebar-menus .menus_items .site-page:hover {
+  background: #99a2aa;
+}
+[data-theme='dark'] #nav .menus_items .menus_item .menus_item_child li a:hover {
+  color: #fff;
+  background: #888;
+}
 [data-theme='dark'] #sidebar #sidebar-menus .menus_items {
   padding: 0 0.5rem 2rem;
   line-height: 30px;
