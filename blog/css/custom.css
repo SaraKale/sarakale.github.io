@@ -90,7 +90,6 @@
   color: #565e67;
 }
 /**
-// 评论
 @media (min-width: 368px) {
   .v[data-class=v],.vcomment, .vcard { font-size: 16px; }
 }
@@ -175,93 +174,55 @@ span#inline-toc {
   margin: 2px 5px 2px 0px;
   line-height: 1.5;
 }
-#article-container ol,
-#article-container ul {
-  margin-top: 0.4rem;
-  padding: 0 0 0 0.8rem;
-  list-style: none;
-  counter-reset: li;
+#article-container.post-content li::marker {
+  color: #49b1f5;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 0.5em;
 }
-#article-container ol li,
-#article-container ul li {
-  position: relative;
-  margin: 0.3rem 0;
-  padding-left: 0.3rem;
-  line-height: 20px;
+/*
+#article-container ol, #article-container ul {
+    margin-top: 0.4rem;
+    padding: 0 0 0 0.8rem;
+    list-style: none;
+    counter-reset: li;
+    //font-size: 16px;
+}
+#article-container ol li, #article-container ul li {
+    position: relative;
+    margin: 0.3rem 0;
+    padding-left: 0.3rem;
+    //font-size: 16px;
+    line-height: 20px;
 }
 #article-container.post-content ul > li:not(.tab):before {
-  top: 0.5em;
-  width: 0.42em;
-  height: 0.42em;
-  border: 0.21em solid #49b1f5;
-  border-radius: 0.42em;
-  background: transparent;
-  content: '';
-  line-height: 0.42em;
+    top: 0.5em;
+    width: 0.42em;
+    height: 0.42em;
+    border: 0.21em solid #49b1f5;
+    border-radius: 0.42em;
+    background: transparent;
+    content: '';
+    line-height: 0.42em;
 }
 #article-container.post-content ol > li:before {
-  margin-top: 0.4em;
-  width: 1.45em;
-  height: 1.45em;
-  border-radius: 0.725em;
-  content: counter(li);
-  counter-increment: li;
-  text-align: center;
-  line-height: 1.45em;
+    margin-top: 0.4em;
+    width: 1.45em;
+    height: 1.45em;
+    border-radius: 0.725em;
+    content: counter(li);
+    counter-increment: li;
+    text-align: center;
+    //font-size: 0.85em;
+    line-height: 1.45em;
 }
 [data-theme='light'] #article-container ul {
-  color: #875555;
+    color: #875555;
 }
 [data-theme='dark'] #article-container ul {
-  color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.6);
 }
-/**
-// 文章字体大小
-@media (min-width: 360px) {
-  #article-container p { font-size: 16px; line-height: 1.9; }
-}
-@media (min-width: 411px) {
-  #article-container p { font-size: 16px; line-height: 1.9; }
-}
-@media (min-width: 576px) {
-  #article-container p { font-size: 16px; line-height: 1.9; }
-}
-@media (min-width: 768px) {
-  #article-container p { font-size: 16px; line-height: 1.9; }
-}
-@media (min-width: 992px) {
-  #article-container p { font-size: 16px; line-height: 2; }
-}
-@media (min-width: 1200px) {
-  #article-container p { font-size: 17px; line-height: 2; }
-}
-@media (min-width: 1600px) {
-  #article-container p { font-size: 17px; line-height: 2; }
-}
-
-// 友链页面
-@media (min-width: 360px) {
-  .flink { font-size: 15px; }
-}
-@media (min-width: 411px) {
-  .flink { font-size: 15px; }
-}
-@media (min-width: 576px) {
-  .flink { font-size: 15px; }
-}
-@media (min-width: 768px) {
-  .flink { font-size: 15px; }
-}
-@media (min-width: 992px) {
-  .flink { font-size: 16px; }
-}
-@media (min-width: 1200px) {
-  .flink { font-size: 16px; }
-}
-@media (min-width: 1600px) {
-  .flink { font-size: 16px; }
-}
-**/
+*/
 #article-container .flink .flink-list > .flink-list-item:before {
   position: absolute;
   top: 0;
@@ -555,16 +516,6 @@ hr:before {
   color: rgba(255,255,255,0.6);
   font-weight: bold;
 }
-/**
-#page .category-lists ul li {
-    position: relative;
-    margin: 0.8rem 0;
-    padding: 0.5em 0.4em 0.12em 1.4em;
-}
-.category-content ol li, .category-content ul li {
-   //font-size: 16px;
-}
-**/
 .category-content ul li:before {
   border: 0.15rem solid #e26662;
   border-radius: 0.3rem;
