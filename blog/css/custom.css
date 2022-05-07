@@ -89,58 +89,55 @@
   margin-top: 12px;
   color: #565e67;
 }
-/**
-@media (min-width: 368px) {
-  .v[data-class=v],.vcomment, .vcard { font-size: 16px; }
+#waline-wrap {
+/* 字体大小 */
+  --waline-font-size: 17px;
+/* 常规颜色 */
+  --waline-white: #fff;
+  --waline-light-grey: #999;
+  --waline-dark-grey: #666;
+/* 主题色 */
+  --waline-theme-color: #d9534f;
+  --waline-active-color: #ff69b4;
+/* 布局颜色 */
+  --waline-color: #444;
+  --waline-bgcolor: #fff;
+  --waline-bgcolor-light: #f8f8f8;
+  --waline-bgcolor-hover: #f0f0f0;
+  --waline-border-color: #999; /*下划线*/
+  --waline-disable-bgcolor: #f8f8f8;
+  --waline-disable-color: #bbb;
+  --waline-code-bgcolor: #282c34;
+/* 特殊颜色 */
+  --waline-bq-color: #f0f0f0;
+/* 头像 */
+  --waline-avatar-size: 3.25rem;
+  --waline-m-avatar-size: calc(var(--waline-avatar-size) * 9 / 13);
+/* 徽章 */
+  --waline-badge-color: #d9534f;
+  --waline-badge-font-size: 0.775em;
+/* 信息 */
+  --waline-info-bgcolor: #f8f8f8;
+  --waline-info-color: #999;
+  --waline-info-font-size: 0.625em;
+/* 渲染选择 */
+  --waline-border: 1px solid var(--waline-border-color);
+  --waline-avatar-radius: 50%;
+  --waline-box-shadow: none;
 }
-@media (min-width: 411px) {
-  .v[data-class=v],.vcomment, .vcard { font-size: 16px; }
+#waline-wrap .wl-card .wl-quote {
+  border-left: 1px dashed #999;
 }
-@media (min-width: 576px) {
-  .v[data-class=v],.vcomment, .vcard { font-size: 17px; }
-}
-@media (min-width: 788px) {
-  .v[data-class=v],.vcomment, .vcard { font-size: 18px; }
-}
-@media (min-width: 1020px) {
-  .v[data-class=v],.vcomment, .vcards { font-size: 18px; }
-}
-**/
-.v[data-class=v] .vcard a {
-  position: relative;
-  display: inline-block;
-  color: #428bca;
-  text-decoration: none;
-  cursor: pointer;
-}
-.v[data-class=v] .vcontent a {
-  color: #f3817e;
-}
-.v[data-class=v] .vcontent a:hover {
-  color: #d9534f;
-}
-.v[data-class=v] button.vbtn.primary {
-  border-color: #d9534f;
-  background: #d9534f;
-  color: var(--waline-white);
-}
-.v[data-class=v] button.vbtn.primary:hover {
-  border-color: #ff69b4;
-  background: #ff69b4;
-  color: var(--waline-white);
-}
-.v[data-class=v] button.vbtn:hover,
-button.vbtn:active {
-  border-color: #d9534f;
-  color: #d9534f;
-}
-.v[data-class='v'] .vcontent img[src^="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu"] {
+#waline-wrap .wl-content img[src^="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu"] {
   width: 40px;
+  height: 40px;
   margin: 0.25em;
   vertical-align: middle;
 }
-.v[data-class='v'] .vcontent img[src^="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color"] {
+#waline-wrap .wl-content .vemoji,
+.wl-content .wl-emoji[src^="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color"] {
   width: 60px;
+  height: 60px;
   margin: 0.25em;
   vertical-align: middle;
 }

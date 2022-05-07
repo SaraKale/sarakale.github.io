@@ -6,7 +6,7 @@
   <link href="https://sarakale.netlify.com/blog/atom.xml" rel="self"/>
   
   <link href="https://sarakale.netlify.com/blog/"/>
-  <updated>2022-05-05T04:36:29.423Z</updated>
+  <updated>2022-05-07T07:03:29.392Z</updated>
   <id>https://sarakale.netlify.com/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本站的备份镜像站点</title>
+    <link href="https://sarakale.netlify.com/blog/posts/4325.html"/>
+    <id>https://sarakale.netlify.com/blog/posts/4325.html</id>
+    <published>2022-05-07T05:01:06.000Z</published>
+    <updated>2022-05-07T07:03:29.392Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>好像没写个置顶，我都忘了！真是失策！！现在写个置顶给大家通知下～！！<br>本站的仓库是存在github那边的，不过国内用户访问较慢，我后来去netlify做了镜像，大家以后可以收藏这个站点噢！基本上是同步的～gitee是国内较快的节点，就是同步慢点，喜欢哪个节点就用哪个都行！</p><div class="note info no-icon flat"><p>镜像站1（推荐）：<a href="https://sarakale.netlify.com/blog">https://sarakale.netlify.com/blog</a><br>镜像站1（国内节点）：<a href="https://sarakale.gitee.io/blog">https://sarakale.gitee.io/blog</a><br>主站（较慢）：<a href="https://sarakale.github.io/blog">https://sarakale.github.io/blog</a></p></div><p>就这几个站点啦！大家可以更换下收藏夹～～麻烦大家了！有什么问题也可在评论下留言！我看到会回复的！</p><p>另外评论系统有时候会抽风，不要慌，等待服务器后台修复即可，我会尽快修复的！或者过一段时间再来看看～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\blog\assets\js\APlayer.m</summary>
+      
+    
+    
+    
+    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="网站" scheme="https://sarakale.netlify.com/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
   
   <entry>
     <title>给自己博客添加了说说页面</title>
@@ -117,9 +141,9 @@
     
     <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
-    
     <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    
+    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
     <category term="拉郎" scheme="https://sarakale.netlify.com/blog/tags/%E6%8B%89%E9%83%8E/"/>
     
@@ -494,9 +518,9 @@
     
     <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
-    
     <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    
+    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
   </entry>
   
@@ -545,39 +569,6 @@
     <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
     <category term="古龙" scheme="https://sarakale.netlify.com/blog/tags/%E5%8F%A4%E9%BE%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【仙剑真人合剪丨姜承/姜世离】承道埋魔丨这是英雄他生来的归乡【6人联合制作】</title>
-    <link href="https://sarakale.netlify.com/blog/posts/14177.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/14177.html</id>
-    <published>2020-10-23T10:34:50.000Z</published>
-    <updated>2020-10-23T10:34:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/work/20.jpg" style="width:70%" /><span id="more"></span><div class="video-container"><iframe src="//player.bilibili.com/player.html?aid=542570041&bvid=BV13i4y177Pd&cid=248507336&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div><p><span style="font-size:20px">在线观看：</span><br>B站：<a href="https://www.bilibili.com/video/BV13i4y177Pd">https://www.bilibili.com/video/BV13i4y177Pd</a><br>youtube：<a href="https://youtu.be/F6GypIDjRSQ">https://youtu.be/F6GypIDjRSQ</a></p><p>这是一条漫长的路，路上遇见了许许多多的人，最终留下的是什么呢……</p><p>刘学义 饰 姜承&#x2F;姜世离<br>联合制作：<br>1、姜世离x夏侯瑾轩（茅子俊） UP主：蕼茆兄<br>2、姜世离x谢沧行（高伟光） UP主：甜萌雪团<br>3、姜世离x龙溟（许凯） UP主：唯听<br>4、姜世离x欧阳倩（唐艺昕） UP主：蕼茆兄<br>5、姜世离x皇甫卓（罗云熙） UP主：越今朝的橙子<br>6、姜世离x姜云凡（吴磊） UP主：蹦蹦跳跳灰太狼<br>7、姜世离x厉岩（陈伟霆） UP主：烟寒水月斜</p><p>感谢：叶L君<br>策划：仙女天团<br>整合&#x2F;海报：雪团</p>]]></content>
-    
-    
-    <summary type="html">这是一条漫长的路，路上遇见了许许多多的人，最终留下的是什么呢……</summary>
-    
-    
-    
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
-    
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
-    
-    <category term="仙剑五前传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94%E5%89%8D%E4%BC%A0/"/>
-    
-    <category term="姜承" scheme="https://sarakale.netlify.com/blog/tags/%E5%A7%9C%E6%89%BF/"/>
-    
-    <category term="姜世离" scheme="https://sarakale.netlify.com/blog/tags/%E5%A7%9C%E4%B8%96%E7%A6%BB/"/>
-    
-    <category term="刘学义" scheme="https://sarakale.netlify.com/blog/tags/%E5%88%98%E5%AD%A6%E4%B9%89/"/>
     
   </entry>
   
