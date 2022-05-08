@@ -4,12 +4,19 @@
 /**color: #617884;**/
   line-height: 26px;
 }
-#article-container pre,
-#article-container code {
+#article-container pre {
   color: #63737b;
+/*font-size: 15px;*/
 }
-[data-theme='dark'] #article-container pre,
 #article-container code {
+  padding: 2px 4px;
+  color: #fefeff;
+  background: rgba(153,153,153,0.851);
+}
+[data-theme='dark'] #article-container pre {
+  color: #8e9aa7;
+}
+[data-theme='dark'] #article-container code {
   color: #8e9aa7;
 }
 .post-copyright {
@@ -17,7 +24,7 @@
   color: #583a39;
   margin: 2em 0 0;
   padding: 0.5em 1em;
-  border-left: 0px solid #ff1700;
+  border: 1px solid #fff;
   background-color: #ffeeed;
   list-style: none;
   line-height: 1.6;
@@ -36,9 +43,9 @@
 [data-theme='dark'] .post-copyright .post-copyright-info {
   color: rgba(45,21,21,0.6);
 }
-[data-theme='dark'] .post-copyright {
+[data-theme='dark'] #post .post-copyright {
   background-color: #858585;
-  border: rgba(255,255,255,0);
+  border: 1px solid rgba(255,255,255,0);
 }
 [data-theme='dark'] .post-copyright a {
   color: #858585;
@@ -127,6 +134,24 @@
 }
 #waline-wrap .wl-card .wl-quote {
   border-left: 1px dashed #999;
+}
+[data-theme='dark'] #waline-wrap {
+/* 常规颜色 */
+  --waline-white: #000;
+  --waline-light-grey: #666;
+  --waline-dark-grey: #999;
+/* 布局颜色 */
+  --waline-color: #cfcfcf;
+  --waline-bgcolor: #1e1e1e;
+  --waline-bgcolor-light: #272727;
+  --waline-border-color: #333;
+  --waline-disable-bgcolor: #444;
+  --waline-disable-color: #272727;
+/* 特殊颜色 */
+  --waline-bq-color: #272727;
+/* 其他颜色 */
+  --waline-info-bgcolor: #272727;
+  --waline-info-color: #666;
 }
 #waline-wrap .wl-content img[src^="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu"] {
   width: 40px;
@@ -311,6 +336,7 @@ hr:before {
   border: 1px solid #d9534f;
   border-radius: 0.6rem;
   color: #ff69b4;
+/*font-size: 1.1em;*/
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -329,7 +355,7 @@ hr:before {
   border: 1px solid rgba(153,162,170,0.749);
   border-radius: 0.6rem;
   color: #99a2aa;
-  font-size: 1.1em;
+/*font-size: 1.1em;*/
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -477,7 +503,7 @@ hr:before {
   border: 0.25rem solid #90a4ae;
 }
 .article-sort {
-  padding-left: 1rem;
+/*padding-left: 1rem;*/
   border-left: 2px solid #fba6a6;
 }
 .article-sort-item:before {
@@ -493,6 +519,9 @@ hr:before {
 }
 [data-theme='dark'] .layout > div:first-child:not(.recent-posts) {
   background: #121212;
+}
+[data-theme='dark'] .article-sort {
+  border-left: 1px solid rgba(251,166,166,0.49);
 }
 #pagination .page-number {
   color: #654545;
@@ -524,6 +553,7 @@ hr:before {
 }
 .tag-cloud-list.is-center {
   line-height: 50px;
+/*font-size: 16px;*/
 }
 #nav .menus_items .menus_item .menus_item_child li {
   list-style: none;
@@ -540,6 +570,11 @@ hr:before {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+#page-header.nav-fixed #nav a:hover,
+#page-header.nav-fixed #nav #site-name:hover,
+#page-header.nav-fixed #nav #toggle-menu:hover {
+  color: #d9534f;
 }
 #nav .site-page:not(.child):after {
   color: #da6d69;
@@ -562,6 +597,11 @@ hr:before {
 [data-theme='dark'] #sidebar #sidebar-menus .menus_items {
   padding: 0 0.5rem 2rem;
   line-height: 30px;
+}
+[data-theme='dark'] #page-header.nav-fixed #nav a:hover,
+#page-header.nav-fixed #nav #site-name:hover,
+#page-header.nav-fixed #nav #toggle-menu:hover {
+  color: #d9534f;
 }
 #recent-posts>.recent-post-item,
 .layout_page>div:first-child:not(.recent-posts),
@@ -1155,4 +1195,35 @@ h5.hours_played {
 }
 [data-theme='dark'] #waifu-tool .icon-bilibili:before {
   color: #5b6c7d;
+}
+/***********
+  说说页面
+  需先清理缓存clean再运行server
+************/
+#artitalk_main p.shuoshuo_time {
+  margin-top: 10px;
+  border-top: 1px dashed #9d9090;
+  padding-top: 5px;
+  font-size: 12px;
+}
+[data-theme='dark'] #artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+  background: #333030;
+  color: #e3dede;
+}
+[data-theme='dark'] #artitalk_main .cbp_tmtimeline>li .cbp_tmlabel {
+  background: #333030;
+  color: #e3dede;
+}
+[data-theme='dark'] #artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+  border-right-color: #333030;
+}
+[data-theme='dark'] #artitalk_main .cbp_tmtimeline>li .cbp_tmlabel:after {
+  border-right-color: #333030;
+}
+[data-theme='dark'] #artitalk_main .at_button {
+  background: #333030;
+  color: #f5f5f5;
+}
+[data-theme='dark'] #artitalk_main path {
+  fill: #e3dede;
 }
