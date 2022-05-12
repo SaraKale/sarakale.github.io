@@ -3,11 +3,11 @@
   <title>SaraKale&#39;s blog</title>
   
   
-  <link href="https://sarakale.netlify.com/blog/atom.xml" rel="self"/>
+  <link href="https://sarakale.netlify.app/blog/atom.xml" rel="self"/>
   
-  <link href="https://sarakale.netlify.com/blog/"/>
-  <updated>2022-05-08T08:34:20.011Z</updated>
-  <id>https://sarakale.netlify.com/blog/</id>
+  <link href="https://sarakale.netlify.app/blog/"/>
+  <updated>2022-05-12T09:53:22.382Z</updated>
+  <id>https://sarakale.netlify.app/blog/</id>
   
   <author>
     <name>SaraKale</name>
@@ -17,42 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>用Electron将web项目封装成exe程序</title>
-    <link href="https://sarakale.netlify.com/blog/posts/52627.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/52627.html</id>
-    <published>2022-05-08T08:11:29.000Z</published>
-    <updated>2022-05-08T08:34:20.011Z</updated>
+    <title>gulp v4.0更新修改</title>
+    <link href="https://sarakale.netlify.app/blog/posts/4425.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/4425.html</id>
+    <published>2022-05-12T09:42:20.000Z</published>
+    <updated>2022-05-12T09:53:22.382Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>查资料的时候看到了关于web项目打包的关键词，于是乎我又忍不住职业病去搜索了一些东西……目前看来，<a href="https://www.electronjs.org/">Electron</a>、<a href="https://nwjs.io/">nw.js</a>（原node-webkit）、<a href="http://hex.youdao.com/zh-cn/downloads/index.html">Hex</a>这几个能给网页打包成exe桌面应用程序，<strong>nwjs</strong>和<strong>Electron</strong>基本差不多，Electron是推荐最多的，<strong>Hex</strong>看起来很古老了，居然是有道发起的，挺厉害。思考了下，还是选择了<strong>Electron</strong>，这个我也是从来没体验过，正好趁此机会来试试！走起！<br>以前也搜过如何把html&#x2F;css&#x2F;js打包成单个exe，当时技术有限也没能做到，主要是为了把自己做的资料库打包然后分享给小伙伴……因为直接能点击打开，多方便！搜了一圈大多数用C++什么的，苦于自己不会编程就放弃了……现在既然看到了，就来试试吧！</p><h1 id="Electron是什么？"><a href="#Electron是什么？" class="headerlink" title="Electron是什么？"></a>Electron是什么？</h1><p><a href="https://www.electronjs.org/">Electron</a>是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。嵌入Chromium和Node.js到环境中，可以创建Windows、macOS和Linux的exe应用程序。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul><li><a href="https://nodejs.org/en/download/">Node.js</a> 最新版</li><li>完整的web项目</li><li>做好的ICO图标文件</li></ul><p>Nodejs设置啥的早弄过就不写了，直接走下一步～</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装Electron"><a href="#安装Electron" class="headerlink" title="安装Electron"></a>安装Electron</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure><h2 id="安装打包工具"><a href="#安装打包工具" class="headerlink" title="安装打包工具"></a>安装打包工具</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron-packager -g</span><br></pre></td></tr></table></figure><h2 id="下载官方范例"><a href="#下载官方范例" class="headerlink" title="下载官方范例"></a>下载官方范例</h2><p>可以下载官方的案例来练习：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 克隆示例项目的仓库</span><br><span class="line">git clone https://github.com/electron/electron-quick-start</span><br><span class="line">// 进入项目</span><br><span class="line">cd electron-quick-start</span><br><span class="line">// 安装依赖</span><br><span class="line">npm install</span><br><span class="line">// 运行</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure><p>修改下 <code>main.js</code> 和 <code>package.json</code> 里面的设置<br>在项目 <code>index.html</code> 的 <code>&lt;body&gt;&lt;/body&gt;</code> 之间添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./renderer.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>输入npm start看看效果，确保能运行</p><h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">electron-packager &lt;sourcedir&gt; &lt;appname&gt; --platform=&lt;platform&gt; --arch=&lt;arch&gt; [optional flags...]</span><br></pre></td></tr></table></figure><p><strong>参数：</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">sourcedir</td><td>应用程序源的基本目录</td></tr><tr><td align="left">appname</td><td>应用程序的名称</td></tr><tr><td align="left">version</td><td>打印Electron Packager和Node的版本，以及目标平台和arch，用于错误报告，并立即退出</td></tr></tbody></table><p><strong>所有平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">all</td><td>等效于–platform&#x3D;all –arch&#x3D;all</td></tr><tr><td align="left">app-copyright</td><td>应用程序版权发行</td></tr><tr><td align="left">app-version</td><td>应用设置的应用版本发布版本</td></tr><tr><td align="left">arch</td><td>架构选择，可选值: ia32, x64, armv7l, arm64, mips64el, universal(通用，可用逗号分隔)<br />Windows（用于x86、x86_64和arm64体系结构）win32<br />macOS&#x2F;Mac App Store（用于x86_64，arm64和通用架构）darwinmas<br />Linux（适用于x86、x86_64、armv7l、arm64和mips64el架构）</td></tr><tr><td align="left">asar</td><td>将应用程序中的源代码打包到程序中。pass——asar使用默认配置，配置属性–asar.unpackDir&#x3D;sub_dir<br />支持的属性包括:<br />- ordering: 用于文件打包的排序文件的路径<br />- unpack: 将文件解包到应用程序<br />- unpackDir: 将目录解包到应用程序<br /></td></tr><tr><td align="left">build-version</td><td>应用程序生成版本</td></tr><tr><td align="left">download</td><td>传递给@electron&#x2F;get的子选项列表。它们通过点符号指定, 例：–download.cacheRoot&#x3D;&#x2F;tmp&#x2F;cache<br />支持属性:<br />- cacheRoot: 缓存的Electron下载目录<br />- mirrorOptions: 下载备选URL选项<br />- rejectUnauthorized: 下载时是否要求SSL证书有效，默认为true, 使用–no-download 拒绝检查</td></tr><tr><td align="left">electron-version</td><td>正在打包的电子版本</td></tr><tr><td align="left">electron-zip-dir</td><td>包含Electron ZIP文件的目录的本地路径</td></tr><tr><td align="left">executable-name</td><td>可执行文件的名称，无文件扩展名。默认为appname</td></tr><tr><td align="left">extra-resource</td><td>要复制到应用程序资源目录的文件</td></tr><tr><td align="left">icon</td><td>应用程序图标文件的本地路径</td></tr><tr><td align="left">ignore</td><td>不要打包某个文件夹。如：–ignore&#x3D;node_modules 可设置–no-prune</td></tr><tr><td align="left">no-deref-symlinks</td><td>确保应用程序源中没有取消对符号链接的引用</td></tr><tr><td align="left">no-junk</td><td>不要忽略打包应用程序中的系统垃圾文件</td></tr><tr><td align="left">no-prune</td><td>不要删除打包应用程序中的devDependencies</td></tr><tr><td align="left">out</td><td>应用程序输出目录，默认为当前目录</td></tr><tr><td align="left">overwrite</td><td>如果平台的输出目录已经存在，则替换它，而不是跳过它</td></tr><tr><td align="left">platform</td><td>要构建哪个平台的应用（Windows&#x2F;Mac&#x2F;Linux）可选值: darwin, linux, mas, win32 (如果有多个，则以逗号分隔)</td></tr><tr><td align="left">prebuilt-asar</td><td>预构建asar文件的路径（asar, ignore, no-prune, 或no-deref-symlinks）</td></tr><tr><td align="left">quiet</td><td>不要打印信息或警告消息</td></tr><tr><td align="left">tmpdir</td><td>临时目录。默认为系统临时目录，使用–no tmpdir禁用使用临时目录。</td></tr></tbody></table><p><strong>仅限win&#x2F;mas平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">app-bundle-id</td><td>要在应用程序plist中使用的绑定标识符</td></tr><tr><td align="left">app-category-type</td><td>应用程序类别类型 <br />例如 <code>app-category-type=public.app-category.developer-tools</code> 将应用程序类别设置为“开发者工具”。 <br /></td></tr><tr><td align="left">darwin-dark-mode-support</td><td>在打包的应用程序中强制支持Mojave&#x2F;10.14暗模式</td></tr><tr><td align="left">extend-info</td><td>a plist file to merge into the app plist</td></tr><tr><td align="left">helper-bundle-id</td><td>要合并到应用程序plist的plist文件</td></tr><tr><td align="left">osx-sign</td><td>（仅限macOS平台）是否签署macOS应用程序包。<br />可使用–osx-sign自行签名以使用默认配置, 或使用其他配置<br />例：–osx-sign.identity&#x3D;”My Name”<br />支持的属性包括:<br />- identity: 应包含运行“codesign”时要使用的标识&#96;<br />- entitlements: 签名时使用的授权路径<br />- entitlements-inherit: “子女”权利的路径<br /></td></tr><tr><td align="left">osx-notarize</td><td>（仅限macOS平台，需要–osx签名）是否对macOS应用进行公证包装。<br /> 例：–osx-notarize.appleId&#x3D;”<a href="mailto:&#x66;&#111;&#111;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#111;&#109;">&#x66;&#111;&#111;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#111;&#109;</a>“<br />支持属性包括:<br />- appleId: 包含你的apple ID用户名&#x2F;电子邮件<br />- appleIdPassword: 包含提供的apple ID的密码<br />- appleApiKey: 包含应用商店连接API密钥<br />- appleApiIssuer: 包含API密钥的颁发者<br /></td></tr><tr><td align="left">protocol</td><td>URL协议方案，将应用程序注册如下：<br />例：<code>--protocol=myapp</code> 将注册要打开的应用程序<br />URLs：<code>myapp://path</code> 此参数需要 <code>--protocol-name</code><br /></td></tr><tr><td align="left">protocol-name</td><td>通过–protocol指定的URL协议方案的描述性名称&#96;</td></tr><tr><td align="left">usage-description</td><td>关于应用程序如何使用某些macOS功能的可读描述。<br />支持列表：<br />- Camera <br />- Microphone <br /></td></tr></tbody></table><p><strong>仅限win32目标平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">win32metadata</td><td>用于设置嵌入到中的应用程序元数据<br />例：–win32metadata.CompanyName&#x3D;”Company Inc.”<br />或 –win32metadata.ProductName&#x3D;”Product”<br />支持属性:<br />- CompanyName (默认值: package.json中的名字)<br />- FileDescription (默认值: appname)<br />- OriginalFilename (默认值: renamed exe)<br />- ProductName (默认值: appname)<br />- InternalName (默认值: appname)<br />- requested-execution-level (user, asInvoker, or requireAdministrator)<br />- application-manifest</td></tr></tbody></table><p>范例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">electron-packager mysite --platform=win32 --arch=x64 --out outsite --icon=icon.ico --app-version=0.0.1 --overwrite --ignore=node_modules </span><br></pre></td></tr></table></figure><p>这里遇到个坑：<br>出现错误提示：connect ECONNREFUSED 127.0.0.1:443<br>百度了下，要设置个环境变量：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：ELECTRON_MIRROR：</span><br><span class="line">变量值：https://cdn.npm.taobao.org/dist/electron/</span><br></pre></td></tr></table></figure><p>或者重置registry缓存，有可能也是端口被占用，关闭正在占用的程序，或者重启电脑。</p><h1 id="最终打包"><a href="#最终打包" class="headerlink" title="最终打包"></a>最终打包</h1><p>ico图标最大尺寸是256x256，可以用<a href="http://greenfishsoftware.org/gfie.php#apage">Greenfish Icon Editor</a>来绘制图标，也可以百度搜索在线转换ico的网站，直接用制作好的图片转换即可。</p><p>刚才通过electron-packager输出打包后，会在目录看到已经生成.exe文件，但是还有很多文件，我们需要再次打包整合成单个exe，这时候可以用到<a href="https://jrsoftware.org/isdl.php">Inno Setup</a>或<a href="https://enigmaprotector.com/cn/downloads.html">Enigma Virtual Box</a>来进行最终打包。</p><p>我使用的是Enigma Virtual Box，直接封包完毕。原项目大小103MB，最后封装大小440MB……呃……感觉体积也太大了吧！没办法，electron打包出来就这么大……<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/acfun_05.gif" style="height:80px"/><br>这图啥呢…就是为了方便大家下载后双击就能点开看！！以前我看一个资料本直接点开就能看，好酷的！占用还很小，大概估计是用C++写的吧…还不如直接打包网页版让用户点html看好了，反正每个人都有浏览器哈哈哈！<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu/alus_11.png" style="height:50px"/>纯是为了折磨自己而已啊！占这么大的空间没必要啊！愤怒删了！！哼！</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>electron最后封包会遇到错误提示，感觉npm源也不稳定啊，下次可以考虑用nw.js试试。然后我搜到有一个新项目<a href="https://tauri.studio/">tauri</a>说是可以创建体积更小的桌面程序，替代electron的产物，这看来很有前景啊，如果发展不错未来或许真的可以替代electron，那就太好了！不过语言是Rust，还是有点门槛的，以后再说吧～<br>然后又恰巧搜到了一个项目：<a href="https://www.jianshu.com/p/c830b471dc82">Nativefier——快速将网站打包成桌面程序</a> 这个看起来不错的样子，不过感觉是将在线网站封包了下，断网了就不能访问了，这个算是另一种快捷方式……<br>网站打包exe之路任重道远啊，等以后大佬写个工具革新！现阶段还是洗洗睡吧～<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu/alus_15.png" style="height:50px"/></p>]]></content>
-    
-    
-    <summary type="html">总有些时候需要把网页打包……</summary>
-    
-    
-    
-    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
-    
-    
-    <category term="网站" scheme="https://sarakale.netlify.com/blog/tags/%E7%BD%91%E7%AB%99/"/>
-    
-    <category term="web" scheme="https://sarakale.netlify.com/blog/tags/web/"/>
-    
-    <category term="Electron" scheme="https://sarakale.netlify.com/blog/tags/Electron/"/>
-    
-    <category term="exe" scheme="https://sarakale.netlify.com/blog/tags/exe/"/>
-    
-    <category term="封装" scheme="https://sarakale.netlify.com/blog/tags/%E5%B0%81%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>本站的备份镜像站点</title>
-    <link href="https://sarakale.netlify.com/blog/posts/4325.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/4325.html</id>
-    <published>2022-05-07T05:01:06.000Z</published>
-    <updated>2022-05-07T07:03:29.392Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>好像没写个置顶，我都忘了！真是失策！！现在写个置顶给大家通知下～！！<br>本站的仓库是存在github那边的，不过国内用户访问较慢，我后来去netlify做了镜像，大家以后可以收藏这个站点噢！基本上是同步的～gitee是国内较快的节点，就是同步慢点，喜欢哪个节点就用哪个都行！</p><div class="note info no-icon flat"><p>镜像站1（推荐）：<a href="https://sarakale.netlify.com/blog">https://sarakale.netlify.com/blog</a><br>镜像站1（国内节点）：<a href="https://sarakale.gitee.io/blog">https://sarakale.gitee.io/blog</a><br>主站（较慢）：<a href="https://sarakale.github.io/blog">https://sarakale.github.io/blog</a></p></div><p>就这几个站点啦！大家可以更换下收藏夹～～麻烦大家了！有什么问题也可在评论下留言！我看到会回复的！</p><p>另外评论系统有时候会抽风，不要慌，等待服务器后台修复即可，我会尽快修复的！或者过一段时间再来看看～</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>gulp更新到4.0.2变更了语法，只需要把最后执行的代码 <code>gulp.parallel</code> 改成 <code>gulp.series</code> 即可。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//v3版本执行语法</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;default&#x27;</span>, gulp.<span class="title function_">parallel</span>(<span class="string">&#x27;compress&#x27;</span>, <span class="string">&#x27;minify-css&#x27;</span>, <span class="string">&#x27;minify-html&#x27;</span>, <span class="string">&#x27;minify-images&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//gulp 4.0.2新语法修改</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;default&#x27;</span>, gulp.<span class="title function_">series</span>(<span class="string">&#x27;compress&#x27;</span>, <span class="string">&#x27;minify-css&#x27;</span>, <span class="string">&#x27;minify-html&#x27;</span>))</span><br></pre></td></tr></table></figure><p>完整代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">&#x27;gulp&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> cleanCSS = <span class="built_in">require</span>(<span class="string">&#x27;gulp-clean-css&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> htmlmin = <span class="built_in">require</span>(<span class="string">&#x27;gulp-html-minifier-terser&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> htmlclean = <span class="built_in">require</span>(<span class="string">&#x27;gulp-htmlclean&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> imagemin = <span class="title function_">import</span>(<span class="string">&#x27;gulp-imagemin&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// babel(如果不是使用bebel,把下面两行注释掉)</span></span><br><span class="line"><span class="keyword">const</span> uglify = <span class="built_in">require</span>(<span class="string">&#x27;gulp-uglify&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> babel = <span class="built_in">require</span>(<span class="string">&#x27;gulp-babel&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩js</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;compress&#x27;</span>, <span class="function">() =&gt;</span></span><br><span class="line">  gulp.<span class="title function_">src</span>([<span class="string">&#x27;./public/**/*.js&#x27;</span>, <span class="string">&#x27;!./public/**/*.min.js&#x27;</span>])</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">babel</span>(&#123;</span><br><span class="line">      <span class="attr">presets</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">uglify</span>().<span class="title function_">on</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;./public&#x27;</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// minify js - gulp-tester (如果使用 gulp-tester,把下面前面的//去掉)</span></span><br><span class="line"><span class="comment">// gulp.task(&#x27;compress&#x27;, () =&gt;</span></span><br><span class="line"><span class="comment">//   gulp.src([&#x27;./public/**/*.js&#x27;, &#x27;!./public/**/*.min.js&#x27;])</span></span><br><span class="line"><span class="comment">//     .pipe(terser())</span></span><br><span class="line"><span class="comment">//     .pipe(gulp.dest(&#x27;./public&#x27;))</span></span><br><span class="line"><span class="comment">// )</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩css</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;minify-css&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.<span class="title function_">src</span>(<span class="string">&#x27;./public/**/*.css&#x27;</span>)</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">cleanCSS</span>())</span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;./public&#x27;</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩public目录内 html</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;minify-html&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.<span class="title function_">src</span>(<span class="string">&#x27;./public/**/*.html&#x27;</span>)</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">htmlclean</span>())</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">htmlmin</span>(&#123;</span><br><span class="line">      <span class="attr">removeComments</span>: <span class="literal">true</span>, <span class="comment">// 清除 HTML 註释</span></span><br><span class="line">      <span class="attr">collapseWhitespace</span>: <span class="literal">true</span>, <span class="comment">// 压缩 HTML</span></span><br><span class="line">      <span class="attr">collapseBooleanAttributes</span>: <span class="literal">true</span>, <span class="comment">// 省略布尔属性的值 &lt;input checked=&quot;true&quot;/&gt; ==&gt; &lt;input /&gt;</span></span><br><span class="line">      <span class="attr">removeEmptyAttributes</span>: <span class="literal">true</span>, <span class="comment">// 删除所有空格作属性值 &lt;input id=&quot;&quot; /&gt; ==&gt; &lt;input /&gt;</span></span><br><span class="line">      <span class="attr">removeScriptTypeAttributes</span>: <span class="literal">true</span>, <span class="comment">// 删除 &lt;script&gt; 的 type=&quot;text/javascript&quot;</span></span><br><span class="line">      <span class="attr">removeStyleLinkTypeAttributes</span>: <span class="literal">true</span>, <span class="comment">// 删除 &lt;style&gt; 和 &lt;link&gt; 的 type=&quot;text/css&quot;</span></span><br><span class="line">      <span class="attr">minifyJS</span>: <span class="literal">true</span>, <span class="comment">// 压缩页面 JS</span></span><br><span class="line">      <span class="attr">minifyCSS</span>: <span class="literal">true</span>, <span class="comment">// 压缩页面 CSS</span></span><br><span class="line">      <span class="attr">minifyURLs</span>: <span class="literal">true</span> <span class="comment">// 压缩页面 URL</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="string">&#x27;./public&#x27;</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩 public/uploads 目录内图片，一般用图片软件压缩就行</span></span><br><span class="line"><span class="comment">//gulp.task(&#x27;minify-images&#x27;, async () =&gt; &#123;</span></span><br><span class="line"><span class="comment">//  gulp.src(&#x27;./public/img/**/*.*&#x27;)</span></span><br><span class="line"><span class="comment">//    .pipe(imagemin(&#123;</span></span><br><span class="line"><span class="comment">//      optimizationLevel: 5, // 类型：Number  预设：3  取值範围：0-7（优化等级）</span></span><br><span class="line"><span class="comment">//      progressive: true, // 类型：Boolean 预设：false 无失真压缩jpg图片</span></span><br><span class="line"><span class="comment">//      interlaced: false, // 类型：Boolean 预设：false 隔行扫描gif进行渲染</span></span><br><span class="line"><span class="comment">//      multipass: false // 类型：Boolean 预设：false 多次优化svg直到完全优化</span></span><br><span class="line"><span class="comment">//    &#125;))</span></span><br><span class="line"><span class="comment">//    .pipe(gulp.dest(&#x27;./public/img&#x27;))</span></span><br><span class="line"><span class="comment">//&#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// v3版本语法，执行gulp命令时执行的任务</span></span><br><span class="line"><span class="comment">//gulp.task(&#x27;default&#x27;, gulp.parallel(&#x27;compress&#x27;, &#x27;minify-css&#x27;, &#x27;minify-html&#x27;, &#x27;minify-images&#x27;))</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// gulp 4.0.2新语法</span></span><br><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;default&#x27;</span>, gulp.<span class="title function_">series</span>(<span class="string">&#x27;compress&#x27;</span>, <span class="string">&#x27;minify-css&#x27;</span>, <span class="string">&#x27;minify-html&#x27;</span>))</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -62,42 +33,97 @@
     
     
     
-    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
     
     
-    <category term="网站" scheme="https://sarakale.netlify.com/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    <category term="gulp" scheme="https://sarakale.netlify.app/blog/tags/gulp/"/>
+    
+    <category term="网站" scheme="https://sarakale.netlify.app/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Electron将web项目封装成exe程序</title>
+    <link href="https://sarakale.netlify.app/blog/posts/52627.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/52627.html</id>
+    <published>2022-05-08T08:11:29.000Z</published>
+    <updated>2022-05-08T08:34:20.011Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>查资料的时候看到了关于web项目打包的关键词，于是乎我又忍不住职业病去搜索了一些东西……目前看来，<a href="https://www.electronjs.org/">Electron</a>、<a href="https://nwjs.io/">nw.js</a>（原node-webkit）、<a href="http://hex.youdao.com/zh-cn/downloads/index.html">Hex</a>这几个能给网页打包成exe桌面应用程序，<strong>nwjs</strong>和<strong>Electron</strong>基本差不多，Electron是推荐最多的，<strong>Hex</strong>看起来很古老了，居然是有道发起的，挺厉害。思考了下，还是选择了<strong>Electron</strong>，这个我也是从来没体验过，正好趁此机会来试试！走起！<br>以前也搜过如何把html&#x2F;css&#x2F;js打包成单个exe，当时技术有限也没能做到，主要是为了把自己做的资料库打包然后分享给小伙伴……因为直接能点击打开，多方便！搜了一圈大多数用C++什么的，苦于自己不会编程就放弃了……现在既然看到了，就来试试吧！</p><h1 id="Electron是什么？"><a href="#Electron是什么？" class="headerlink" title="Electron是什么？"></a>Electron是什么？</h1><p><a href="https://www.electronjs.org/">Electron</a>是一个使用JavaScript、HTML和CSS构建桌面应用程序的框架。嵌入Chromium和Node.js到环境中，可以创建Windows、macOS和Linux的exe应用程序。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul><li><a href="https://nodejs.org/en/download/">Node.js</a> 最新版</li><li>完整的web项目</li><li>做好的ICO图标文件</li></ul><p>Nodejs设置啥的早弄过就不写了，直接走下一步～</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装Electron"><a href="#安装Electron" class="headerlink" title="安装Electron"></a>安装Electron</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron --save-dev</span><br></pre></td></tr></table></figure><h2 id="安装打包工具"><a href="#安装打包工具" class="headerlink" title="安装打包工具"></a>安装打包工具</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron-packager -g</span><br></pre></td></tr></table></figure><h2 id="下载官方范例"><a href="#下载官方范例" class="headerlink" title="下载官方范例"></a>下载官方范例</h2><p>可以下载官方的案例来练习：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 克隆示例项目的仓库</span><br><span class="line">git clone https://github.com/electron/electron-quick-start</span><br><span class="line">// 进入项目</span><br><span class="line">cd electron-quick-start</span><br><span class="line">// 安装依赖</span><br><span class="line">npm install</span><br><span class="line">// 运行</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure><p>修改下 <code>main.js</code> 和 <code>package.json</code> 里面的设置<br>在项目 <code>index.html</code> 的 <code>&lt;body&gt;&lt;/body&gt;</code> 之间添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./renderer.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>输入npm start看看效果，确保能运行</p><h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">electron-packager &lt;sourcedir&gt; &lt;appname&gt; --platform=&lt;platform&gt; --arch=&lt;arch&gt; [optional flags...]</span><br></pre></td></tr></table></figure><p><strong>参数：</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">sourcedir</td><td>应用程序源的基本目录</td></tr><tr><td align="left">appname</td><td>应用程序的名称</td></tr><tr><td align="left">version</td><td>打印Electron Packager和Node的版本，以及目标平台和arch，用于错误报告，并立即退出</td></tr></tbody></table><p><strong>所有平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">all</td><td>等效于–platform&#x3D;all –arch&#x3D;all</td></tr><tr><td align="left">app-copyright</td><td>应用程序版权发行</td></tr><tr><td align="left">app-version</td><td>应用设置的应用版本发布版本</td></tr><tr><td align="left">arch</td><td>架构选择，可选值: ia32, x64, armv7l, arm64, mips64el, universal(通用，可用逗号分隔)<br />Windows（用于x86、x86_64和arm64体系结构）win32<br />macOS&#x2F;Mac App Store（用于x86_64，arm64和通用架构）darwinmas<br />Linux（适用于x86、x86_64、armv7l、arm64和mips64el架构）</td></tr><tr><td align="left">asar</td><td>将应用程序中的源代码打包到程序中。pass——asar使用默认配置，配置属性–asar.unpackDir&#x3D;sub_dir<br />支持的属性包括:<br />- ordering: 用于文件打包的排序文件的路径<br />- unpack: 将文件解包到应用程序<br />- unpackDir: 将目录解包到应用程序<br /></td></tr><tr><td align="left">build-version</td><td>应用程序生成版本</td></tr><tr><td align="left">download</td><td>传递给@electron&#x2F;get的子选项列表。它们通过点符号指定, 例：–download.cacheRoot&#x3D;&#x2F;tmp&#x2F;cache<br />支持属性:<br />- cacheRoot: 缓存的Electron下载目录<br />- mirrorOptions: 下载备选URL选项<br />- rejectUnauthorized: 下载时是否要求SSL证书有效，默认为true, 使用–no-download 拒绝检查</td></tr><tr><td align="left">electron-version</td><td>正在打包的电子版本</td></tr><tr><td align="left">electron-zip-dir</td><td>包含Electron ZIP文件的目录的本地路径</td></tr><tr><td align="left">executable-name</td><td>可执行文件的名称，无文件扩展名。默认为appname</td></tr><tr><td align="left">extra-resource</td><td>要复制到应用程序资源目录的文件</td></tr><tr><td align="left">icon</td><td>应用程序图标文件的本地路径</td></tr><tr><td align="left">ignore</td><td>不要打包某个文件夹。如：–ignore&#x3D;node_modules 可设置–no-prune</td></tr><tr><td align="left">no-deref-symlinks</td><td>确保应用程序源中没有取消对符号链接的引用</td></tr><tr><td align="left">no-junk</td><td>不要忽略打包应用程序中的系统垃圾文件</td></tr><tr><td align="left">no-prune</td><td>不要删除打包应用程序中的devDependencies</td></tr><tr><td align="left">out</td><td>应用程序输出目录，默认为当前目录</td></tr><tr><td align="left">overwrite</td><td>如果平台的输出目录已经存在，则替换它，而不是跳过它</td></tr><tr><td align="left">platform</td><td>要构建哪个平台的应用（Windows&#x2F;Mac&#x2F;Linux）可选值: darwin, linux, mas, win32 (如果有多个，则以逗号分隔)</td></tr><tr><td align="left">prebuilt-asar</td><td>预构建asar文件的路径（asar, ignore, no-prune, 或no-deref-symlinks）</td></tr><tr><td align="left">quiet</td><td>不要打印信息或警告消息</td></tr><tr><td align="left">tmpdir</td><td>临时目录。默认为系统临时目录，使用–no tmpdir禁用使用临时目录。</td></tr></tbody></table><p><strong>仅限win&#x2F;mas平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">app-bundle-id</td><td>要在应用程序plist中使用的绑定标识符</td></tr><tr><td align="left">app-category-type</td><td>应用程序类别类型 <br />例如 <code>app-category-type=public.app-category.developer-tools</code> 将应用程序类别设置为“开发者工具”。 <br /></td></tr><tr><td align="left">darwin-dark-mode-support</td><td>在打包的应用程序中强制支持Mojave&#x2F;10.14暗模式</td></tr><tr><td align="left">extend-info</td><td>a plist file to merge into the app plist</td></tr><tr><td align="left">helper-bundle-id</td><td>要合并到应用程序plist的plist文件</td></tr><tr><td align="left">osx-sign</td><td>（仅限macOS平台）是否签署macOS应用程序包。<br />可使用–osx-sign自行签名以使用默认配置, 或使用其他配置<br />例：–osx-sign.identity&#x3D;”My Name”<br />支持的属性包括:<br />- identity: 应包含运行“codesign”时要使用的标识&#96;<br />- entitlements: 签名时使用的授权路径<br />- entitlements-inherit: “子女”权利的路径<br /></td></tr><tr><td align="left">osx-notarize</td><td>（仅限macOS平台，需要–osx签名）是否对macOS应用进行公证包装。<br /> 例：–osx-notarize.appleId&#x3D;”<a href="mailto:&#102;&#111;&#111;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#102;&#111;&#111;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a>“<br />支持属性包括:<br />- appleId: 包含你的apple ID用户名&#x2F;电子邮件<br />- appleIdPassword: 包含提供的apple ID的密码<br />- appleApiKey: 包含应用商店连接API密钥<br />- appleApiIssuer: 包含API密钥的颁发者<br /></td></tr><tr><td align="left">protocol</td><td>URL协议方案，将应用程序注册如下：<br />例：<code>--protocol=myapp</code> 将注册要打开的应用程序<br />URLs：<code>myapp://path</code> 此参数需要 <code>--protocol-name</code><br /></td></tr><tr><td align="left">protocol-name</td><td>通过–protocol指定的URL协议方案的描述性名称&#96;</td></tr><tr><td align="left">usage-description</td><td>关于应用程序如何使用某些macOS功能的可读描述。<br />支持列表：<br />- Camera <br />- Microphone <br /></td></tr></tbody></table><p><strong>仅限win32目标平台</strong></p><table><thead><tr><th align="left">命令</th><th>说明</th></tr></thead><tbody><tr><td align="left">win32metadata</td><td>用于设置嵌入到中的应用程序元数据<br />例：–win32metadata.CompanyName&#x3D;”Company Inc.”<br />或 –win32metadata.ProductName&#x3D;”Product”<br />支持属性:<br />- CompanyName (默认值: package.json中的名字)<br />- FileDescription (默认值: appname)<br />- OriginalFilename (默认值: renamed exe)<br />- ProductName (默认值: appname)<br />- InternalName (默认值: appname)<br />- requested-execution-level (user, asInvoker, or requireAdministrator)<br />- application-manifest</td></tr></tbody></table><p>范例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">electron-packager mysite --platform=win32 --arch=x64 --out outsite --icon=icon.ico --app-version=0.0.1 --overwrite --ignore=node_modules </span><br></pre></td></tr></table></figure><p>这里遇到个坑：<br>出现错误提示：connect ECONNREFUSED 127.0.0.1:443<br>百度了下，要设置个环境变量：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名：ELECTRON_MIRROR：</span><br><span class="line">变量值：https://cdn.npm.taobao.org/dist/electron/</span><br></pre></td></tr></table></figure><p>或者重置registry缓存，有可能也是端口被占用，关闭正在占用的程序，或者重启电脑。</p><h1 id="最终打包"><a href="#最终打包" class="headerlink" title="最终打包"></a>最终打包</h1><p>ico图标最大尺寸是256x256，可以用<a href="http://greenfishsoftware.org/gfie.php#apage">Greenfish Icon Editor</a>来绘制图标，也可以百度搜索在线转换ico的网站，直接用制作好的图片转换即可。</p><p>刚才通过electron-packager输出打包后，会在目录看到已经生成.exe文件，但是还有很多文件，我们需要再次打包整合成单个exe，这时候可以用到<a href="https://jrsoftware.org/isdl.php">Inno Setup</a>或<a href="https://enigmaprotector.com/cn/downloads.html">Enigma Virtual Box</a>来进行最终打包。</p><p>我使用的是Enigma Virtual Box，直接封包完毕。原项目大小103MB，最后封装大小440MB……呃……感觉体积也太大了吧！没办法，electron打包出来就这么大……<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/acfun_05.gif" style="height:80px"/><br>这图啥呢…就是为了方便大家下载后双击就能点开看！！以前我看一个资料本直接点开就能看，好酷的！占用还很小，大概估计是用C++写的吧…还不如直接打包网页版让用户点html看好了，反正每个人都有浏览器哈哈哈！<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu/alus_11.png" style="height:50px"/>纯是为了折磨自己而已啊！占这么大的空间没必要啊！愤怒删了！！哼！</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>electron最后封包会遇到错误提示，感觉npm源也不稳定啊，下次可以考虑用nw.js试试。然后我搜到有一个新项目<a href="https://tauri.studio/">tauri</a>说是可以创建体积更小的桌面程序，替代electron的产物，这看来很有前景啊，如果发展不错未来或许真的可以替代electron，那就太好了！不过语言是Rust，还是有点门槛的，以后再说吧～<br>然后又恰巧搜到了一个项目：<a href="https://www.jianshu.com/p/c830b471dc82">Nativefier——快速将网站打包成桌面程序</a> 这个看起来不错的样子，不过感觉是将在线网站封包了下，断网了就不能访问了，这个算是另一种快捷方式……<br>网站打包exe之路任重道远啊，等以后大佬写个工具革新！现阶段还是洗洗睡吧～<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/alu/alus_15.png" style="height:50px"/></p>]]></content>
+    
+    
+    <summary type="html">总有些时候需要把网页打包……</summary>
+    
+    
+    
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="网站" scheme="https://sarakale.netlify.app/blog/tags/%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="web" scheme="https://sarakale.netlify.app/blog/tags/web/"/>
+    
+    <category term="Electron" scheme="https://sarakale.netlify.app/blog/tags/Electron/"/>
+    
+    <category term="exe" scheme="https://sarakale.netlify.app/blog/tags/exe/"/>
+    
+    <category term="封装" scheme="https://sarakale.netlify.app/blog/tags/%E5%B0%81%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本站的备份镜像站点</title>
+    <link href="https://sarakale.netlify.app/blog/posts/4325.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/4325.html</id>
+    <published>2022-05-07T05:01:06.000Z</published>
+    <updated>2022-05-11T10:56:56.612Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>好像没写个置顶，我都忘了！真是失策！！现在写个置顶给大家通知下～！！<br>本站的仓库是存在github那边的，不过国内用户访问较慢，我后来去netlify做了镜像，大家以后可以收藏这个站点噢！基本上是同步的～gitee是国内较快的节点，就是同步慢点，喜欢哪个节点就用哪个都行！</p><div class="note info no-icon flat"><p>镜像站1（推荐）：<a href="https://sarakale.netlify.app/blog">https://sarakale.netlify.app/blog</a><br>镜像站1（国内节点）：<a href="https://sarakale.gitee.io/blog">https://sarakale.gitee.io/blog</a><br>主站（较慢）：<a href="https://sarakale.github.io/blog">https://sarakale.github.io/blog</a></p></div><p>就这几个站点啦！大家可以更换下收藏夹～～麻烦大家了！有什么问题也可在评论下留言！我看到会回复的！</p><p>另外评论系统有时候会抽风，不要慌，等待服务器后台修复即可，我会尽快修复的！或者过一段时间再来看看～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\blog\assets\js\APlayer.m</summary>
+      
+    
+    
+    
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="网站" scheme="https://sarakale.netlify.app/blog/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>给自己博客添加了说说页面</title>
-    <link href="https://sarakale.netlify.com/blog/posts/2686.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/2686.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/2686.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/2686.html</id>
     <published>2022-05-05T02:10:12.000Z</published>
-    <updated>2022-05-05T04:36:29.423Z</updated>
+    <updated>2022-05-10T12:10:12.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>我也来给自己博客添加说说页面啦！<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/acfun_07.gif" style="height:80px"/>最近看博友的网站都有说说的版面，每天分享小日常，我感觉蛮新鲜的，我自己也想弄个玩玩了～！我博客的主题也可以添加说说页面，有<a href="https://artitalk.js.org/">Artitalk</a>和<a href="https://hexoplusplus.js.org/">HexoPlusPlus Talk</a>两种选择，Artitalk很好看也在更新，HexoPlusPlus貌似停止更新了，那就只好选择Artitalk了！正好这个也是用LeanCloud作为后端管理，每次更新可以从LeanCloud后台更新，不用重新部署博客，这点也不错，就敲定这个了！</p><p>不知道页面名字叫啥好，叫“碎碎念”还是“说说”？不过创建完后有个问题…也不知道会不会有人来看_(:з)∠)_感觉没人有兴趣看吧233除了微博我也想找个地方吐吐槽，分享生活小日常，最近不咋顺心，也想向博友们倾诉，不如慢慢建立起来，以后和小伙伴互动多了也会热闹些！</p><p>我的说说页面地址在这里：<a href="/blog/shuoshuo/">碎碎念</a><br>欢迎大家一起来吐槽～～</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><p>我也来给自己博客添加说说页面啦！<img class="inline-img" src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/emoji/acfun_color/acfun_07.gif" style="height:80px"/>最近看博友的网站都有说说的版面，每天分享小日常，我感觉蛮新鲜的，我自己也想弄个玩玩了～！我博客的主题也可以添加说说页面，有<a href="https://artitalk.js.org/">Artitalk</a>和<a href="https://hexoplusplus.js.org/">HexoPlusPlus Talk</a>两种选择，Artitalk很好看也在更新，HexoPlusPlus貌似停止更新了，那就只好选择Artitalk了！正好这个也是用LeanCloud作为后端管理，每次更新可以从LeanCloud后台更新，不用重新部署博客，这点也不错，就敲定这个了！</p><p>不知道页面名字叫啥好，叫“碎碎念”还是“说说”？不过创建完后有个问题…也不知道会不会有人来看_(:з)∠)_感觉没人有兴趣看吧233除了微博我也想找个地方吐吐槽，分享生活小日常，最近不咋顺心，也想向博友们倾诉，不如慢慢建立起来，以后和小伙伴互动多了也会热闹些！</p><p>我的说说页面地址在这里：<a href="/blog/shuoshuo/">碎碎念</a><br>欢迎大家一起来吐槽～～</p><hr><p>发现又有个项目叫<a href="https://immmmm.com/bb-by-wechat-pro/">哔哔点啥</a>，但部署要在云平台上，嗯…设置有点麻烦的样子，感兴趣的话也可以试试这个。</p>]]></content>
     
     
     <summary type="html">碎碎念日常开始~</summary>
     
     
     
-    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
     
     
-    <category term="博客" scheme="https://sarakale.netlify.com/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="https://sarakale.netlify.app/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="hexo" scheme="https://sarakale.netlify.com/blog/tags/hexo/"/>
+    <category term="hexo" scheme="https://sarakale.netlify.app/blog/tags/hexo/"/>
     
-    <category term="说说" scheme="https://sarakale.netlify.com/blog/tags/%E8%AF%B4%E8%AF%B4/"/>
+    <category term="说说" scheme="https://sarakale.netlify.app/blog/tags/%E8%AF%B4%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>在线文档帮助生成/笔记软件使用一览</title>
-    <link href="https://sarakale.netlify.com/blog/posts/3761.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/3761.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/3761.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/3761.html</id>
     <published>2022-05-04T01:50:57.000Z</published>
     <updated>2022-05-05T04:35:13.037Z</updated>
     
@@ -108,25 +134,25 @@
     
     
     
-    <category term="工具资源" scheme="https://sarakale.netlify.com/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    <category term="工具资源" scheme="https://sarakale.netlify.app/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
     
     
-    <category term="在线文档" scheme="https://sarakale.netlify.com/blog/tags/%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3/"/>
+    <category term="在线文档" scheme="https://sarakale.netlify.app/blog/tags/%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3/"/>
     
-    <category term="帮助文档" scheme="https://sarakale.netlify.com/blog/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
+    <category term="帮助文档" scheme="https://sarakale.netlify.app/blog/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"/>
     
-    <category term="wiki" scheme="https://sarakale.netlify.com/blog/tags/wiki/"/>
+    <category term="wiki" scheme="https://sarakale.netlify.app/blog/tags/wiki/"/>
     
-    <category term="笔记" scheme="https://sarakale.netlify.com/blog/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://sarakale.netlify.app/blog/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="知识管理" scheme="https://sarakale.netlify.com/blog/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/"/>
+    <category term="知识管理" scheme="https://sarakale.netlify.app/blog/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>OCR识别软件列表</title>
-    <link href="https://sarakale.netlify.com/blog/posts/27650.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/27650.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/27650.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/27650.html</id>
     <published>2022-05-03T04:06:58.000Z</published>
     <updated>2022-05-05T06:08:34.491Z</updated>
     
@@ -137,19 +163,19 @@
     
     
     
-    <category term="工具资源" scheme="https://sarakale.netlify.com/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    <category term="工具资源" scheme="https://sarakale.netlify.app/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
     
     
-    <category term="OCR" scheme="https://sarakale.netlify.com/blog/tags/OCR/"/>
+    <category term="OCR" scheme="https://sarakale.netlify.app/blog/tags/OCR/"/>
     
-    <category term="软件" scheme="https://sarakale.netlify.com/blog/tags/%E8%BD%AF%E4%BB%B6/"/>
+    <category term="软件" scheme="https://sarakale.netlify.app/blog/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>【仙剑合剪】流光记丨大年初二，我把仙剑CP全部拆了</title>
-    <link href="https://sarakale.netlify.com/blog/posts/53405.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/53405.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/53405.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/53405.html</id>
     <published>2022-02-02T02:10:00.000Z</published>
     <updated>2022-02-02T02:37:00.000Z</updated>
     
@@ -163,25 +189,25 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
+    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
-    <category term="拉郎" scheme="https://sarakale.netlify.com/blog/tags/%E6%8B%89%E9%83%8E/"/>
+    <category term="拉郎" scheme="https://sarakale.netlify.app/blog/tags/%E6%8B%89%E9%83%8E/"/>
     
   </entry>
   
   <entry>
     <title>重装系统之软件清单备忘</title>
-    <link href="https://sarakale.netlify.com/blog/posts/20832.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/20832.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/20832.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/20832.html</id>
     <published>2022-01-10T10:41:30.000Z</published>
     <updated>2022-01-10T11:41:30.000Z</updated>
     
@@ -192,19 +218,19 @@
     
     
     
-    <category term="其他" scheme="https://sarakale.netlify.com/blog/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://sarakale.netlify.app/blog/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="软件" scheme="https://sarakale.netlify.com/blog/tags/%E8%BD%AF%E4%BB%B6/"/>
+    <category term="软件" scheme="https://sarakale.netlify.app/blog/tags/%E8%BD%AF%E4%BB%B6/"/>
     
-    <category term="Windows" scheme="https://sarakale.netlify.com/blog/tags/Windows/"/>
+    <category term="Windows" scheme="https://sarakale.netlify.app/blog/tags/Windows/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 6.0.0发布，支持Node.js 12+</title>
-    <link href="https://sarakale.netlify.com/blog/posts/34806.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/34806.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/34806.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/34806.html</id>
     <published>2022-01-03T10:03:09.000Z</published>
     <updated>2022-01-03T11:03:09.000Z</updated>
     
@@ -218,19 +244,19 @@
     
     
     
-    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
     
     
-    <category term="Hexo" scheme="https://sarakale.netlify.com/blog/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://sarakale.netlify.app/blog/tags/Hexo/"/>
     
-    <category term="Node.js" scheme="https://sarakale.netlify.com/blog/tags/Node-js/"/>
+    <category term="Node.js" scheme="https://sarakale.netlify.app/blog/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>2021年终总结</title>
-    <link href="https://sarakale.netlify.com/blog/posts/8569.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/8569.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/8569.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/8569.html</id>
     <published>2022-01-03T09:38:04.000Z</published>
     <updated>2022-01-03T07:40:48.991Z</updated>
     
@@ -244,17 +270,17 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="年终总结" scheme="https://sarakale.netlify.com/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <category term="年终总结" scheme="https://sarakale.netlify.app/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>【仙剑三外传/燎日X蕙卿】刻舟求爱丨赠·烟寒水月斜</title>
-    <link href="https://sarakale.netlify.com/blog/posts/32669.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/32669.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/32669.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/32669.html</id>
     <published>2021-12-25T12:30:05.000Z</published>
     <updated>2021-12-25T13:25:05.000Z</updated>
     
@@ -268,31 +294,31 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
-    <category term="仙剑三外传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E4%B8%89%E5%A4%96%E4%BC%A0/"/>
+    <category term="仙剑三外传" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E4%B8%89%E5%A4%96%E4%BC%A0/"/>
     
-    <category term="燎日" scheme="https://sarakale.netlify.com/blog/tags/%E7%87%8E%E6%97%A5/"/>
+    <category term="燎日" scheme="https://sarakale.netlify.app/blog/tags/%E7%87%8E%E6%97%A5/"/>
     
-    <category term="蕙卿" scheme="https://sarakale.netlify.com/blog/tags/%E8%95%99%E5%8D%BF/"/>
+    <category term="蕙卿" scheme="https://sarakale.netlify.app/blog/tags/%E8%95%99%E5%8D%BF/"/>
     
-    <category term="朱一龙" scheme="https://sarakale.netlify.com/blog/tags/%E6%9C%B1%E4%B8%80%E9%BE%99/"/>
+    <category term="朱一龙" scheme="https://sarakale.netlify.app/blog/tags/%E6%9C%B1%E4%B8%80%E9%BE%99/"/>
     
-    <category term="彭小苒" scheme="https://sarakale.netlify.com/blog/tags/%E5%BD%AD%E5%B0%8F%E8%8B%92/"/>
+    <category term="彭小苒" scheme="https://sarakale.netlify.app/blog/tags/%E5%BD%AD%E5%B0%8F%E8%8B%92/"/>
     
   </entry>
   
   <entry>
     <title>【沈晓海古装群像】还君旧山河</title>
-    <link href="https://sarakale.netlify.com/blog/posts/50123.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/50123.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/50123.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/50123.html</id>
     <published>2021-09-30T10:25:05.000Z</published>
     <updated>2021-09-30T12:25:05.000Z</updated>
     
@@ -306,23 +332,23 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
-    <category term="沈晓海" scheme="https://sarakale.netlify.com/blog/tags/%E6%B2%88%E6%99%93%E6%B5%B7/"/>
+    <category term="沈晓海" scheme="https://sarakale.netlify.app/blog/tags/%E6%B2%88%E6%99%93%E6%B5%B7/"/>
     
   </entry>
   
   <entry>
     <title>【仙五前传】盗将行·记姜承/姜世离</title>
-    <link href="https://sarakale.netlify.com/blog/posts/23807.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/23807.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/23807.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/23807.html</id>
     <published>2021-09-14T11:58:42.000Z</published>
     <updated>2021-09-14T12:00:42.000Z</updated>
     
@@ -336,23 +362,23 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="仙剑五前传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94%E5%89%8D%E4%BC%A0/"/>
+    <category term="仙剑五前传" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94%E5%89%8D%E4%BC%A0/"/>
     
-    <category term="姜承" scheme="https://sarakale.netlify.com/blog/tags/%E5%A7%9C%E6%89%BF/"/>
+    <category term="姜承" scheme="https://sarakale.netlify.app/blog/tags/%E5%A7%9C%E6%89%BF/"/>
     
-    <category term="姜世离" scheme="https://sarakale.netlify.com/blog/tags/%E5%A7%9C%E4%B8%96%E7%A6%BB/"/>
+    <category term="姜世离" scheme="https://sarakale.netlify.app/blog/tags/%E5%A7%9C%E4%B8%96%E7%A6%BB/"/>
     
   </entry>
   
   <entry>
     <title>【2021】个人介绍/简介</title>
-    <link href="https://sarakale.netlify.com/blog/posts/18807.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/18807.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/18807.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/18807.html</id>
     <published>2021-07-21T10:41:41.000Z</published>
     <updated>2021-07-21T12:41:41.000Z</updated>
     
@@ -366,19 +392,19 @@
     
     
     
-    <category term="其他" scheme="https://sarakale.netlify.com/blog/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://sarakale.netlify.app/blog/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="个人介绍" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/"/>
+    <category term="个人介绍" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/"/>
     
   </entry>
   
   <entry>
     <title>【古剑/恭芳】芳华如梦丨千载弦歌 芳华如梦丨赠：蕼茆兄</title>
-    <link href="https://sarakale.netlify.com/blog/posts/504.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/504.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/504.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/504.html</id>
     <published>2021-07-17T08:29:10.000Z</published>
     <updated>2021-07-17T09:29:10.000Z</updated>
     
@@ -392,31 +418,31 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
-    <category term="古剑奇谭" scheme="https://sarakale.netlify.com/blog/tags/%E5%8F%A4%E5%89%91%E5%A5%87%E8%B0%AD/"/>
+    <category term="古剑奇谭" scheme="https://sarakale.netlify.app/blog/tags/%E5%8F%A4%E5%89%91%E5%A5%87%E8%B0%AD/"/>
     
-    <category term="欧阳少恭" scheme="https://sarakale.netlify.com/blog/tags/%E6%AC%A7%E9%98%B3%E5%B0%91%E6%81%AD/"/>
+    <category term="欧阳少恭" scheme="https://sarakale.netlify.app/blog/tags/%E6%AC%A7%E9%98%B3%E5%B0%91%E6%81%AD/"/>
     
-    <category term="巽芳" scheme="https://sarakale.netlify.com/blog/tags/%E5%B7%BD%E8%8A%B3/"/>
+    <category term="巽芳" scheme="https://sarakale.netlify.app/blog/tags/%E5%B7%BD%E8%8A%B3/"/>
     
-    <category term="乔振宇" scheme="https://sarakale.netlify.com/blog/tags/%E4%B9%94%E6%8C%AF%E5%AE%87/"/>
+    <category term="乔振宇" scheme="https://sarakale.netlify.app/blog/tags/%E4%B9%94%E6%8C%AF%E5%AE%87/"/>
     
-    <category term="钟欣桐" scheme="https://sarakale.netlify.com/blog/tags/%E9%92%9F%E6%AC%A3%E6%A1%90/"/>
+    <category term="钟欣桐" scheme="https://sarakale.netlify.app/blog/tags/%E9%92%9F%E6%AC%A3%E6%A1%90/"/>
     
   </entry>
   
   <entry>
     <title>【仙五/凡柔】云柔心乡丨你是我心里的暖阳丨 赠：绣雨烟萝 越今朝的橙子</title>
-    <link href="https://sarakale.netlify.com/blog/posts/15904.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/15904.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/15904.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/15904.html</id>
     <published>2021-06-24T11:35:33.000Z</published>
     <updated>2021-06-24T11:40:33.000Z</updated>
     
@@ -430,33 +456,33 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="仙剑五" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94/"/>
+    <category term="仙剑五" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E4%BA%94/"/>
     
-    <category term="仙剑奇侠传五" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%94/"/>
+    <category term="仙剑奇侠传五" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0%E4%BA%94/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
-    <category term="姜云凡" scheme="https://sarakale.netlify.com/blog/tags/%E5%A7%9C%E4%BA%91%E5%87%A1/"/>
+    <category term="姜云凡" scheme="https://sarakale.netlify.app/blog/tags/%E5%A7%9C%E4%BA%91%E5%87%A1/"/>
     
-    <category term="唐雨柔" scheme="https://sarakale.netlify.com/blog/tags/%E5%94%90%E9%9B%A8%E6%9F%94/"/>
+    <category term="唐雨柔" scheme="https://sarakale.netlify.app/blog/tags/%E5%94%90%E9%9B%A8%E6%9F%94/"/>
     
-    <category term="郑业成" scheme="https://sarakale.netlify.com/blog/tags/%E9%83%91%E4%B8%9A%E6%88%90/"/>
+    <category term="郑业成" scheme="https://sarakale.netlify.app/blog/tags/%E9%83%91%E4%B8%9A%E6%88%90/"/>
     
-    <category term="王楚然" scheme="https://sarakale.netlify.com/blog/tags/%E7%8E%8B%E6%A5%9A%E7%84%B6/"/>
+    <category term="王楚然" scheme="https://sarakale.netlify.app/blog/tags/%E7%8E%8B%E6%A5%9A%E7%84%B6/"/>
     
   </entry>
   
   <entry>
     <title>评论系统更换为Waline</title>
-    <link href="https://sarakale.netlify.com/blog/posts/24482.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/24482.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/24482.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/24482.html</id>
     <published>2021-06-19T06:06:38.000Z</published>
     <updated>2021-06-19T10:00:00.000Z</updated>
     
@@ -467,21 +493,21 @@
     
     
     
-    <category term="前端与网站" scheme="https://sarakale.netlify.com/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
+    <category term="前端与网站" scheme="https://sarakale.netlify.app/blog/categories/%E5%89%8D%E7%AB%AF%E4%B8%8E%E7%BD%91%E7%AB%99/"/>
     
     
-    <category term="Valine" scheme="https://sarakale.netlify.com/blog/tags/Valine/"/>
+    <category term="Valine" scheme="https://sarakale.netlify.app/blog/tags/Valine/"/>
     
-    <category term="评论系统" scheme="https://sarakale.netlify.com/blog/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <category term="评论系统" scheme="https://sarakale.netlify.app/blog/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Waline" scheme="https://sarakale.netlify.com/blog/tags/Waline/"/>
+    <category term="Waline" scheme="https://sarakale.netlify.app/blog/tags/Waline/"/>
     
   </entry>
   
   <entry>
     <title>PR导入OGG/FLAG音频方法</title>
-    <link href="https://sarakale.netlify.com/blog/posts/42198.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/42198.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/42198.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/42198.html</id>
     <published>2021-06-10T11:19:58.000Z</published>
     <updated>2021-06-10T11:39:58.000Z</updated>
     
@@ -492,23 +518,23 @@
     
     
     
-    <category term="工具资源" scheme="https://sarakale.netlify.com/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    <category term="工具资源" scheme="https://sarakale.netlify.app/blog/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
     
     
-    <category term="PR" scheme="https://sarakale.netlify.com/blog/tags/PR/"/>
+    <category term="PR" scheme="https://sarakale.netlify.app/blog/tags/PR/"/>
     
-    <category term="premiere" scheme="https://sarakale.netlify.com/blog/tags/premiere/"/>
+    <category term="premiere" scheme="https://sarakale.netlify.app/blog/tags/premiere/"/>
     
-    <category term="OGG" scheme="https://sarakale.netlify.com/blog/tags/OGG/"/>
+    <category term="OGG" scheme="https://sarakale.netlify.app/blog/tags/OGG/"/>
     
-    <category term="FLAC" scheme="https://sarakale.netlify.com/blog/tags/FLAC/"/>
+    <category term="FLAC" scheme="https://sarakale.netlify.app/blog/tags/FLAC/"/>
     
   </entry>
   
   <entry>
     <title>时隔半年，我又回来了</title>
-    <link href="https://sarakale.netlify.com/blog/posts/46972.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/46972.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/46972.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/46972.html</id>
     <published>2021-05-29T06:15:25.000Z</published>
     <updated>2021-05-29T13:15:25.000Z</updated>
     
@@ -519,17 +545,17 @@
     
     
     
-    <category term="生活随记" scheme="https://sarakale.netlify.com/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"/>
+    <category term="生活随记" scheme="https://sarakale.netlify.app/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/"/>
     
     
-    <category term="博客" scheme="https://sarakale.netlify.com/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="https://sarakale.netlify.app/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>【仙剑真人群像合剪】孟婆八泪丨是念念不忘的岁月</title>
-    <link href="https://sarakale.netlify.com/blog/posts/41415.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/41415.html</id>
+    <link href="https://sarakale.netlify.app/blog/posts/41415.html"/>
+    <id>https://sarakale.netlify.app/blog/posts/41415.html</id>
     <published>2021-05-09T14:50:10.000Z</published>
     <updated>2021-05-09T14:50:10.000Z</updated>
     
@@ -540,37 +566,16 @@
     
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
     
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    <category term="个人作品" scheme="https://sarakale.netlify.app/blog/tags/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
     
-    <category term="视频剪辑" scheme="https://sarakale.netlify.com/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
+    <category term="视频剪辑" scheme="https://sarakale.netlify.app/blog/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
-    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.com/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
+    <category term="仙剑奇侠传" scheme="https://sarakale.netlify.app/blog/tags/%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0/"/>
     
-    <category term="真人" scheme="https://sarakale.netlify.com/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020年终总结</title>
-    <link href="https://sarakale.netlify.com/blog/posts/41083.html"/>
-    <id>https://sarakale.netlify.com/blog/posts/41083.html</id>
-    <published>2021-01-28T12:22:40.000Z</published>
-    <updated>2021-01-28T12:22:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/00.jpg" style="width:70%" /><span id="more"></span><p>迟到的年终总结……终极拖延症就是我了OTZ</p><p><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/2020-P1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/2020-P2.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/2020-P3.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/2020-P4.jpg"><br><img src="https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/2020-P5.jpg"></p><p><strong>视频作品：</strong><br>[2020-01-22]【仙剑混剪】缘尽世间丨友情篇丨此生有幸与你结为挚友（重制版）<br>[2020-09-02]【仙剑&#x2F;真人合剪】缘落|那独守轮回的人注定是我<br>[2020-10-23]【仙剑真人合剪丨姜承&#x2F;姜世离】承道埋魔丨这是英雄他生来的归乡<br>[2020-11-29] 不世芳华·古龙红颜录——怀旧武侠群像<br>[2020-12-20] 广播剧《不二之臣》番外①——离家出走的小金丝雀</p><p><strong>海报类：</strong><br>依旧是时间轴错乱，如有缺漏欢迎告知～<br>[2020-01-01] 现代言情广播剧《西城往事》第二期<br>[2020-01-30] 现代BG校园广播剧《她的小梨涡》第二期<br>[2020-02-06] 凤栖梧全一期<br>[2020-02-08] 暖萌治愈系有声漫画《全世界都在谈恋爱》第八期<br>[2020-02-14] 小僧与狐<br>[2020-02-14] 吹灭小山河<br>[2020-02-15] 《我只想做个安静的精神病人》第三期<br>[2020-02-20] 现代言情广播剧《不二之臣》第一期<br>[2020-02-21] 现代言情广播剧《我等你，很久了》第三期<br>[2020-02-29] 现代言情广播剧《西城往事》第三期（大结局）<br>[2020-03-01] 长篇BG声漫《姑娘不可以》第四-五集<br>[2020-03-03]【MMD】小灵儿的恋愛デコレート<br>[2020-03-06] 翻唱-知我<br>[2020-03-08]【仙剑MMD】如见君一面<br>[2020-03-13]【MMD】樱花樱花想见你<br>[2020-03-31] 长篇BG声漫《姑娘不可以》第六集<br>[2020-04-01] 有声漫画《道士嫁给狐》ED填翻-剧情歌《成亲莫要逃》<br>[2020-04-06] 广播剧《长恨》（上）+ ED《风景旧曾谙》<br>[2020-05-06] 秉烛照夜<br>[2020-05-09] 现代BG校园广播剧《她的小梨涡》第三期（上&amp;下）<br>[2020-05-15] 现代言情广播剧《不二之臣》第二期<br>[2020-05-17] 现代都市言情广播剧《第二十八年春》第一期 + 番外《十年踪迹十年心》<br>[2020-05-20] 暖萌治愈恋爱向有声漫画《学长男友萌萌哒》第五期<br>[2020-07-15] 现代改编BL剧《春潮带雨》第二期<br>[2020-08-11]【仙剑二十五周年快乐】你最最最重要~<br>[2020-08-17]【仙剑二十五周年】紫纱向·芳华旧<br>[2020-08-25] 现代都市言情广播剧《第二十八年春》第二期<br>[2020-09-25] 现代言情广播剧《不二之臣》第三期<br>[2020-10-27]【仙剑奇侠传四真人预告】万劫无期，何时来飞<br>[2020-10-28]【仙剑三】遇萤-尘缘不相误<br>[2020-11-07] 现代言情校园广播剧《她的小梨涡》大结局（上&amp;下）<br>[2020-12-06] 现代言情广播剧《我等你，很久了》第四期<br>[2020-12-13] 古风言情广播剧《水煮大神》第四期<br>[2020-12-15]【斗罗大陆动画 献祭】唐昊阿银x唐三小舞-不老梦<br>[2020-12-26] 天行九歌-我行我道</p><p><strong>其他类：</strong><br>[2020-01-01] B站新年祝福<br>[2020-07-07] 仙剑奇侠传五9周年庆祝活动</p>]]></content>
-    
-    
-    <summary type="html">&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SaraKale/blogimg/Article/2020/00.jpg&quot; style=&quot;width:70%&quot; /&gt;</summary>
-    
-    
-    
-    <category term="个人作品" scheme="https://sarakale.netlify.com/blog/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-    <category term="年终总结" scheme="https://sarakale.netlify.com/blog/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <category term="真人" scheme="https://sarakale.netlify.app/blog/tags/%E7%9C%9F%E4%BA%BA/"/>
     
   </entry>
   

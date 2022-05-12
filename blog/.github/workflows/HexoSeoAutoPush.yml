@@ -27,7 +27,7 @@ jobs:
 
       - name: 4. 自动提交
         run: |
-          curl -H 'Content-Type:text/plain' --data-binary @baidu.txt 'http://data.zz.baidu.com/urls?site=https://sarakale.netlify.com/blog&token=${{secrets.baidu_token}}'
+          curl -H 'Content-Type:text/plain' --data-binary @baidu.txt 'http://data.zz.baidu.com/urls?site=https://sarakale.netlify.app/blog&token=${{secrets.baidu_token}}'
           curl -X POST 'https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=${{secrets.bing_apikey}}' -H 'Content-Type: application/json' -H 'charset: utf-8' -d @bing.json
           
   
