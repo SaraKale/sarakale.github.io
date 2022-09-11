@@ -65,6 +65,15 @@
   </url>
   
   <url>
+    <loc>https://sarakale.netlify.app/blog/categories/index.html</loc>
+    
+    <lastmod>2022-08-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sarakale.netlify.app/blog/bangumis/index.html</loc>
     
     <lastmod>2022-08-12</lastmod>
@@ -75,15 +84,6 @@
   
   <url>
     <loc>https://sarakale.netlify.app/blog/links/index.html</loc>
-    
-    <lastmod>2022-08-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sarakale.netlify.app/blog/categories/index.html</loc>
     
     <lastmod>2022-08-12</lastmod>
     
