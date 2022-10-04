@@ -1,1 +1,106 @@
-"use strict";function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)||_unsupportedIterableToArray(t)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(t,e){var r;if(t)return"string"==typeof t?_arrayLikeToArray(t,e):"Map"===(r="Object"===(r=Object.prototype.toString.call(t).slice(8,-1))&&t.constructor?t.constructor.name:r)||"Set"===r?Array.from(t):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?_arrayLikeToArray(t,e):void 0}function _iterableToArray(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}function _arrayWithoutHoles(t){if(Array.isArray(t))return _arrayLikeToArray(t)}function _arrayLikeToArray(t,e){(null==e||e>t.length)&&(e=t.length);for(var r=0,n=new Array(e);r<e;r++)n[r]=t[r];return n}var radius=240,autoRotate=!0,rotateSpeed=-60,imgWidth=120,imgHeight=170;function carouselinit(t){setTimeout(i,1e3);var a=document.getElementById(t+"-drag-container"),e=(console.log(a),document.getElementById(t+"-spin-container")),r=e.getElementsByTagName("img"),n=e.getElementsByTagName("video"),o=[].concat(_toConsumableArray(r),_toConsumableArray(n)),r=(e.style.width=imgWidth+"px",e.style.height=imgHeight+"px",document.getElementById(t+"-carousel-ground"));function i(t){for(var e=0;e<o.length;e++)o[e].style.transform="rotateY("+e*(360/o.length)+"deg) translateZ("+radius+"px)",o[e].style.transition="transform 1s",o[e].style.transitionDelay=t||(o.length-e)/4+"s"}function l(t){(d=180<d?180:d)<0&&(d=0),t.style.transform="rotateX("+-d+"deg) rotateY("+c+"deg)"}function s(t){e.style.animationPlayState=t?"running":"paused"}r.style.width=3*radius+"px",r.style.height=3*radius+"px";var u=0,y=0,c=0,d=10;autoRotate&&(e.style.animation="".concat(0<rotateSpeed?"spin":"spinRevert"," ").concat(Math.abs(rotateSpeed),"s infinite linear")),document.getElementById(t).onpointerdown=function(t){clearInterval(a.timer);var r=(t=t||window.event).clientX,n=t.clientY;return this.onpointermove=function(t){var e=(t=t||window.event).clientX,t=t.clientY;c+=.1*(u=e-r),d+=.1*(y=t-n),l(a),r=e,n=t},!(this.onpointerup=function(t){a.timer=setInterval(function(){c+=.1*(u*=.95),d+=.1*(y*=.95),l(a),s(!1),Math.abs(u)<.5&&Math.abs(y)<.5&&(clearInterval(a.timer),s(!0))},17),this.onpointermove=this.onpointerup=null})},document.getElementById(t).onmousewheel=function(t){t=(t=t||window.event).wheelDelta/20||-t.detail;return radius+=t,i(1),!1}}
+// You can change global variables here:
+var radius = 240; // how big of the radius
+var autoRotate = true; // auto rotate or not
+var rotateSpeed = -60; // unit: seconds/360 degrees
+var imgWidth = 120; // width of images (unit: px)
+var imgHeight = 170; // height of images (unit: px)
+function carouselinit(carouselName){
+// ===================== start =======================
+// animation start after 1000 miliseconds
+setTimeout(init, 1000);
+
+var odrag = document.getElementById(carouselName+'-drag-container');
+console.log(odrag);
+var ospin = document.getElementById(carouselName+'-spin-container');
+var aImg = ospin.getElementsByTagName('img');
+var aVid = ospin.getElementsByTagName('video');
+var aEle = [...aImg, ...aVid]; // combine 2 arrays
+
+// Size of images
+ospin.style.width = imgWidth + "px";
+ospin.style.height = imgHeight + "px";
+
+// Size of ground - depend on radius
+var ground = document.getElementById(carouselName+'-carousel-ground');
+ground.style.width = radius * 3 + "px";
+ground.style.height = radius * 3 + "px";
+
+function init(delayTime) {
+  for (var i = 0; i < aEle.length; i++) {
+    aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
+    aEle[i].style.transition = "transform 1s";
+    aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
+  }
+}
+
+function applyTranform(obj) {
+  // Constrain the angle of camera (between 0 and 180)
+  if(tY > 180) tY = 180;
+  if(tY < 0) tY = 0;
+
+  // Apply the angle
+  obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + (tX) + "deg)";
+}
+
+function playSpin(yes) {
+  ospin.style.animationPlayState = (yes?'running':'paused');
+}
+
+var sX, sY, nX, nY, desX = 0,
+    desY = 0,
+    tX = 0,
+    tY = 10;
+
+// auto spin
+if (autoRotate) {
+  var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
+  ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+}
+
+// 监测鼠标拖动动作
+document.getElementById(carouselName).onpointerdown = function (e) {
+  clearInterval(odrag.timer);
+  e = e || window.event;
+  var sX = e.clientX,
+      sY = e.clientY;
+
+  this.onpointermove = function (e) {
+    e = e || window.event;
+    var nX = e.clientX,
+        nY = e.clientY;
+    desX = nX - sX;
+    desY = nY - sY;
+    tX += desX * 0.1;
+    tY += desY * 0.1;
+    applyTranform(odrag);
+    sX = nX;
+    sY = nY;
+  };
+
+  this.onpointerup = function (e) {
+    odrag.timer = setInterval(function () {
+      desX *= 0.95;
+      desY *= 0.95;
+      tX += desX * 0.1;
+      tY += desY * 0.1;
+      applyTranform(odrag);
+      playSpin(false);
+      if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+        clearInterval(odrag.timer);
+        playSpin(true);
+      }
+    }, 17);
+    this.onpointermove = this.onpointerup = null;
+  };
+
+  return false;
+};
+// 监测鼠标滚轮动作
+document.getElementById(carouselName).onmousewheel = function(e) {
+  e = e || window.event;
+  var d = e.wheelDelta / 20 || -e.detail;
+  radius += d;
+  init(1);
+  return false
+};
+}
