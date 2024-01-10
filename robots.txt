@@ -21,5 +21,6 @@ Allow: /blog/music/
 Allow: /blog/page/
 Allow: /blog/bangumis/
 Allow: /blog/steamgames/
+Allow: /blog/shuoshuo/
 Sitemap: https://sarakale.top/blog/sitemap.xml
 Sitemap: https://sarakale.top/blog/baidusitemap.xml

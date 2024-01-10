@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->     
+<html>
 
- <head>
-  <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width">
   <title>SaraKale's website</title>
   <meta name="keywords" content="sarakale,个人网站,仙剑,雪团,SaraKale,blog,视频作品" />
   <meta name="description" content="SaraKale's website是个人网站，兴趣使然创建的个人站，制作自己的作品及分享整理的资源。" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 站点验证 -->
   <meta name="baidu-site-verification" content="rVPHkpSQFc" /> <!-- baidu github -->
   <meta name="baidu-site-verification" content="code-OuYpQmBgMB" /><!-- baidu netlify -->
   <meta name="baidu-site-verification" content="code-IbRpbQ9kep" /><!-- baidu sarakale.top -->
@@ -18,633 +16,146 @@
   <meta name="google-site-verification" content="y_1ASfPVvUOZQjCLvBgXALRD4o8rEQuDIaCAG8BAe9g" /> <!-- google github -->
   <meta name="google-site-verification" content="TZhPK7x6WZ93nWJqxDOoBfaemALYZZuhcI8qCDZOM18" /> <!-- google netlify-->
   <meta name="google-site-verification" content="XlqFOzJCEPydt9NhQyuDV3SWHIAm__g7NPBGb4aRxhI" /> <!-- google sarakale.top -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="https://npm.elemecdn.com/sarakale-assets@v1/favicon.ico" />
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link rel="stylesheet" href="../css/normalize.css" />
-  <link href="../css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/templatemo-style.css" />
-  <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.min.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
-  <style type="text/css">
-	.btn-outline-primary {
-	  color: #486b7f;
-	  background-color: transparent;
-	  background-position: center 0;
-	  background-image: none;
-	  border-color: #486b7f;
-	  width: 250px;
-	  hidden: 100px;
-	  margin: 10px 40px;
-	  font-size:16px;
-	}
-	.btn-outline-primary:hover {
-	  color: #b85b53;
-	  background-color: #ffffff;
-	  border-color: #b85b53;
-	  -webkit-transition: all 0.3s ease-out;
-	}
-	.video-container {
-	  z-index: 1;
-	  position: relative;
-	  padding-bottom: 56.25%;
-	  margin: 0 auto;
-	  
-	  }
-	  .video-container iframe, 
-	  .video-container object, 
-	  .video-container embed {
-		z-index: 1;
-		position: absolute;
-		top: 0;
-		left: 7%;
-		width: 85%;
-		height: 85%;
-		box-shadow: 0px 0px 20px 2px #888888;
-	  }
-	  
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 150px;
-	}
-	@media (min-width: 368px) {
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 180px;
-		}
-	}
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-	@media (min-width: 411px) {
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 200px;
-		}
-	}
+  <!-- 百度统计 sarakale.top -->
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?e1073bf1f0995729ac4da7f87d852a73";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<!-- 百度统计 sarakale.netlify.app -->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?2fd114e9154348d52ddb61018971ad43";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<!-- 微软统计 sarakale.top -->
+	<script type="text/javascript">
+		(function(c,l,a,r,i,t,y){
+			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		})(window, document, "clarity", "script", "ki30ssmkoy");
+	</script>
+	<!-- 微软统计 sarakale.netlify.app -->
+	<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ki320aihuo");
+	</script>
+	<!-- Google统计 sarakale.top-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-75N7DWJZJX"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-	@media (min-width: 576px) {
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 300px;
-		}
-	}
+	  gtag('config', 'G-75N7DWJZJX');
+	</script>
+	<!-- Google统计 sarakale.netlify.app-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9SNLGLT2EF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-	@media (min-width: 768px) {
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 200px;
-		}
-	}
+	  gtag('config', 'G-9SNLGLT2EF');
+	</script>
+	
+</head>
 
-	@media (min-width: 1020px) {
-	.project-item img {
-		width: 100%;
-		display: block;
-		height: 150px;
-		}
-	}
-	.profile-role {font-size:15px;}
-	.title {
-    display: block;
-    line-height: 20px;
-    height: 38px;
-    margin-top: 8px;
-    overflow: hidden;
-	color: black;
-}
-	.title:hover {color:#b85b53;}
-	.gallery-section .project-item {
-    margin-bottom: 20px;
-}
-  </style>
- </head>
- 
- <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-  <div class="site-bg"></div>
-  <div class="site-bg-overlay"></div>
-  
-  <!-- TOP HEADER -->
-  <div class="top-header">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-6 col-sm-6 col-xs-12">
-      <p class="phone-info"><span class="white">SaraKale's website</span></p>
-     </div>
-     <div class="col-md-6 col-sm-6 col-xs-12">
-      <div class="social-icons">
-       <ul>
-        <li><a href="https://space.bilibili.com/4197121" class="fa-brands fa-bilibili" target="_blank"></a></li>
-        <li><a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" class="fa-brands fa-youtube" target="_blank"></a></li>
-        <li><a href="https://sarakale.lofter.com" class="fa-solid fa-receipt" target="_blank"></a></li>
-        <li><a href="https://steamcommunity.com/id/sarakale/" class="fa-brands fa-steam" target="_blank"></a></li>
-        <li><a href="https://music.163.com/#/user/home?id=1829955125" class="fa-solid fa-music" target="_blank"></a></li>
-        <li><a href="/blog" class="fa-brands fa-wordpress" target="_blank"></a></li>
-		<li><a href="https://www.weibo.com/3312158754/profile?topnav=1&amp;wvr=6" class="fa-brands fa-weibo" target="_blank"></a></li>
-       </ul>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div><!-- .top-header -->
-  
-  <div class="visible-xs visible-sm responsive-menu">
-   <a href="#" class="toggle-menu"><i class="fa-solid fa-bars"></i> Menu</a>
-   <div class="show-menu">
-    <ul class="main-menu">
-     <li><a class="show-1 active homebutton" href="#"><i class="fa-solid fa-home"></i>主页</a></li>
-     <li><a class="show-2 aboutbutton" href="#"><i class="fa-solid fa-heart"></i>最新作品</a></li>
-     <li><a class="show-3 projectbutton" href="#"><i class="fa-solid fa-th"></i>作品列表</a></li>
-     <li><a class="show-5 contactbutton" href="#"><i class="fa-solid fa-user"></i>关于我</a></li>
-    </ul>
-   </div>
-  </div>
-  
-  <div class="container" id="page-content">
-   <div class="row">
-   
-    <div class="col-md-9 col-sm-12 content-holder">
-     <div id="menu-container">
-      <div id="menu-1" class="homepage home-section text-center">
-       <div class="welcome-text">
-        <h2>Welcome to my website</h2>
-        <p>欢迎您来光顾我的小站，感谢您的支持与帮助～<br />
-		这个网站是我个人开的兴趣小站，没什么重要的文章，如果对您有帮助那是我的荣幸。<br />我喜欢钻研有趣的技术知识，目前沉迷视频剪辑制作当中，还在磨练，也欢迎您前来观看，请随意观看～<br />
-		<br />
-		可通过右侧菜单点击你感兴趣的按钮，我的最新作品也都在那里。<br /></p>
-        <br />
-			<p class="font-size:30px;"><b>最新作品：</b>
-			<a href="https://www.bilibili.com/video/BV1m54y1N7TG" target="_blank">【2023仙剑新年手书】春岁谣</a></p>
-			<hr />
-			<p>更多作品请点击“My blog”</p>
-			<br />
-				<a class="btn btn-outline-primary" href="/blog/works/" role="button">个人作品列表</a>
-				<a class="btn btn-outline-primary" href="https://space.bilibili.com/4197121" role="button">B站主页</a>
-				<a class="btn btn-outline-primary" href="http://sarakale.lofter.com/" role="button">LOFTER</a>
-				<a class="btn btn-outline-primary" href="/blog" role="button">My Blog</a>
-       </div>
-      </div>
-	  
-      <div id="menu-2" class="content about-section">
-       <div class="box-content">
-        <h3 class="widget-title">最新作品</h3>
-        <div class="profile-content">
-         <h5 class="profile-name">【2023仙剑新年手书】春岁谣</h5>
-         <span class="profile-role">发布时间：2023年1月22日</span>
-         <div class="video-container">
-			<iframe src="//player.bilibili.com/player.html?aid=864212985&bvid=BV1m54y1N7TG&cid=1003679116&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-         </div>
-         <span style="font-size:16px;font-weight:bold;">在线观看：</span><br />
-		 B站：<a href="https://www.bilibili.com/video/BV1m54y1N7TG">https://www.bilibili.com/video/BV1m54y1N7TG</a><br />
-		 youtube：<a href="https://youtu.be/3GdlnYPpVIk">https://youtu.be/3GdlnYPpVIk</a><br />
-         <br />
-		——STAFF——<br />
-		画手：<br />
-		一叽——阿奴、灵儿<br />
-		老狗不吃糖 ——李逍遥、林月如<br />
-		汪口乌——王小虎、李忆如<br />
-		铃铃——沈欺霜<br />
-		兔子——重楼、景天<br />
-		啊乜——双葵、白茉晴<br />
-		舟余——唐雪见、花楹、常纪南宫煌<br />
-		山海——南宫煌、温慧<br />
-		巫毒——思堂、星璇<br />
-		猫骨骨——云天河、慕容紫英、韩菱纱、柳梦璃<br />
-		九祈——怀朔、璇玑<br />
-		桜九时——夏侯瑾轩、瑕<br />
-		燕淮——姜承、欧阳倩<br />
-		柚木——姜云凡、一贫<br />
-		凰 ——唐雨柔、小蛮<br />
-		长平猴——龙幽<br />
-		木怂怂——越祈、越今朝<br />
-		初晴——明绣、王蓬絮<br />
-		果子狸——洛昭言、洛埋名<br />
-		斜斜——葛清霏、小嫒<br />
-		萝卜——月清疏、修吾<br />
-		小葵——桑游<br />
-		<br />
-		视频：雪团<br />
-		策划：巫毒<br />
-		<br />
-        </div>
-       </div>
-       <div class="row">
-        <div class="col-md-7 col-sm-7">
-         <div class="box-content">
-          <h3 class="widget-title">歌词摘录</h3>
-          <p>小蘸飞花半淌</p>
-          <p>荡开东风忙</p>
-          <p>寻故携友 恰归客来访</p>
-		  <p>燕里声唱 待芳菲而至再赴清欢年岁长</p>
-         </div>
-			<!--
-            <div class="row">
-                <div class="col-md-5 col-sm-5">
-                    <div class="box-content">
-                        <h3 class="widget-title">相关文章</h3>
-                        <div class="project-item">
-                            <a href="" target="_blank"><img src=""></a>
-                            <div class="project-hover">
-                                <h4>描述</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				-->
-        </div>
-       </div>
-      </div>
-	  
-      <div id="menu-3" class="content gallery-section">
-       <div class="box-content">
-        <h3 class="widget-title">主要作品展示</h3>
-        <div class="row">
-		
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1m54y1N7TG"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/32.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1m54y1N7TG" target="_blank" title="【2023仙剑新年手书】春岁谣" class="title">
-			【2023仙剑新年手书】春岁谣</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1gV4y1F7bW"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/31.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1gV4y1F7bW" target="_blank" title="【布袋戏】苍生为念，慈悲为怀" class="title">
-			【布袋戏】苍生为念，慈悲为怀</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1ht4y1w75r"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/30.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1ht4y1w75r" target="_blank" title="【非常君x冽红角】椒瓜椒‖愿喧嚣尘世把我们遗忘" class="title">
-			【非常君x冽红角】椒瓜椒‖愿喧嚣尘世把我们遗忘</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1zY4y1E7Ym"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/29.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1zY4y1E7Ym" target="_blank" title="【月无缺x梦丹青】月梦‖可知一生有你我都陪在你身边" class="title">
-			【月无缺x梦丹青】月梦‖可知一生有你我都陪在你身边</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1UP4y1N7h9"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/28.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1UP4y1N7h9" target="_blank" title="【仙剑合剪】流光记丨大年初二，我把仙剑CP全部拆了" class="title">
-			【仙剑合剪】流光记丨大年初二，我把仙剑CP全部拆了</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV13D4y1c7x4"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/27.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV13D4y1c7x4" target="_blank" title="【仙剑三外传/燎日X蕙卿】刻舟求爱丨赠·烟寒水月斜" class="title">
-			【仙剑三外传/燎日X蕙卿】刻舟求爱丨赠·烟寒水月斜</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1dL411W747"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/26.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1dL411W747" target="_blank" title="【沈晓海古装群像】还君旧山河" class="title">
-			【沈晓海古装群像】还君旧山河</a>
-          </div>
-		  </div>
-		  
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV12v411w7KD"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/25.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV12v411w7KD" target="_blank" title="【仙五前传】盗将行-记姜承/姜世离" class="title">
-			【仙五前传】盗将行-记姜承/姜世离</a>
-          </div>
-		  </div>
+<body>
 
-		  <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1Sb4y1k7Sk"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/24.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1Sb4y1k7Sk" target="_blank" title="【古剑/恭芳】芳华如梦丨千载弦歌 芳华如梦丨赠：蕼茆兄" class="title">【古剑/恭芳】芳华如梦丨千载弦歌 芳华如梦丨赠：蕼茆兄</a>
+  <main>
+    <div class="container">
+          <div class="header">
+            <img src="https://npm.elemecdn.com/sarakale-assets@v1/sarakale.jpg" alt="icon" class="icon">
           </div>
-		  </div>
-		  
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1864y197Jp"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/23.jpg" alt="" /></a>
-		   <a href="https://www.bilibili.com/video/BV1864y197Jp" target="_blank" title="【仙五/凡柔】云柔心乡丨你是我心里的暖阳丨 赠：绣雨烟萝 越今朝的橙子" class="title">【仙五/凡柔】云柔心乡丨你是我心里的暖阳丨 赠：绣雨烟萝 越今朝的橙子</a>
-          </div>
-		  </div>
-		  
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1kA411G7xY"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/22.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1kA411G7xY" target="_blank" title="【仙剑真人群像合剪】孟婆八泪丨是念念不忘的岁月" class="title">【仙剑真人群像合剪】孟婆八泪丨是念念不忘的岁月</a>
-          </div>
-		  </div>
-		  
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1eZ4y1G7Ux"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/21.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1eZ4y1G7Ux" target="_blank" title="【经典传唱】不世芳华·古龙红颜录——怀旧武侠群像" class="title">【经典传唱】不世芳华·古龙红颜录——怀旧武侠群像</a>
-          </div>
-		</div>		
-		
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV13i4y177Pd"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/20.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV13i4y177Pd" target="_blank" title="【仙剑五前传真人合剪丨姜承/姜世离】承道埋魔丨这是英雄他生来的归乡【6人联合制作】" class="title">【仙剑五前传真人合剪丨姜承/姜世离】承道埋魔丨这是英雄他生来的归乡【6人联合制作】</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1cf4y1X7of"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/19.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1cf4y1X7of" target="_blank" title="【仙剑/真人合剪】缘落｜那独守轮回的人注定是我" class="title">【仙剑/真人合剪】缘落｜那独守轮回的人注定是我</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av84567000"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/18.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV147411e7VD" target="_blank" title="【仙剑混剪】缘尽世间丨友情篇丨此生有幸与你结为挚友 [2019籼米影业第三届大赛]" class="title">【仙剑混剪】缘尽世间丨友情篇丨此生有幸与你结为挚友 [2019籼米影业第三届大赛]</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av74164008"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/17.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV12E41187M6" target="_blank" title="【AMV】奔跑的梦想【2019随意链接MAD大赛/未入围】" class="title">【AMV】奔跑的梦想【2019随意链接MAD大赛/未入围】</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av71118585"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/16.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV14E411d77j" target="_blank" title="【AMV/幻璃镜】浩气参天 | 青槐个人向" class="title">【AMV/幻璃镜】浩气参天 | 青槐个人向</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av64301195"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/15.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1E4411o7o4" target="_blank" title="【流星蝴蝶剑 | 陈楚河x陈意涵】星蝶 | 与你一马一剑驰骋川谷" class="title">【流星蝴蝶剑 | 陈楚河x陈意涵】星蝶 | 与你一马一剑驰骋川谷</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av61146258"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/14.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1zt411w7hB" target="_blank" title="【仙剑三x双葵】双葵的百合之旅 | 赠·瓶子 [沙雕GMV]" class="title">【仙剑三x双葵】双葵的百合之旅 | 赠·瓶子 [沙雕GMV]</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av58757790"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/13.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1it41157mV" target="_blank" title="【朱一龙x陈意涵】飞蝶 | 赠·玲珑小醋" class="title">【朱一龙x陈意涵】飞蝶 | 赠·玲珑小醋</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av56145483"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/12.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1D4411g7Jm" target="_blank" title="【刘亦菲x赵灵儿】甜蜜蜜 | 赠·天赋晓晓·生贺" class="title">【刘亦菲x赵灵儿】甜蜜蜜 | 赠·天赋晓晓·生贺</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av39311445"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover15.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1At411k7Vs" target="_blank" title="#再见2018# 个人作品年终总结【雪团】" class="title">#再见2018# 个人作品年终总结【雪团】</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av36765208"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/09.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1gt41197st" target="_blank" title="【仙剑历代群像】仙梦长留【仙剑二十三周年贺】[简体/繁體字幕]" class="title">【仙剑历代群像】仙梦长留【仙剑二十三周年贺】[简体/繁體字幕]</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av19324587"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover1.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1TW411n74F" target="_blank" title="【仙剑】伪-仙剑春晚（练习作品）" class="title">【仙剑】伪-仙剑春晚（练习作品）</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av16593036"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/08.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1dx411V7VR" target="_blank" title="【MAD】Forever Remember【CLANNAD动画十周年纪念】" class="title">【MAD】Forever Remember【CLANNAD动画十周年纪念】</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av12958671"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/07.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/av12958671" target="_blank" title="【月玲珑出品】月玲珑十周年作品回顾（2007-2017）感谢一路上有你！" class="title">【月玲珑出品】月玲珑十周年作品回顾（2007-2017）感谢一路上有你！</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av11426785"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/06.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1Lx411h7M5" target="_blank" title="【仙剑六二周年生贺】仙剑六群像同人视频《当时明月》" class="title">【仙剑六二周年生贺】仙剑六群像同人视频《当时明月》</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av54973901"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/05.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1H4411T7K5" target="_blank" title="【古剑奇谭二】夏夷则x阿阮同人视频《在水一方》" class="title">【古剑奇谭二】夏夷则x阿阮同人视频《在水一方》</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av7805288"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover10.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV15s411Y7t8" target="_blank" title="【云之凡】《涯羽霓裳》祝有涯x羽裳真人剪辑视频欣赏" class="title">【云之凡】《涯羽霓裳》祝有涯x羽裳真人剪辑视频欣赏</a>
-          </div>
-         </div>
-		 
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/av7673376"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover13.jpg" alt="" /></a>
-			<a href="https://www.bilibili.com/video/BV1es411a79o" target="_blank" title="【仙剑五】《幻草流光》——羽裳x祝有涯同人视频" class="title">【仙剑五】《幻草流光》——羽裳x祝有涯同人视频</a>
-		   <!--
-		     <div class="project-hover">
-            <h4>【仙剑五】《幻草流光》——羽裳x祝有涯同人视频</h4>
-           </div>
-		   -->
-          </div>
-         </div>
-        </div>
-		
-		<hr />
-		
-        <h3 class="widget-title">广播剧相关</h3>
-        <div class="row">
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV11u411r7kz/"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover18.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>现代言情广播剧《云泥》主题曲—怦怦</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://weibo.com/5112304086/L16W0zQce?type=comment"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover17.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>舒远婚礼联动剧场</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1434y1Y74m/"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover16.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>广播剧《不二之臣》番外①——离家出走的小金丝雀</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1n4411T7mA"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/04.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>《诡事书》第五折《壁上花》预告《萤诺》</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="http://www.bilibili.com/video/av2755773/"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover5.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>【月玲珑催音大队荣誉出品】催音大法《求你了！交音吧！》</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="http://music.163.com/#/djradio?id=4366007"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover6.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>【月玲珑出品】古风架空广播剧《桃花美人债》</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="http://www.ximalaya.com/1014895/album/16708/"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover7.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>青春校园改编广播剧《冰凝映雪》（2期+番外篇）</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/video/BV1Jt411i7hG"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover11.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>【月玲珑出品】高考特技《语数英讨债记》</h4>
-           </div>
-          </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="project-item">
-           <a href="https://www.bilibili.com/audio/au660093?type=3"><img src="https://npm.elemecdn.com/sarakale-assets@v1/work/cover12.jpg" alt="" /></a>
-           <div class="project-hover">
-            <h4>天涯明月刀OL同人歌《惊鸿》</h4>
-           </div>
-          </div>
-         </div>
-        </div>
-        <br />更多作品详见：
-        <a href="/blog/works/" target="_blank">链接</a>
-        <br />
-       </div>
-      </div>
-	  
-      <div id="menu-4" class="content contact-section">
-       <div class="row">
-        <div class="col-md-8 col-sm-8">
-         <div class="box-content">
-          <h3 class="widget-title">关于我</h3> 
-		  昵称：Sarakale<br />
-		  兴趣广泛，喜欢很多有趣的东西，涉足很多技术学问，技能特长什么的也都只是学会一点皮毛而已啦。大家才是最厉害的，一起互相学习才是最重要！<br />目前是逆转迷、CLANNAD迷、京阿尼粉等，动漫和游戏也偶尔会有沉迷的时候，就看喜爱程度了。<br />
+
+          <h1 class="center">SaraKale</h1>
+          <p class="update">“我是一只雪团子～滚来滚去～享受美好的世界中～</p>
+          <p class="center">
+		  兴趣广泛，喜欢很多有趣的东西，爱好动画、漫画、游戏、音乐、小说等等。<br />
+		  PSer丨MVer丨逆转裁判丨CLANNAD丨京阿尼 等<br />
 		  常在二次元流浪，浪迹在大大小小的世界里，在每个美好的领域中路过～<br />
 		  <br />
-		  如果想看我作品或者关注我都可以从下面地址寻找，关注啥的请随意了，我不是很在意……就请欣赏作品就可以了！<br />
-		  如果有问题可以到微博找我，或者到博客相关文章内留言，我看到会尽量回复的。<br />
-		  <br />
-		  B站（BiliBili）：<a href="https://space.bilibili.com/4197121">链接</a><br />
-		  A站（AcFun）：<a href="https://www.acfun.cn/u/1170628">链接</a><br />
-		  Youtube：<a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ">链接</a><br />
-		  LOFTER：<a href="https://sarakale.lofter.com/">链接</a><br />
-		  我的博客：<a href="/blog">链接</a><br />
-         </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-         <div class="box-content">
-          <img src="https://npm.elemecdn.com/sarakale-assets@v1/sarakale.jpg" />
-          <p>“我是一只雪团子～滚来滚去～享受美好的世界中～”</p>
-          <div class="about-social">
-           <ul>
-            <li><a href="https://space.bilibili.com/4197121" class="fa-brands fa-bilibili" target="_blank"></a></li>
-            <li><a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" class="fa-brands fa-youtube" target="_blank"></a></li>
-            <li><a href="https://sarakale.lofter.com" class="fa-solid fa-receipt" target="_blank"></a></li>
-            <li><a href="https://steamcommunity.com/id/sarakale/" class="fa-brands fa-steam" target="_blank"></a></li>
-            <li><a href="https://music.163.com/#/user/home?id=1829955125" class="fa-solid fa-music" target="_blank"></a></li>
-			<li><a href="https://www.weibo.com/3312158754/profile?topnav=1&amp;wvr=6" class="fa-brands fa-weibo" target="_blank"></a></li>
-			<li><a href="https://twitter.com/SaraKale9" class="fa-brands fa-twitter" target="_blank"></a></li>
-            <li><a href="/blog" class="fa-brands fa-wordpress" target="_blank"></a></li>
+		  如果想看我作品或者关注我都可以从下面地址寻找，关注请随意，就请欣赏作品就可以了！<br />
+		  如果有问题可以到微博找我，或者到博客相关文章内留言，我看到会尽量回复的。
+		  </p>
+		  
+            <ul class="sns-list center">
+              <li><a href="/blog/works/" class="Works" target="_blank">个人作品列表</a></li>
+              <li><a href="https://space.bilibili.com/4197121" class="bilibili" target="_blank">B站主页</a></li>
+              <li><a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" class="youtube" target="_blank">Youtube</a></li>
+              <li><a href="/blog" class="blog" target="_blank">My Blog</a></li>
+            </ul>
+			
+           <ul class="shejiao-icon center">
+            <li><a href="https://space.bilibili.com/4197121" class="fa-brands fa-bilibili" target="_blank" title="bilibili"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCw_cN6ERwP7KjjXYlkMVjvQ" class="fa-brands fa-youtube" target="_blank" title="youtube"></a></li>
+            <li><a href="https://sarakale.lofter.com" class="fa-solid fa-receipt" target="_blank" title="lofter"></a></li>
+            <li><a href="https://steamcommunity.com/id/sarakale/" class="fa-brands fa-steam" target="_blank" title="steam"></a></li>
+            <li><a href="https://music.163.com/#/user/home?id=1829955125" class="fa-solid fa-music" target="_blank" title="网易云"></a></li>
+			<li><a href="https://www.weibo.com/3312158754/profile?topnav=1&amp;wvr=6" class="fa-brands fa-weibo" target="_blank" title="微博"></a></li>
+			<li><a href="https://twitter.com/SaraKale9" class="fa-brands fa-twitter" target="_blank" title="twitter"></a></li>
+            <li><a href="/blog" class="fa-brands fa-wordpress" target="_blank" title="我的博客"> </a></li>
            </ul>
-          </div>
-         </div>
+			
+          <section class="two-column">
+            <div class="column">
+              <dl class="memo">
+                <dt>技能特长</dt>
+                <dd><strong>平面设计</strong>
+                主要使用Photoshop，偶然Illustrator作为辅助。</dd>
+                <dd><strong>视频剪辑</strong>
+                主要使用Premiere，AE偶尔做特效。</dd>
+
+                <dt>其他</dt>
+                <dd>前端只会HTML和CSS，其他的东西也只学了一点皮毛。</dd>
+
+                <dt>正在学习</dt>
+                <dd>目前正在学习Python中</dd>
+              </dl>
+            </div>
+            <div class="column">
+			<h2>人物名言</h2>
+              <p>一个小小的契机，就能让未来发生未知的改变。我希望我们接下来所走的路上，能充满各种各样的可能性。<br><br>——藤林椋《CLANNAD》</p>
+			  
+			  <!--
+              <div class="box">
+                色付きのボックスも使えます。何か強調したいことがあればここに書いてください。<br>
+                ボックスの中で<u>タグを使ってもOK</u>です。
+              </div>
+				-->
+				
+            </div>
+    </section>
+  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 center">
+          <p class="bottom">Copyright &copy; 2017-2024 SaraKale | Design:<a href="https://do.gt-gt.org" target="_blank">by do.</a></p>
         </div>
-       </div>
       </div>
-     </div>
     </div>
-	
-    <div class="col-md-3 hidden-sm">
-     <nav id="nav" class="main-navigation hidden-xs hidden-sm">
-      <ul class="main-menu">
-       <li><a class="show-1 active homebutton" href="#"><i class="fa-solid fa-home"></i>主页</a></li>
-       <li><a class="show-2 aboutbutton" href="#"><i class="fa-solid fa-heart"></i>最新作品</a></li>
-       <li><a class="show-3 projectbutton" href="#"><i class="fa-solid fa-th"></i>作品列表</a></li>
-       <li><a class="show-5 contactbutton" href="#"><i class="fa-solid fa-user"></i>关于我</a></li>
-      </ul>
-     </nav>
-    </div>
-   </div>
-  </div>
-  
-  <div class="site-footer">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-12 text-center">
-      <p><span class="white">Copyright &copy; 2017-2023 SaraKale | Design:<a href="http://www.templatemo.com" target="_blank"><span class="orange">free templates</span></a></span></p>
-     </div>
-    </div>
-   </div>
-  </div>
-  
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-  <script type="text/javascript">
-	<script type="text/javascript">
-	$('.nav a').on('click',function(){
-	$(this).tab('show');
-	});
- </body>
+  </footer>
+</body>
+
 </html>
