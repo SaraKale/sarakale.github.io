@@ -372,20 +372,19 @@ ul.sns-list li a.blog:hover {
   color: #ffffff;
 }
 
-/*
-ul.sns-list li:not(:last-of-type) {
-  margin-right: 20px;
-}
-*/
-
 /* 社交图标 */
+ul.shejiao-icon.center {
+    margin: auto;
+}
+
 ul.shejiao-icon li {
     text-align: center;
-    margin: 10px auto;
-    padding: 0 40px 0 40px;
-    display: inline-block;
+    margin: 20px auto;
+    padding: 0px 20px 0px 20px;
+    display: inline-table;
     width: 40px;
 }
+
 ul.shejiao-icon li a {
 	font-size: 40px;
 }
